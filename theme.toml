@@ -1,0 +1,9 @@
+name = 'Manitoba Hydro Theme'
+description = 'Theme for Manitoba Hydro website'
+
+# If you have a running demo of the theme
+demosite = 'https://mh.q30development.com/theme'
+
+[author]
+    name = "Q30 Design inc."
+    homepage = "https://q30design.com"

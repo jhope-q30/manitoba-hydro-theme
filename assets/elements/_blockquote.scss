@@ -1,0 +1,4 @@
+blockquote {
+    background-color:tomato;
+    > :last-child { margin-bottom: 0; }
+}
