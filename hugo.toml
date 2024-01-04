@@ -1,4 +1,3 @@
 baseURL      = '/'
 languageCode = 'en-us'
 title        = 'Manitoba Hydro theme site'
-theme        = 'manitoba-hydro'
