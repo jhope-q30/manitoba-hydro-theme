@@ -1,0 +1,15 @@
+[[main]]
+    identifier = 'theme'
+    name       = 'theme'
+    url        = '/theme/'
+    weight     = 99
+    [[main]]
+        parent     = 'theme'
+        name       = 'Getting started'
+        url        = '/theme/getting-started/'
+        weight     = 1
+    [[main]]
+        parent     = 'theme'
+        name       = 'Typography'
+        url        = '/theme/typography/'
+        weight     = 2
