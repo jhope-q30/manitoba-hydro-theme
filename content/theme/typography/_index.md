@@ -8,7 +8,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend sem nec jus
 
 ### Blockquote
 
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend sem nec justo eleifend, eu mattis odio fringilla.
+<blockquote>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eleifend sem nec justo eleifend, eu mattis odio fringilla.</p>
+    <p class="blockquote-footer">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+    </p>
+</blockquote>
 
 ```html
 <blockquote>
