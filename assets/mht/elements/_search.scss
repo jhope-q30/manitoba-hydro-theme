@@ -9,6 +9,7 @@
 
             > input[type="search"] {
 
+                flex-grow:1;
                 background-color:var( --mht-white );
                 padding:map-get( $spacing, 'xs' ) map-get( $spacing, 'xs' ) map-get( $spacing, 'xs' ) map-get( $spacing, 'md' );
                 border-radius:map-get( $spacing, 'md' ) 0 0 map-get( $spacing, 'md' );
@@ -19,6 +20,7 @@
 
             button#button-search {
 
+                flex-shrink:0;
                 border-radius:0 map-get( $spacing, 'md' ) map-get( $spacing, 'md' ) 0;
                 background:var( --mht-white );
                 border:1px solid var( --mht-black-50 );

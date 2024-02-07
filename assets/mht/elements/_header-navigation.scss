@@ -16,17 +16,23 @@
 
     }
 
-    > a.#{$prefix}logo { /** logo flex expands to fill open space on desktop */
+    .#{$prefix}logo {
 
         flex-shrink:1;
         flex-grow:1;
         align-self:center;
-        padding:map-get( $spacing, 'sm' );
 
-        > img {
+        > a { /** logo flex expands to fill open space on desktop */
 
-            width:130px;
-            height:49px;
+            padding:map-get( $spacing, 'sm' );
+            display:inline-block;
+
+            > img {
+
+                width:130px;
+                height:49px;
+
+            }
 
         }
 
@@ -64,7 +70,8 @@
                 ul.#{$prefix}menu-list {
 
                     @include reset-element();
-                    li { 
+
+                    > li { 
                         
                         @include reset-element();
                         @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:inline-block; }
@@ -106,22 +113,42 @@
                     border:0;
                     display:block;
                     background:none;
-                    background-repeat:no-repeat;
 
                 }
                 
                 &.#{$prefix}toggle {
 
-                    width:29px;
-                    height:30px;
                     @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:none; }
 
                     button#toggler {
-                        
-                        width:29px;
-                        height:30px;
-                        background-image:map-get( $svgs, 'menu' );
+
+                        border-radius:map-get( $spacing, 'sm' );
+                        padding:0 map-get( $spacing, 'md' ) 0 0;
+                        background-color:var( --mht-pale-blue );
                         cursor:pointer;
+
+                        > span { 
+                            
+                            padding:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                            text-transform:uppercase;
+                            display:block;
+                            background-image:map-get( $svgs, 'menu' );
+                            background-position:100% 50%;
+                            background-repeat:no-repeat;
+                        
+                        }
+
+                        &[aria-expanded="true"] { > span { background-image:map-get( $svgs, 'menu-open' ); } }
+
+                        @include x-transition( all );
+                        @include on-event { 
+                            
+                            background-color:var( --mht-hydro-blue );
+                            color:var( --mht-white );
+
+                            &[aria-expanded="false"] { > span { background-image:map-get( $svgs, 'menu-white' ); } }
+                        
+                        }
                         
                     }
         
@@ -135,6 +162,8 @@
 
     /** search field */
     .#{$prefix}search {
+
+        padding:map-get( $spacing, 'md' );
 
         @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
 
@@ -157,10 +186,14 @@
         ul.#{$prefix}menu-list {
 
             @include reset-element();
+
+            border-bottom:1px solid var( --mht-pale-blue );
+
             @media ( min-width: map-get( $breakpoints, "lg" ) ){
             
                 display:flex;
                 justify-content:center;
+                border:0;
             
             }
 
@@ -181,6 +214,7 @@
                     font-weight:map-get( $font-weight, 'demi' );
                     color:var( --mht-wave-blue );
                     background-color: var( --mht-white );
+                    border-top:1px solid var( --mht-pale-blue );
                     display:block;
                     cursor:pointer;
 
@@ -192,6 +226,7 @@
                     
                     }
 
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ border:0; }
                     @media ( max-width: map-get( $breakpoints, "lg" ) ){ width:100%; }
 
                 }
@@ -271,14 +306,16 @@
 
                     @include reset-element( $d:none );
                     @include x-transition( all );
-                    padding:0 0 map-get( $spacing, 'md' ) 0;
+                    padding:map-get( $spacing, 'md' ) 0;
                     width:100%;
                     opacity:0;
-                    background-color:var( --mht-pale-blue );
+                    background-color:var( --mht-pale-blue-50 );
+                    border-top:1px solid var( --mht-sky-blue );
 
                     @media ( min-width: map-get( $breakpoints, "lg" ) ){
 
                         @include dropshadow();
+                        border:0;
                         position:absolute;
                         min-width:map-get( $max-widths, 'xs' );
                         padding:map-get( $spacing, 'md' ) 0;

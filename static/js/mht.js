@@ -55,9 +55,8 @@
     }
     /** navigation toggles */
     $menuToggler.addEventListener( 'click', (e) => {
-        let $this = e.target;
-        if( $this.getAttribute( 'aria-expanded' ) != 'true' ){ /// if hamburger is open
-            $this.setAttribute( 'aria-expanded', 'true' );
+        if( $menuToggler.getAttribute( 'aria-expanded' ) != 'true' ){ /// if hamburger is open
+            $menuToggler.setAttribute( 'aria-expanded', 'true' );
             Array.prototype.forEach.call( $menuToggles, ( $toggle, i ) => {
                 $toggle.classList.add( $navOpen );
                 setTimeout( () => { $toggle.classList.add( $navFade ); }, 1 );
