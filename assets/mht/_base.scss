@@ -1,0 +1,11 @@
+*,
+*:after,
+*:before { box-sizing: inherit; }
+
+html { 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html, body { 
+    font-family: $font-family;
+}

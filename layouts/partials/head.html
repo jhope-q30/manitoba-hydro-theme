@@ -3,10 +3,11 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-{{- with .Description -}}<meta name="description" content="{{ . }}">{{ end }}
-{{- with .Keywords -}}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
-{{- $options := ( dict "targetPath" "css/theme.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
-{{- $style := resources.Get "theme.scss" | resources.ToCSS $options -}}
+{{- with .Description }}<meta name="description" content="{{ . }}">{{- end }}
+{{- with .Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{- end }}
+<link rel="stylesheet" href="https://use.typekit.net/xrw4ihz.css">
+{{- $options := ( dict "targetPath" "css/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
+{{- $style := resources.Get "mht.scss" | resources.ToCSS $options -}}
 {{- with $style -}}
 <link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
 {{- $title := print .Site.Title " | " .Title -}}
