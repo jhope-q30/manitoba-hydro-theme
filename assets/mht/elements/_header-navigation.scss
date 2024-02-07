@@ -1,0 +1,202 @@
+.#{$prefix}header {
+
+    margin:0 auto;
+    padding:map-get( $spacing, 'md' ) 0 0 0;
+    width:100%;
+    max-width:map-get( $max-widths, 'xxl' );
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    background-color:var( --mht-body-bg );
+
+    @media ( max-width: map-get( $breakpoints, "lg" ) ){
+        
+        position:fixed;
+        padding:0;
+        @include dropshadow();
+    
+    }
+
+    > a.#{$prefix}logo {
+
+        padding:map-get( $spacing, 'md' );
+
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
+
+            padding:0 0 0 map-get( $spacing, 'md' );
+            align-self:center;
+
+        }
+
+        > img {
+
+            width:130px;
+            height:49px;
+
+        }
+
+    }
+
+    .#{$prefix}menu-group {
+
+        .#{$prefix}item { 
+            
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
+        
+        }
+
+        &.#{$prefix}links {
+
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){
+                
+                display:flex;
+                align-items:center;
+            
+            }
+
+            .#{$prefix}item {
+
+                a {
+
+                    text-decoration:none;
+                    color:var( --mht-black );
+
+                    @include on-event { text-decoration:underline; }
+
+                }
+
+                ul.#{$prefix}menu-list {
+
+                    @include reset-element();
+                    li { 
+                        
+                        @include reset-element();
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:inline-block; }
+
+                        > a {
+
+                            display:block;
+                            padding:0 map-get( $spacing, 'sm' );
+
+                        }
+                    
+                    }
+                
+                }
+
+            }
+
+        }
+        
+        &.#{$prefix}buttons {
+
+            display:flex;
+            align-items:center;
+            align-self:center;
+
+            @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding-right:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) }; }
+
+            .#{$prefix}item {
+
+                button {
+
+                    @include reset-default-btn();
+                    margin:0;
+                    padding:0;
+                    border:0;
+                    display:block;
+                    background:none;
+                    background-repeat:no-repeat;
+
+                }
+                
+                &.#{$prefix}toggle {
+
+                    width:29px;
+                    height:30px;
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:none; }
+
+                    button#toggler {
+                        
+                        width:29px;
+                        height:30px;
+                        background-image:map-get( $svgs, 'menu' );
+                        
+                    }
+        
+                }
+
+            }
+
+        }
+
+    }
+   
+    .#{$prefix}navigation {
+
+        width:100%;
+        flex-shrink:0;
+        flex-grow:1;
+        margin-top:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) };
+        padding-top:map-get( $spacing, 'xs' );
+        border-top:1px solid var( --mht-gray-300 );
+
+        ul.#{$prefix}menu-list {
+
+            @include reset-element();
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){
+            
+                display:flex;
+                justify-content:space-between;
+            
+            }
+
+            li.#{$prefix}menu-item {
+
+                @include reset-element();
+
+                /** top level link, no sub */
+                > a {
+
+                    padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                    text-decoration:none;
+                    color:var( --mht-black );
+                    display:block;
+
+                }
+
+                > button {
+
+                    @include reset-default-btn();
+                    @include reset-element();
+
+                    text-align:left;
+                    background-color:var( --mht-white );
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /** navigation items that get toggled on small screens */
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ .#{$prefix}menu-mobile { display:none; } }
+    @media ( max-width: map-get( $breakpoints, "lg" ) ){
+
+        .#{$prefix}menu-desktop { display:none; }
+        .#{$prefix}menu-toggle {
+
+            display:none;
+            opacity:0;
+            @include x-transition( all );
+
+            &.menu-open { display:block; }
+            &.menu-fade { opacity:1; }
+
+        }
+
+    }
+
+}

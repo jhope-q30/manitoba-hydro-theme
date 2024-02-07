@@ -1,0 +1,23 @@
+$colors: ();
+$colors: map-merge(
+    (
+        "white":#fffffe,
+        "black":#000,
+        "sky-blue": #94D9F8,
+        "cyan-blue": #00AEEF,
+        "hydro-blue": #0079C1,
+        "wave-blue": #005C96,
+        "deep-sea-blue": #004369,
+        "dark-green": #50B848,
+        "light-green": #ABD331,
+        "medium-grey": #BCBEC0,
+        "dark-orange": #F59421,
+        "light-orange": #FFC412,
+        "yellow": #FBE551,
+        "light-grey": #EDEDEE,
+        "tint-blue": #E7F2F8,
+        "red": #C63C27,
+        "red-tint": #FCF2F0,
+    ),
+    $colors
+);
