@@ -75,6 +75,9 @@
                             padding:0 map-get( $spacing, 'sm' );
                             color:var( --mht-hydro-blue );
 
+                            @include x-transition( all );
+                            @include on-event { color: var( --mht-deeo-sea-blue ); }
+
                         }
                     
                     }
@@ -148,10 +151,8 @@
 
         width:100%;
         flex-shrink:0;
-        flex-grow:1;
-        margin-top:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) };
-        padding-top:map-get( $spacing, 'xs' );
-        border-top:1px solid var( --mht-gray-300 );
+        flex-grow:1;;
+        border-top:1px solid var( --mht-pale-blue );
 
         ul.#{$prefix}menu-list {
 
@@ -163,34 +164,124 @@
             
             }
 
-            li.#{$prefix}menu-item {
+            > li.#{$prefix}menu-item {
 
                 @include reset-element();
                 position:relative;
 
+                /** top level link, no sub */
+                > a,
+                > button {
+
+                    @include reset-element();
+
+                    padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                    text-decoration:none;
+                    text-transform:uppercase;
+                    font-weight:map-get( $font-weight, 'demi' );
+                    color:var( --mht-wave-blue );
+                    background-color: var( --mht-white );
+                    display:block;
+                    cursor:pointer;
+
+                    @include x-transition( all );
+                    @include on-event { 
+                        
+                        background-color:var( --mht-pale-blue );
+                        color:var( --mht-deeo-sea-blue );
+                    
+                    }
+
+                    @media ( max-width: map-get( $breakpoints, "lg" ) ){ width:100%; }
+
+                }
                 /** sub menu toggle button+ul */
                 > button {
 
                     @include reset-default-btn();
-                    @include reset-element();
 
+                    position:relative;
                     text-align:left;
                     background:var( --mht-white );
+
+                    /** border bottom style for desktop */
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                        margin-bottom:map-get( $spacing, 'sm' );
+
+                        &::after {
+
+                            position:absolute;
+                            margin-top:map-get( $spacing, 'sm' );
+                            left:0;
+                            bottom:#{ 0 - map-get( $spacing, 'sm' ) };
+                            display:block;
+                            content:" ";
+                            height:map-get( $spacing, 'sm' );
+                            width:calc( 100% - #{ map-get( $spacing, 'lg' ) } );
+                            background-color:transparent;
+                            @include x-transition( all );
+
+                        }
+
+                    }
+
+                    > span {
+
+                        display:block;
+                        position:relative;
+                        padding-right:#{ map-get( $spacing, "md" ) + map-get( $spacing, "xs" ) };
+
+                        &::after {
+
+                            position:absolute;
+                            content:map-get( $svgs, "menu-chevron" );
+                            width:11px;
+                            height:11px;
+                            right:0;
+
+                            @include x-transition( all );
+
+                        }
+
+                    }
+
+                    &[aria-expanded="true"] {
+
+                        > span::after {
+
+                            margin-top:5px; 
+                            -webkit-transform: rotate( 180deg );
+                            -moz-transform:    rotate( 180deg );
+                            -o-transform:      rotate( 180deg );
+                            transform:         rotate( 180deg );
+
+                        }
+                        
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                            &::after { background-color:var( --mht-hydro-blue ); }
+
+                        }
+                    
+                    }
 
                 }
                 > ul {
 
-                    @include reset-element();
+                    @include reset-element( $d:none );
                     @include x-transition( all );
-                    display:none;
+                    padding:0 0 map-get( $spacing, 'md' ) 0;
                     width:100%;
                     opacity:0;
+                    background-color:var( --mht-pale-blue );
 
                     @media ( min-width: map-get( $breakpoints, "lg" ) ){
 
                         @include dropshadow();
                         position:absolute;
-                        max-width:map-get( $max-widths, 'xs' );
+                        min-width:map-get( $max-widths, 'xs' );
+                        padding:map-get( $spacing, 'md' ) 0;
 
                     }
 
@@ -201,10 +292,39 @@
                         > a {
 
                             display:block;
+                            color: var( --mht-deep-sea-blue );
+                            text-decoration:none;
+                            padding:#{ map-get( $spacing, 'xs' ) + 2px } map-get( $spacing, 'md' );
+                            @include x-transition( all );
+
+                            @include on-event {
+
+                                background-color:var( --mht-sky-blue );
+                                color:var( --mht-black );
+
+                            }
 
                             &.active {
 
                                 font-weight:map-get( $font-weight, 'bold' );
+                                background-color:var( --mht-sky-blue );
+                                color:var( --mht-black );
+
+                            }
+
+                        }
+
+                        &.most-requested {
+
+                            > span {
+
+                                margin:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' ) 0 map-get( $spacing, 'md' );
+                                padding:#{ map-get( $spacing, 'md' ) + 2px } 0 #{ map-get( $spacing, 'xs' ) + 2px } 0;
+                                border-top:1px solid var( --mht-sky-blue );
+                                color:var( --mht-black-75 );
+                                font-size:map-get( $font-size, 'sm' );
+                                font-weight:map-get( $font-weight, 'demi' );
+                                display:block;
 
                             }
 
@@ -214,15 +334,6 @@
                     
                     &.#{$prefix}menu-open { display:block; }
                     &.#{$prefix}menu-fade { opacity:1; }
-
-                }
-                /** top level link, no sub */
-                > a {
-
-                    ///padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
-                    text-decoration:none;
-                    color:var( --mht-black );
-                    display:block;
 
                 }
 

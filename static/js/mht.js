@@ -14,12 +14,13 @@
     const $menuToggles = document.querySelectorAll( '.mht-nav-toggle' );
     const $primaryMenu = document.getElementById( 'primary-menu' );
     const $primaryMenuButtons = $primaryMenu.getElementsByTagName( 'button' );
+    const $primaryMenuLinks = $primaryMenu.getElementsByTagName( 'a' );
     const $navOpen = 'mht-nav-open';
     const $navFade = 'mht-nav-fade';
     const $menuOpen = 'mht-menu-open';
     const $menuFade = 'mht-menu-fade';
 
-    var closeMenu = () => {
+    var closeNav = () => {
         if( $menuToggler.getAttribute( 'aria-expanded' ) === 'true' ){
             $menuToggler.setAttribute( 'aria-expanded', 'false' );
             Array.prototype.forEach.call( $menuToggles, ( $toggle, i ) => {
@@ -27,16 +28,22 @@
             });
         }
     }
-    var clearNav = () => {
+    var clearMenus = () => {
         Array.prototype.forEach.call( $primaryMenuButtons, ( $button, i ) => {
             const $parent = document.getElementById( $button.getAttribute( 'aria-controls' ) );
+            $parent.setAttribute( 'aria-hidden', 'true' );
 			$parent.classList.remove( $menuOpen, $menuFade );
 			$button.setAttribute( 'aria-expanded', 'false' );
 		});
     }
-    var checkKey = (e) => {
+    var checkKeyCloseNav = (e) => {
         if( e.key == "Escape" ){
-            closeMenu();
+            closeNav();
+        }
+    }
+    var checkKeyClearMenus = (e) => {
+        if( e.key == "Escape" ){
+            clearMenus();
         }
     }
     var updateWindowSize = () => {
@@ -56,26 +63,30 @@
                 setTimeout( () => { $toggle.classList.add( $navFade ); }, 1 );
             });
 		} else {
-			closeMenu();
+			closeNav();
 		}
     } );
-    $menuToggler.addEventListener( 'keydown', checkKey );
-    $siteNavigation.addEventListener( 'keydown', checkKey );
+    $menuToggler.addEventListener( 'keydown', checkKeyCloseNav );
+    $siteNavigation.addEventListener( 'keydown', checkKeyCloseNav );
     /// window resize event
     window.addEventListener( "resize", updateWindowSize );
     Array.prototype.forEach.call( $primaryMenuButtons, ( $button, i ) => {
         $button.addEventListener( 'click', (e) => {
             const $parent = document.getElementById( $button.getAttribute( 'aria-controls' ) );
             if( $button.getAttribute( 'aria-expanded' ) != 'true' ){
-                clearNav(); /// clear open navigation
+                clearMenus(); /// clear open navigation
                 $button.setAttribute( 'aria-expanded', 'true' );
                 $parent.classList.add( $menuOpen );
+                $parent.setAttribute( 'aria-hidden', 'false' );
                 setTimeout( () => { $parent.classList.add( $menuFade ); }, 2 );
 		    } else {
-                clearNav(); /// clear open navigation
+                clearMenus(); /// clear open navigation
             }
         } );
-        ///$button.addEventListener( 'keydown', handleKeyPress, false );
+        
+    }, true );
+    Array.prototype.forEach.call( $primaryMenuLinks, ( $link, i ) => {
+        $link.addEventListener( 'keydown', checkKeyClearMenus );
     }, true );
 
     updateWindowSize();
