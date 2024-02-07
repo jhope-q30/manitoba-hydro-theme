@@ -7,7 +7,7 @@
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    background-color:var( --mht-body-bg );
+    background-color:var( --mht-white );
 
     @media ( max-width: map-get( $breakpoints, "lg" ) ){
         
@@ -121,6 +121,7 @@
                         width:29px;
                         height:30px;
                         background-image:map-get( $svgs, 'menu' );
+                        cursor:pointer;
                         
                     }
         
@@ -154,24 +155,63 @@
             li.#{$prefix}menu-item {
 
                 @include reset-element();
+                position:relative;
 
-                /** top level link, no sub */
-                > a {
-
-                    padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
-                    text-decoration:none;
-                    color:var( --mht-black );
-                    display:block;
-
-                }
-
+                /** sub menu toggle button+ul */
                 > button {
 
                     @include reset-default-btn();
                     @include reset-element();
 
                     text-align:left;
-                    background-color:var( --mht-white );
+                    background:var( --mht-white );
+
+                }
+                > ul {
+
+                    @include reset-element();
+                    @include x-transition( all );
+                    display:none;
+                    width:100%;
+                    opacity:0;
+
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                        @include dropshadow();
+                        position:absolute;
+                        max-width:map-get( $max-widths, 'xs' );
+
+                    }
+
+                    > li {
+
+                        @include reset-element();
+
+                        > a {
+
+                            display:block;
+
+                            &.active {
+
+                                font-weight:map-get( $font-weight, 'bold' );
+
+                            }
+
+                        }
+
+                    }
+                    
+                    &.#{$prefix}menu-open { display:block; }
+                    &.#{$prefix}menu-fade { opacity:1; }
+
+                }
+                /** top level link, no sub */
+                > a {
+
+                    ///padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                    text-decoration:none;
+                    color:var( --mht-black );
+                    display:block;
 
                 }
 
@@ -182,18 +222,18 @@
     }
 
     /** navigation items that get toggled on small screens */
-    @media ( min-width: map-get( $breakpoints, "lg" ) ){ .#{$prefix}menu-mobile { display:none; } }
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ .#{$prefix}nav-mobile { display:none; } }
     @media ( max-width: map-get( $breakpoints, "lg" ) ){
 
-        .#{$prefix}menu-desktop { display:none; }
-        .#{$prefix}menu-toggle {
+        .#{$prefix}nav-desktop { display:none; }
+        .#{$prefix}nav-toggle {
 
             display:none;
             opacity:0;
             @include x-transition( all );
 
-            &.menu-open { display:block; }
-            &.menu-fade { opacity:1; }
+            &.#{$prefix}nav-open { display:block; }
+            &.#{$prefix}nav-fade { opacity:1; }
 
         }
 
