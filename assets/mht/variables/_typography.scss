@@ -1,5 +1,16 @@
+@font-face {
+    font-family:"hydro-sans";
+    src:url( "/mht/fonts/Hydro-Sans-Medium.woff2" ) format( "woff2" );
+    font-display:auto;
+    font-style:normal;
+    font-weight:400;
+    font-stretch:normal;
+}
+
 /// font variables
-$font-family: "houschka-pro", sans-serif;
+$font-family: "hydro-sans", sans-serif;
+$legacy-font-family: "houschka-pro", sans-serif;
+
 $font-size: ();
 $font-size: map-merge(
     (

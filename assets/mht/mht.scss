@@ -5,16 +5,16 @@ $prefix: "mht-";
 
 /* Variables, Mixins, etc...
 --------------------------------------------- */
-@import "mht/variables/variables";
-@import "mht/mixins";
-@import "mht/root";
+@import "variables/variables";
+@import "mixins";
+@import "root";
 
 /* Layout
 --------------------------------------------- */
-@import "mht/elements/elements";
-@import "mht/base";
-@import "mht/normalize";
+@import "elements/elements";
+@import "base";
+@import "normalize";
 
 /* Helpers
 --------------------------------------------- */
-@import "mht/helpers";
+@import "helpers";
