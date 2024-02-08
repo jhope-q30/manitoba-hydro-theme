@@ -82,7 +82,7 @@
                 clearMenus(); /// clear open navigation
             }
         } );
-        
+        $button.addEventListener( 'keydown', checkKeyClearMenus );
     }, true );
     Array.prototype.forEach.call( $primaryMenuLinks, ( $link, i ) => {
         $link.addEventListener( 'keydown', checkKeyClearMenus );
