@@ -16,13 +16,13 @@
 
     }
 
-    .#{$prefix}logo {
+    .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
 
         flex-shrink:1;
         flex-grow:1;
         align-self:center;
 
-        > a { /** logo flex expands to fill open space on desktop */
+        > a {
 
             padding:map-get( $spacing, 'sm' );
             display:inline-block;
@@ -49,10 +49,14 @@
         &.#{$prefix}links {
 
             @media ( min-width: map-get( $breakpoints, "lg" ) ){
-                
-                display:flex;
-                align-items:center;
-                align-self:center;
+
+                &:not( .#{$prefix}nav-mobile ) {
+
+                    display:flex;
+                    align-items:center;
+                    align-self:center;
+
+                }
             
             }
 
@@ -67,9 +71,10 @@
 
                 }
 
-                ul.#{$prefix}menu-list {
+                ul.#{$prefix}links-list {
 
                     @include reset-element();
+                    @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding:map-get( $spacing, 'md' ) 0; }
 
                     > li { 
                         
@@ -79,11 +84,13 @@
                         > a {
 
                             display:block;
-                            padding:0 map-get( $spacing, 'sm' );
+                            padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
                             color:var( --mht-hydro-blue );
 
-                            @include x-transition( all );
+                            @include x-transition( color );
                             @include on-event { color: var( --mht-deeo-sea-blue ); }
+
+                            @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
 
                         }
                     
@@ -101,7 +108,7 @@
             align-items:center;
             align-self:center;
 
-            @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding-right:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) }; }
+            @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding-right:map-get( $spacing, 'md' ); }
 
             .#{$prefix}item {
 
@@ -126,6 +133,7 @@
                         padding:0 map-get( $spacing, 'md' ) 0 0;
                         background-color:var( --mht-pale-blue );
                         cursor:pointer;
+                        @include x-transition( background-color );
 
                         > span { 
                             
@@ -138,15 +146,24 @@
                         
                         }
 
-                        &[aria-expanded="true"] { > span { background-image:map-get( $svgs, 'menu-open' ); } }
+                        &[aria-expanded="true"] {
 
-                        @include x-transition( all );
-                        @include on-event { 
-                            
                             background-color:var( --mht-hydro-blue );
                             color:var( --mht-white );
+                            
+                            > span { background-image:map-get( $svgs, 'menu-open' ); }
+                            
+                        }
+                        &:hover {
 
-                            &[aria-expanded="false"] { > span { background-image:map-get( $svgs, 'menu-white' ); } }
+                            &[aria-expanded="false"] {
+
+                                background-color:var( --mht-hydro-blue );
+                                color:var( --mht-white );
+                                
+                                > span { background-image:map-get( $svgs, 'menu-white' ); }
+                            
+                            }
                         
                         }
                         
@@ -175,7 +192,8 @@
         }
 
     }
-   
+    
+    /** main navigation */
     .#{$prefix}navigation {
 
         width:100%;
@@ -208,7 +226,7 @@
 
                     @include reset-element();
 
-                    padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                    padding:#{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' ) #{ map-get( $spacing, 'sm' ) + 2px } map-get( $spacing, 'md' );
                     text-decoration:none;
                     text-transform:uppercase;
                     font-weight:map-get( $font-weight, 'demi' );
@@ -270,11 +288,20 @@
                         &::after {
 
                             position:absolute;
-                            content:map-get( $svgs, "menu-chevron" );
-                            width:11px;
-                            height:11px;
-                            right:0;
+                            content:map-get( $svgs, "menu-chevron-lrg" );
+                            right:map-get( $spacing, 'sm' );
+                            width:19px;
+                            height:19px;
 
+                            @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                                right:0;
+                                content:map-get( $svgs, "menu-chevron" );
+                                width:11px;
+                                height:11px;
+
+                            }
+                            
                             @include x-transition( all );
 
                         }
@@ -285,7 +312,10 @@
 
                         > span::after {
 
-                            margin-top:5px; 
+                            margin-top:0px;
+
+                            @media ( min-width: map-get( $breakpoints, "lg" ) ){ margin-top:5px; }
+                            
                             -webkit-transform: rotate( 180deg );
                             -moz-transform:    rotate( 180deg );
                             -o-transform:      rotate( 180deg );
