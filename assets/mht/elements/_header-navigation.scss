@@ -186,6 +186,7 @@
 
             align-self:center;
             padding:0 map-get( $spacing, 'md' );
+            margin-right:map-get( $spacing, 'md' );
 
             .#{$prefix}search-container { max-width:map-get( $max-widths, 'xs' ); }
 

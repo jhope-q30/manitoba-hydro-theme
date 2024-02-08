@@ -8,6 +8,7 @@ title: Header + Navigation
 
 [Example page](header-and-navigation/)
 
+
 ```html
 <header class="mht-header" id="header">
     <div class="mht-logo">
