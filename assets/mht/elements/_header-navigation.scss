@@ -244,8 +244,13 @@
                         color:var( --mht-deeo-sea-blue );
                     
                     }
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){
 
-                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ border:0; }
+                        border:0;
+                        height:calc( 100% - #{ map-get( $spacing, 'sm' ) } );
+                        margin-bottom:map-get( $spacing, 'sm' );
+
+                    }
                     @media ( max-width: map-get( $breakpoints, "lg" ) ){ width:100%; }
 
                 }
@@ -260,8 +265,6 @@
 
                     /** border bottom style for desktop */
                     @media ( min-width: map-get( $breakpoints, "lg" ) ){
-
-                        margin-bottom:map-get( $spacing, 'sm' );
 
                         &::after {
 
@@ -286,6 +289,8 @@
                         position:relative;
                         padding-right:#{ map-get( $spacing, "md" ) + map-get( $spacing, "xs" ) };
 
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){ height:100%; }
+
                         &::after {
 
                             position:absolute;
@@ -296,6 +301,7 @@
 
                             @media ( min-width: map-get( $breakpoints, "lg" ) ){
 
+                                top:0;
                                 right:0;
                                 content:map-get( $svgs, "menu-chevron" );
                                 width:11px;
@@ -324,11 +330,7 @@
 
                         }
                         
-                        @media ( min-width: map-get( $breakpoints, "lg" ) ){
-
-                            &::after { background-color:var( --mht-hydro-blue ); }
-
-                        }
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){ &::after { background-color:var( --mht-hydro-blue ); } }
                     
                     }
 
@@ -336,7 +338,7 @@
                 > ul {
 
                     @include reset-element( $d:none );
-                    @include x-transition( all );
+                    @include x-transition( opacity );
                     padding:map-get( $spacing, 'md' ) 0;
                     width:100%;
                     opacity:0;
@@ -349,6 +351,7 @@
                         border:0;
                         position:absolute;
                         min-width:map-get( $max-widths, 'xs' );
+                        max-width:map-get( $max-widths, 'xs' );
                         padding:map-get( $spacing, 'md' ) 0;
 
                     }

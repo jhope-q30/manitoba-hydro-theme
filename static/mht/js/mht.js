@@ -13,6 +13,7 @@
     const $menuToggler = document.getElementById( 'toggler' );
     const $menuToggles = document.querySelectorAll( '.mht-nav-toggle' );
     const $primaryMenu = document.getElementById( 'primary-menu' );
+    const $primaryMenuItems = $primaryMenu.querySelectorAll( '.mht-menu-item' );
     const $primaryMenuButtons = $primaryMenu.getElementsByTagName( 'button' );
     const $primaryMenuLinks = $primaryMenu.getElementsByTagName( 'a' );
     const $navOpen = 'mht-nav-open';
@@ -46,12 +47,27 @@
             clearMenus();
         }
     }
+    var checkLastMenuItem = () => {
+        const $screen = window.matchMedia( "( max-width: 992px )" ).matches ? "small" : "large";
+        Array.prototype.forEach.call( $primaryMenuItems, ( $item, i ) => {
+            const $ul = $item.getElementsByTagName( 'ul' );
+            if( $ul.length ){
+                if( $screen == "large" ){
+                    const $offsetLeft = ( $item.offsetLeft + $ul.item(0).offsetWidth ) - window.innerWidth;
+                    $ul.item(0).style.left = $offsetLeft > 0 ? ( 0 - $offsetLeft ) + "px" : 0;
+                } else {
+                    $ul.item(0).style.left = 0;
+                }
+            }
+        });
+    }
     var updateWindowSize = () => {
         if( window.matchMedia( "( max-width: 992px )" ).matches ){
             $content.style.paddingTop = $menuLogo.offsetHeight + 'px';
         } else {
             $content.style.paddingTop = 0;
         }
+        checkLastMenuItem();
     }
     /** navigation toggles */
     $menuToggler.addEventListener( 'click', (e) => {
@@ -77,6 +93,7 @@
                 $button.setAttribute( 'aria-expanded', 'true' );
                 $parent.classList.add( $menuOpen );
                 $parent.setAttribute( 'aria-hidden', 'false' );
+                checkLastMenuItem();
                 setTimeout( () => { $parent.classList.add( $menuFade ); }, 2 );
 		    } else {
                 clearMenus(); /// clear open navigation
