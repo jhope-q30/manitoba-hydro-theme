@@ -372,14 +372,7 @@
 
                                 background-color:var( --mht-sky-blue );
                                 color:var( --mht-black );
-
-                            }
-
-                            &.active {
-
-                                font-weight:map-get( $font-weight, 'bold' );
-                                background-color:var( --mht-sky-blue );
-                                color:var( --mht-black );
+                                text-decoration:underline;
 
                             }
 
@@ -405,6 +398,31 @@
                     
                     &.#{$prefix}menu-open { display:block; }
                     &.#{$prefix}menu-fade { opacity:1; }
+
+                }
+
+                /** active state */
+                &.#{$prefix}active {
+
+                    /** top level link, no sub */
+                    > a,
+                    > button {
+
+                        background-color:var( --mht-pale-blue );
+                        color:var( --mht-deeo-sea-blue );
+
+                    }
+                    > ul {
+
+                        > li.#{$prefix}active {
+
+                            font-weight:map-get( $font-weight, 'bold' );
+                            background-color:var( --mht-sky-blue );
+                            color:var( --mht-black );
+
+                        }
+
+                    }
 
                 }
 
