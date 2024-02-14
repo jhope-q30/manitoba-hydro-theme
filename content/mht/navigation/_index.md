@@ -20,10 +20,10 @@ title: Header + Navigation
         <div class="mht-item">
             <ul class="mht-links-list">
                 <li>
-                    <a href="#" role="menuitem">Francais</a>
+                    <a href="#">Francais</a>
                 </li>
                 <li>
-                    <a href="#" role="menuitem">Login</a>
+                    <a href="#">Login</a>
                 </li>
             </ul>
         </div>
@@ -56,29 +56,29 @@ title: Header + Navigation
                 </div>
             </div>
         </div><!-- /.mht-search mht-nav-mobile -->
-        <ul id="primary-menu" class="mht-menu-list" role="menubar">
+        <ul id="primary-menu" class="mht-menu-list">
             <li class="mht-menu-item">
                 <button aria-expanded="false" aria-haspopup="true" aria-controls="your-account" aria-label="Your Account, open menu" title="click to open">
                     <span>Your Account</span>
                 </button>
                 <ul aria-hidden="true" id="your-account" name="your-account">
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 1</a>
+                        <a href="#">Lorem ipsum - 1</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 2</a>
+                        <a href="#">Lorem ipsum - 2</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 3</a>
+                        <a href="#">Lorem ipsum - 3</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 4</a>
+                        <a href="#">Lorem ipsum - 4</a>
                     </li>
                     <li class="mht-menu-item most-requested">
                         <span>Most requested</span>
-                        <a role="menuitem" href="#">Most requested - 1</a>
-                        <a role="menuitem" href="#">Most requested - 2</a>
-                        <a role="menuitem" href="#">Most requested - 3</a>
+                        <a href="#">Most requested - 1</a>
+                        <a href="#">Most requested - 2</a>
+                        <a href="#">Most requested - 3</a>
                     </li>
                 </ul>
             </li>
@@ -88,22 +88,22 @@ title: Header + Navigation
                 </button>
                 <ul aria-hidden="true" id="outages" name="outages">
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 1</a>
+                        <a href="#">Lorem ipsum - 1</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 2</a>
+                        <a href="#">Lorem ipsum - 2</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 3</a>
+                        <a href="#">Lorem ipsum - 3</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 4</a>
+                        <a href="#">Lorem ipsum - 4</a>
                     </li>
                     <li class="mht-menu-item most-requested">
                         <span>Most requested</span>
-                        <a role="menuitem" href="#">Most requested - 1</a>
-                        <a role="menuitem" href="#">Most requested - 2</a>
-                        <a role="menuitem" href="#">Most requested - 3</a>
+                        <a href="#">Most requested - 1</a>
+                        <a href="#">Most requested - 2</a>
+                        <a href="#">Most requested - 3</a>
                     </li>
                 </ul>
             </li>
@@ -113,87 +113,87 @@ title: Header + Navigation
                 </button>
                 <ul aria-hidden="true" id="services-permits" name="services-permits">
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 1</a>
+                        <a href="#">Lorem ipsum - 1</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 2</a>
+                        <a href="#">Lorem ipsum - 2</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 3</a>
+                        <a href="#">Lorem ipsum - 3</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 4</a>
+                        <a href="#">Lorem ipsum - 4</a>
                     </li>
                     <li class="mht-menu-item most-requested">
                         <span>Most requested</span>
-                        <a role="menuitem" href="#">Most requested - 1</a>
-                        <a role="menuitem" href="#">Most requested - 2</a>
-                        <a role="menuitem" href="#">Most requested - 3</a>
+                        <a href="#">Most requested - 1</a>
+                        <a href="#">Most requested - 2</a>
+                        <a href="#">Most requested - 3</a>
                     </li>
                 </ul>
             </li>
-            <li class="mht-menu-item">
+            <li class="mht-menu-item mht-active">
                 <button aria-expanded="false" aria-haspopup="true" aria-controls="safety" aria-label="Safety, open menu" title="click to open">
                     <span>Safety</span>
                 </button>
                 <ul aria-hidden="true" id="safety" name="safety">
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 1</a>
+                        <a href="#">Lorem ipsum - 1</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 2</a>
+                        <a href="#">Lorem ipsum - 2</a>
+                    </li>
+                    <li class="mht-menu-item mht-active">
+                        <a href="#">Lorem ipsum - 3</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 3</a>
-                    </li>
-                    <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 4</a>
+                        <a href="#">Lorem ipsum - 4</a>
                     </li>
                     <li class="mht-menu-item most-requested">
                         <span>Most requested</span>
-                        <a role="menuitem" href="#">Most requested - 1</a>
-                        <a role="menuitem" href="#">Most requested - 2</a>
-                        <a role="menuitem" href="#">Most requested - 3</a>
+                        <a href="#">Most requested - 1</a>
+                        <a href="#">Most requested - 2</a>
+                        <a href="#">Most requested - 3</a>
                     </li>
                 </ul>
             </li>
             <li class="mht-menu-item">
                 <button aria-expanded="false" aria-haspopup="true" aria-controls="customer-support" aria-label="Customer Support, open menu" title="click to open">
-                    <span>Customer Support</span>
+                    <span>Customer Support Support</span>
                 </button>
                 <ul aria-hidden="true" id="customer-support" name="customer-support">
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 1</a>
+                        <a href="#">Lorem ipsum - 1</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 2</a>
+                        <a href="#">Lorem ipsum - 2</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 3</a>
+                        <a href="#">Lorem ipsum - 3</a>
                     </li>
                     <li class="mht-menu-item">
-                        <a role="menuitem" href="#">Lorem ipsum - 4</a>
+                        <a href="#">Lorem ipsum - 4</a>
                     </li>
                     <li class="mht-menu-item most-requested">
                         <span>Most requested</span>
-                        <a role="menuitem" href="#">Most requested - 1</a>
-                        <a role="menuitem" href="#">Most requested - 2</a>
-                        <a role="menuitem" href="#">Most requested - 3</a>
+                        <a href="#">Most requested - 1</a>
+                        <a href="#">Most requested - 2</a>
+                        <a href="#">Most requested - 3</a>
                     </li>
                 </ul>
             </li>
             <li class="mht-menu-item">
-                <a href="#" role="menuitem">Top level link</a>
+                <a href="#">Top level link</a>
             </li>
         </ul><!-- /.mht-menu-list -->
         <div class="mht-menu-group mht-nav-mobile mht-links">
             <div class="mht-item">
                 <ul class="mht-links-list">
                     <li>
-                        <a href="#" role="menuitem">Francais</a>
+                        <a href="#">Francais</a>
                     </li>
                     <li>
-                        <a href="#" role="menuitem">Login</a>
+                        <a href="#">Login</a>
                     </li>
                 </ul>
             </div>

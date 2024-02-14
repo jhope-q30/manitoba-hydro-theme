@@ -4,9 +4,7 @@
 
     const $siteNavigation = document.getElementById( 'navigation' );
 
-    if ( ! $siteNavigation ) {
-		return;
-	}
+    if ( ! $siteNavigation ) { return; }
 
     const $content = document.getElementById( 'content' );
     const $menuLogo = document.getElementById( 'header-logo' );
@@ -15,7 +13,6 @@
     const $primaryMenu = document.getElementById( 'primary-menu' );
     const $primaryMenuItems = $primaryMenu.querySelectorAll( '.mht-menu-item' );
     const $primaryMenuButtons = $primaryMenu.getElementsByTagName( 'button' );
-    const $primaryMenuLists = $primaryMenu.getElementsByTagName( 'ul' );
     const $primaryMenuLinks = $primaryMenu.getElementsByTagName( 'a' );
     const $navOpen = 'mht-nav-open';
     const $navFade = 'mht-nav-fade';
