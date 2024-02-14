@@ -15,6 +15,7 @@
     const $primaryMenu = document.getElementById( 'primary-menu' );
     const $primaryMenuItems = $primaryMenu.querySelectorAll( '.mht-menu-item' );
     const $primaryMenuButtons = $primaryMenu.getElementsByTagName( 'button' );
+    const $primaryMenuLists = $primaryMenu.getElementsByTagName( 'ul' );
     const $primaryMenuLinks = $primaryMenu.getElementsByTagName( 'a' );
     const $navOpen = 'mht-nav-open';
     const $navFade = 'mht-nav-fade';
@@ -61,6 +62,11 @@
             }
         });
     }
+    var checkInSiteNavigation = (e) => {
+        if( ! $siteNavigation.contains( e.relatedTarget ) ){
+            clearMenus();
+        }
+    }
     var updateWindowSize = () => {
         if( window.matchMedia( "( max-width: 992px )" ).matches ){
             $content.style.paddingTop = $menuLogo.offsetHeight + 'px';
@@ -83,6 +89,7 @@
     } );
     $menuToggler.addEventListener( 'keydown', checkKeyCloseNav );
     $siteNavigation.addEventListener( 'keydown', checkKeyCloseNav );
+    $siteNavigation.addEventListener( 'focusout', checkInSiteNavigation );
     /// window resize event
     window.addEventListener( "resize", updateWindowSize );
     Array.prototype.forEach.call( $primaryMenuButtons, ( $button, i ) => {
