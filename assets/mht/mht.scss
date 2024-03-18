@@ -1,20 +1,26 @@
 @charset "UTF-8";
-/* Prefix
---------------------------------------------- */
-$prefix: "mht-";
 
 /* Variables, Mixins, etc...
 --------------------------------------------- */
-@import "variables/variables";
-@import "mixins";
-@import "root";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+/* Base
+--------------------------------------------- */
+@import "base/base";
+
+/* Elements
+--------------------------------------------- */
+@import "elements/elements";
+
+/* Components
+--------------------------------------------- */
+@import "components/components";
 
 /* Layout
 --------------------------------------------- */
-@import "elements/elements";
-@import "base";
-@import "normalize";
+@import "layout/layout";
 
 /* Helpers
 --------------------------------------------- */
-@import "helpers";
+@import "base/helpers";
