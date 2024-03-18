@@ -1,3 +1,4 @@
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,8 +10,9 @@
 <link rel="stylesheet" href="https://use.typekit.net/xrw4ihz.css">
 {{- $options := ( dict "targetPath" "css/mht/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
 {{- $style := resources.Get "mht/mht.scss" | resources.ToCSS $options -}}
-{{- with $style -}}<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
+{{- with $style }}
+<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
 {{- $title := print .Site.Title " | " .Title -}}
-{{- if .IsHome -}}{{ $title = .Site.Title }}{{- end -}}
+{{- if .IsHome -}}{{ $title = .Site.Title }}{{ end }}
 <title>{{ $title | safeHTML }}</title>
 </head>

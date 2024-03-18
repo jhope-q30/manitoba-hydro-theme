@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language }}">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-{{- with .Description }}<meta name="description" content="{{ . }}">{{- end }}
-{{- with .Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{- end }}
-<link rel="stylesheet" href="https://use.typekit.net/xrw4ihz.css">
-{{- $options := ( dict "targetPath" "css/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
-{{- $style := resources.Get "mht/mht.scss" | resources.ToCSS $options -}}
-{{- with $style -}}
-<link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
-{{- $title := print .Site.Title " | " .Title -}}
-{{- if .IsHome -}}{{ $title = .Site.Title }}{{- end -}}
-<title>{{ $title | safeHTML }}</title>
+{{- partial "mht/head" . -}}
 {{- $body := anchorize .Title -}}
 {{- if len .Section -}}
 {{- if ne .Section $body -}}
