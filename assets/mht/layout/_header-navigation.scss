@@ -3,7 +3,7 @@
     margin:0 auto;
     padding:0;
     width:100%;
-    max-width:map-get( $max-widths, 'xxl' );
+    max-width:var( --#{$prefix}max-width );
     display:flex;
     justify-content:flex-end;
     flex-wrap:wrap;

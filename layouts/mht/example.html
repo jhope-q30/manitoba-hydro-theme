@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}">
+{{- partial "mht/head" . -}}
+{{- $body := anchorize .Title -}}
+{{- if len .Section -}}
+{{- if ne .Section $body -}}
+{{- $body = .Section -}}
+{{- end -}}
+{{- end -}}
+<body class="{{ $body }}">
+{{ readFile "layouts/mht/parts/header/navigation.html" | safeHTML }}
+{{ .Content | safeHTML }}
+{{ readFile "layouts/mht/parts/header/footer.html" | safeHTML }}
+</body>
+</html>
