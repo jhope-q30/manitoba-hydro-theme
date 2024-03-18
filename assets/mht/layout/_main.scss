@@ -2,29 +2,38 @@
 
     .content-container {
 
-        margin:0 auto;
-        padding:0;
-        width:100%;
-        max-width:var( --#{$prefix}max-width );
+        @include content-width();
 
-        .hero-banner { grid-area: banner; }
-        #main-content { grid-area: main; }
-        #sidebar { grid-area: sidebar; }
-
-        @supports ( display: grid ) {
-            // Clearfix elements can interfere with the grid.
-            &.clearfix { &::before, &::after { display: none !important; } }
-        }
-
-        // Small devices
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
             display: grid;
-            grid-template-areas:
-                "banner banner"
-                "sidebar main";
-            grid-template-columns: 202px minmax( 566px, 1fr );
+            grid-template-areas: "sidebar main";
+            grid-template-columns: map-get( $columns, "left" ) 1fr;
             grid-template-rows: auto 1fr;
+
+            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+
+                /// grid-template-columns: 248px minmax( 710px, 1fr );
+
+            }
+
+        }
+
+        #main-content { 
+            
+            grid-area: main;
+        
+        }
+        #sidebar { 
+            
+            grid-area: sidebar;
+        
+        }
+
+        // Small devices
+        /*@media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
+
+            
 
             // Fallback styles for when grid is not supported.
             #main-content {
@@ -63,6 +72,12 @@
                 width: 928px;
             }
         }
+
+        @supports ( display: grid ) {
+            // Clearfix elements can interfere with the grid.
+            // &.clearfix { &::before, &::after { display: none !important; } }
+        }*/
+
     }
 
 }

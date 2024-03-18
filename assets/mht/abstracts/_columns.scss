@@ -1,0 +1,8 @@
+$columns: ();
+$columns: map-merge(
+    (
+        "left": 280px,
+        "main": 280px,
+    ),
+    $columns
+);
