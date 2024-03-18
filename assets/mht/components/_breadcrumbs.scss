@@ -1,0 +1,19 @@
+.mht {
+
+    #breadcrumbs {
+
+        > ol {
+
+            @include reset-element();
+
+            > li {
+
+                @include reset-element( $d: inline-block );
+
+            }
+
+        }
+
+    }
+
+}

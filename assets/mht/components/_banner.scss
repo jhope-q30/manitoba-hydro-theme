@@ -1,0 +1,11 @@
+.#{$prefix}banner {
+
+    background-color:var( --#{$prefix}hydro-blue );
+
+    .#{$prefix}banner-content {
+
+        @include content-width();
+
+    }
+
+}
