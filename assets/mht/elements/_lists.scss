@@ -1,0 +1,40 @@
+/** content area */
+.#{$prefix}content-area {
+
+    ul, ol {
+
+        li {
+
+            line-height:map-get( $line-height, 'md' );
+            margin:0 0 map-get( $spacing, 'sm' ) 0;
+
+        }
+
+    }
+
+    ul.links {
+
+        @include reset-element();
+
+        padding-left:map-get( $spacing, 'md' );
+
+        li {
+
+            @include reset-element();
+
+            margin:map-get( $spacing, 'sm' ) 0;
+
+            a {
+
+                background-repeat:no-repeat;
+                background-image: map-get( $svgs, 'chevron-black-sm' );
+                background-position:0 4px;
+                padding-left:map-get( $spacing, 'md' );
+
+            }
+
+        }
+
+    }
+
+}

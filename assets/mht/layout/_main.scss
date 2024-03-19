@@ -27,11 +27,15 @@
         #main-content { 
             
             grid-area: main;
+
+            .mht-content-area { padding:map-get( $spacing, 'lg' ) 0; }
         
         }
         #sidebar { 
             
             grid-area: sidebar;
+
+            > * { padding:map-get( $spacing, 'lg' ) 0; }
         
         }
 

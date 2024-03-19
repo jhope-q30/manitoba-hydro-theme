@@ -1,0 +1,19 @@
+/** content area */
+.#{$prefix}content-area {
+
+    a {
+
+        color:var( --#{$prefix}link-color );
+        font-weight:map-get( $font-weight, 'demi' );
+
+        @include x-transition( color );
+        @include on-event {
+
+            color:var( --#{$prefix}link-hover-color );
+            text-decoration:underline;
+
+        }
+
+    }
+
+}
