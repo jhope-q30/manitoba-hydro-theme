@@ -6,15 +6,19 @@
 
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
+            --#{$prefix}column-gap: #{ map-get( $gutters, "sm" ) };
+
             display: grid;
             grid-template-areas: "sidebar main";
             grid-template-columns: map-get( $columns, "left" ) 1fr;
             grid-template-rows: auto 1fr;
+            column-gap:var( --#{$prefix}column-gap );
 
             @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
 
+                --#{$prefix}column-gap: #{ map-get( $gutters, "md" ) };
                 /// grid-template-columns: 248px minmax( 710px, 1fr );
-
+                
             }
 
         }

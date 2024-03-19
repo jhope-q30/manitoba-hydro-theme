@@ -1,0 +1,25 @@
+/** figure+image in the content area */
+.mht-content-area {
+
+    figure {
+
+        margin:0;
+
+        > picture {
+
+            > img {
+
+                @media ( max-width: map-get( $breakpoints, "lg" ) ){
+
+                    width:100%;
+                    max-width:100%;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -1,9 +1,7 @@
 .#{$prefix}header {
 
-    margin:0 auto;
-    padding:0;
-    width:100%;
-    max-width:var( --#{$prefix}max-width );
+    @include content-width();
+
     display:flex;
     justify-content:flex-end;
     flex-wrap:wrap;

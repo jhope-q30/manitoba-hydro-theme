@@ -1,8 +1,17 @@
 ///
 @mixin content-width(){
+
+	--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+
+	@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
+	@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+
 	margin:0 auto;
 	width:100%;
 	max-width:var( --#{$prefix}max-width );
+	padding-left: var( --#{$prefix}gutter-x );
+	padding-right: var( --#{$prefix}gutter-x );
+
 }
 /// dropshadow
 @mixin dropshadow( $operator: '' ) {
