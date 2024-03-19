@@ -3,7 +3,7 @@
 
     width:100%;
     flex-shrink:0;
-    flex-grow:1;;
+    flex-grow:1;
     border-top:1px solid var( --#{$prefix}pale-blue );
 
     ul.#{$prefix}menu-list {
@@ -166,8 +166,8 @@
                         color: var( --#{$prefix}deep-sea-blue );
                         text-decoration:none;
                         padding:#{ map-get( $spacing, 'xs' ) + 2px } map-get( $spacing, 'md' );
-                        @include x-transition( all );
 
+                        @include x-transition( all );
                         @include on-event {
 
                             background-color:var( --#{$prefix}sky-blue );
@@ -306,6 +306,18 @@
             }
 
         }
+
+    }
+
+    /** subnav page toggle controls */
+    .subnav-toggle {
+
+        margin:0 0 map-get( $spacing, 'lg' ) 0;
+        font-size:map-get( $font-size, 'xs' );
+        font-weight:map-get( $font-weight, 'demi' );
+        text-transform:uppercase;
+        text-decoration:none;
+        display:block;
 
     }
 

@@ -7,12 +7,12 @@
     flex-wrap:wrap;
     background-color: var( --#{$prefix}white );
 
-    @media ( max-width: map-get( $breakpoints, "lg" ) ){
+    /*@media ( max-width: map-get( $breakpoints, "lg" ) ){
         
         position:fixed;
         @include dropshadow();
 
-    }
+    }*/
 
     .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
 

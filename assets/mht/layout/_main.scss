@@ -28,14 +28,24 @@
             
             grid-area: main;
 
-            .mht-content-area { padding:map-get( $spacing, 'lg' ) 0; }
+            .mht-content-area {
+                
+                padding:map-get( $spacing, 'xs' ) 0 0 0;
+
+                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding:map-get( $spacing, 'lg' ) 0; }
+            
+            }
         
         }
         #sidebar { 
             
             grid-area: sidebar;
 
-            > * { padding:map-get( $spacing, 'lg' ) 0; }
+            > * { 
+                
+                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding:map-get( $spacing, 'lg' ) 0; }
+            
+            }
         
         }
 

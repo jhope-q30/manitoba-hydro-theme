@@ -65,11 +65,6 @@
         }
     }
     var updateWindowSize = () => {
-        if( window.matchMedia( "( max-width: 992px )" ).matches ){
-            $content.style.paddingTop = $menuLogo.offsetHeight + 'px';
-        } else {
-            $content.style.paddingTop = 0;
-        }
         checkLastMenuItem();
     }
     /** navigation toggles */
