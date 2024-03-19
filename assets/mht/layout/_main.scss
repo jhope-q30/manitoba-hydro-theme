@@ -7,11 +7,10 @@
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
             --#{$prefix}column-gap: #{ map-get( $gutters, "sm" ) };
-            --#{$prefix}column-left: #{ map-get( $columns, "left" ) };
 
             display: grid;
             grid-template-areas: "sidebar main";
-            grid-template-columns: var( --#{$prefix}column-left ) 1fr;
+            grid-template-columns: map-get( $columns, "left" ) 1fr;
             grid-template-rows: auto 1fr;
             column-gap:var( --#{$prefix}column-gap );
 

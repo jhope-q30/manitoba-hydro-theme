@@ -310,14 +310,31 @@
     }
 
     /** subnav page toggle controls */
-    .subnav-toggle {
+    a.subnav-toggle {
 
         margin:0 0 map-get( $spacing, 'lg' ) 0;
+        padding:0 #{ map-get( $spacing, 'md' ) + map-get( $spacing, 'sm' ) } 0 0;
         font-size:map-get( $font-size, 'xs' );
         font-weight:map-get( $font-weight, 'demi' );
         text-transform:uppercase;
         text-decoration:none;
         display:block;
+        background-repeat:no-repeat;
+
+        @include text-link();
+
+        &.down {
+
+            background-position:100% 1px;
+            background-image:map-get( $svgs, "down-arrow" );
+
+        }
+        &.up {
+
+            background-position:100% 0;
+            background-image:map-get( $svgs, "up-arrow" );
+
+        }
 
     }
 

@@ -30,6 +30,7 @@
                 background-image: map-get( $svgs, 'chevron-black-sm' );
                 background-position:0 4px;
                 padding-left:map-get( $spacing, 'md' );
+                display:block;
 
             }
 
