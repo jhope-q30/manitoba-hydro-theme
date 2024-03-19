@@ -1,0 +1,10 @@
+h1, h2, h3, h4, h5, h6 {
+
+    display:block;
+
+}
+h1 {
+
+    font-size: map-get( $font-size, 'h1' );
+
+}

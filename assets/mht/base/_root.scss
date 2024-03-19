@@ -6,6 +6,10 @@
     --#{$prefix}link-hover-color: #{ $link-hover-color };
     --#{$prefix}link-active-color: #{ $link-active-color };
 
+    --#{$prefix}link-knockout-color: #{ $link-knockout-color };
+    --#{$prefix}link-knockout-hover-color: #{ $link-knockout-hover-color };
+    --#{$prefix}link-knockout-active-color: #{ $link-knockout-active-color };
+
     @each $key, $value in $breakpoints { --#{$prefix}breakpoint-#{$key}:#{$value}; }
 
     --#{$prefix}max-width: #{ $max-width };

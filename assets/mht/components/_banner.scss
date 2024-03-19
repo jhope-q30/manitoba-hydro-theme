@@ -1,10 +1,21 @@
 .#{$prefix}banner {
 
     background-color:var( --#{$prefix}hydro-blue );
+    padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
 
     .#{$prefix}banner-content {
 
         @include content-width();
+
+        * { color:var( --#{$prefix}white ); }
+
+        a:not( .btn ) {
+
+            color: var( --#{$prefix}link-knockout-color ) !important;
+
+            @include on-event { color: var( --#{$prefix}link-knockout-hover-color ) !important; }
+
+        }
 
     }
 
