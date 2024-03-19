@@ -11,9 +11,7 @@
 
         a:not( .btn ) {
 
-            color: var( --#{$prefix}link-knockout-color ) !important;
-
-            @include on-event { color: var( --#{$prefix}link-knockout-hover-color ) !important; }
+            @include text-link-white();
 
         }
 

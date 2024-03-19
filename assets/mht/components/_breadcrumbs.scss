@@ -1,5 +1,6 @@
 .mht {
 
+    /** breadcrumb in page */
     #breadcrumbs {
 
         > ol {
@@ -37,6 +38,25 @@
                         text-decoration:underline;
     
                     }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /** breadcrumb in banner */
+    .#{$prefix}banner {
+
+        #breadcrumbs {
+
+            > ol {
+    
+                > li {
+    
+                    a { @include text-link-white(); }
 
                 }
 

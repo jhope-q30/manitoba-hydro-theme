@@ -1,0 +1,26 @@
+.mht {
+
+    .site-footer {
+
+        background-color: var( --#{$prefix}deep-sea-blue );
+        padding:map-get( $spacing, 'lg' ) 0;
+
+        a { @include text-link-white(); }
+
+        .site-footer-container {
+
+            @include content-width();
+
+            .site-footer-banner {
+
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+
+            }            
+
+        }
+
+    }
+
+}

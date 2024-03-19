@@ -39,3 +39,47 @@
     }
 
 }
+/** social media links */
+.mht {
+
+    .social-media-links {
+
+        > ul {
+
+            @include reset-element( $d:flex );
+
+            gap:map-get( $spacing, 'md' );
+
+            > li {
+
+                @include reset-element();
+
+                > a {
+
+                    display:block;
+                    color:transparent !important;
+                    overflow:hidden;
+                    width:36px;
+                    height:36px;
+                    text-decoration:none !important;
+                    background-repeat:no-repeat;
+                    background-position:0 0;
+                    background-color:var( --#{$prefix}white );
+                    border-radius:50%;
+
+                    @include x-transition( background-color );
+                    @include on-event { background-color:var( --#{$prefix}cyan-blue ); }
+
+                    @each $key, $value in $social {
+                        &.#{$key} { background-image: #{$value} };
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

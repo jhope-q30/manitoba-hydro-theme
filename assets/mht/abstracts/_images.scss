@@ -12,3 +12,16 @@ $svgs: map-merge(
     ),
     $svgs
 );
+
+$social: ();
+$social: map-merge(
+    (
+        "link-facebook": url( '/mht/images/icons/social/facebook.svg' ),
+        "link-twitter": url( '/mht/images/icons/social/x.svg' ),
+        "link-youtube": url( '/mht/images/icons/social/youtube.svg' ),
+        "link-linkedin": url( '/mht/images/icons/social/linkedin.svg' ),
+        "link-instagram": url( '/mht/images/icons/social/instagram.svg' ),
+        "link-threads": url( '/mht/images/icons/social/threads.svg' ),
+    ),
+    $social
+);

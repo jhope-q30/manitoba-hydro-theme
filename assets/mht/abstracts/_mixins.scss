@@ -13,6 +13,12 @@
 	}
 
 }
+@mixin text-link-white(){
+
+	color: var( --#{$prefix}link-knockout-color );
+    @include on-event { color: var( --#{$prefix}link-knockout-hover-color ); }
+
+}
 @mixin content-width(){
 
 	--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
