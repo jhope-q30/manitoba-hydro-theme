@@ -1,9 +1,33 @@
 @font-face {
     font-family:"hydro-sans";
+    src:url( "/mht/fonts/Hydro-Sans-Light.woff2" ) format( "woff2" );
+    font-display:auto;
+    font-style:normal;
+    font-weight:300;
+    font-stretch:normal;
+}
+@font-face {
+    font-family:"hydro-sans";
+    src:url( "/mht/fonts/Hydro-Sans-Regular.woff2" ) format( "woff2" );
+    font-display:auto;
+    font-style:normal;
+    font-weight:500;
+    font-stretch:normal;
+}
+@font-face {
+    font-family:"hydro-sans";
     src:url( "/mht/fonts/Hydro-Sans-Medium.woff2" ) format( "woff2" );
     font-display:auto;
     font-style:normal;
-    font-weight:400;
+    font-weight:600;
+    font-stretch:normal;
+}
+@font-face {
+    font-family:"hydro-sans";
+    src:url( "/mht/fonts/Hydro-Sans-Bold.woff2" ) format( "woff2" );
+    font-display:auto;
+    font-style:normal;
+    font-weight:700;
     font-stretch:normal;
 }
 

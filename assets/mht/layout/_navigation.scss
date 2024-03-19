@@ -243,32 +243,62 @@
                 
                 text-transform: uppercase;
                 font-size: map-get( $font-size, 'sm' );
+                font-weight:map-get( $font-weight, 'demi' );
+                padding:map-get( $spacing, 'md' ) 0;
             
             }
-            > ul {
 
-                @include reset-element();
+            ul,
+            ul > li { @include reset-element(); }
+
+            a {
+
+                display:block;
+                color:var( --#{$prefix}link-color );
+                font-size: map-get( $font-size, 'sm' );
+                font-weight:map-get( $font-weight, 'demi' );
+                text-decoration:none;
+                padding:map-get( $spacing, 'sm' ) 0;
+                line-height: map-get( $line-height, 'md' );
+
+                @include x-transition( color );
+                @include on-event {
+
+                    color:var( --#{$prefix}link-hover-color );
+                    text-decoration:underline;
+
+                }
+
+            }
+
+            > ul {
 
                 > li {
 
-                    @include reset-element();
+                    > a { &.active { font-weight:map-get( $font-weight, 'bold' ); } }
 
-                    > a {
+                    ul {
 
-                        display:block;
-                        color:var( --#{$prefix}link-color );
-                        text-decoration:none;
+                        padding-left:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) };
 
-                        @include x-transition( color );
-                        @include on-event {
+                        li {
 
-                            color:var( --#{$prefix}link-hover-color );
-                            text-decoration:underline;
+                            > a {
+
+                                &.active {
+
+                                    background-repeat:no-repeat;
+                                    background-image: map-get( $svgs, 'chevron-black-sm' );
+                                    background-position:0 #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };
+                                    padding-left:map-get( $spacing, 'md' );
+                                    color:var( --#{$prefix}link-active-color );
+
+                                }
+
+                            }
 
                         }
 
-                        &.active { font-weight:map-get( $font-weight, 'bold' ); }
-        
                     }
 
                 }
