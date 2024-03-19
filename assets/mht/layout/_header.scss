@@ -1,0 +1,213 @@
+.#{$prefix}header {
+
+    @include content-width();
+
+    display:flex;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+    background-color: var( --#{$prefix}white );
+
+    @media ( max-width: map-get( $breakpoints, "lg" ) ){
+        
+        position:fixed;
+        @include dropshadow();
+
+    }
+
+    .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
+
+        flex-shrink:1;
+        flex-grow:1;
+        align-self:center;
+
+        > a {
+
+            padding:map-get( $spacing, 'sm' );
+            display:inline-block;
+
+            > img {
+
+                width:130px;
+                height:49px;
+
+            }
+
+        }
+
+    }
+
+    .#{$prefix}menu-group {
+
+        .#{$prefix}item { 
+            
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
+        
+        }
+
+        &.#{$prefix}links {
+
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                &:not( .#{$prefix}nav-mobile ) {
+
+                    display:flex;
+                    align-items:center;
+                    align-self:center;
+
+                }
+            
+            }
+
+            .#{$prefix}item {
+
+                a {
+
+                    text-decoration:none;
+                    color:var( --#{$prefix}black );
+
+                    @include on-event { text-decoration:underline; }
+
+                }
+
+                ul.#{$prefix}links-list {
+
+                    @include reset-element();
+                    @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding:map-get( $spacing, 'md' ) 0; }
+
+                    > li { 
+                        
+                        @include reset-element();
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:inline-block; }
+
+                        > a {
+
+                            display:block;
+                            padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
+                            color:var( --#{$prefix}hydro-blue );
+
+                            @include x-transition( color );
+                            @include on-event { color: var( --#{$prefix}deep-sea-blue ); }
+
+                            @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
+
+                        }
+                    
+                    }
+                
+                }
+
+            }
+
+        }
+        /** buttons/toggle */
+        &.#{$prefix}buttons {
+
+            display:flex;
+            align-items:center;
+            align-self:center;
+
+            @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding-right:map-get( $spacing, 'md' ); }
+
+            .#{$prefix}item {
+
+                button {
+
+                    @include reset-default-btn();
+                    margin:0;
+                    padding:0;
+                    border:0;
+                    display:block;
+                    background:none;
+
+                }
+                
+                &.#{$prefix}toggle {
+
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ display:none; }
+
+                    button#toggler {
+
+                        border-radius:map-get( $spacing, 'sm' );
+                        padding:0 map-get( $spacing, 'md' ) 0 0;
+                        background-color:var( --#{$prefix}pale-blue );
+                        cursor:pointer;
+                        @include x-transition( background-color );
+
+                        > span { 
+                            
+                            padding:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                            text-transform:uppercase;
+                            display:block;
+                            background-image:map-get( $svgs, 'menu' );
+                            background-position:100% 50%;
+                            background-repeat:no-repeat;
+                        
+                        }
+
+                        &[aria-expanded="true"] {
+
+                            background-color:var( --#{$prefix}hydro-blue );
+                            color:var( --#{$prefix}white );
+                            
+                            > span { background-image:map-get( $svgs, 'menu-open' ); }
+                            
+                        }
+                        &:hover {
+
+                            &[aria-expanded="false"] {
+
+                                background-color:var( --#{$prefix}hydro-blue );
+                                color:var( --#{$prefix}white );
+                                
+                                > span { background-image:map-get( $svgs, 'menu-white' ); }
+                            
+                            }
+                        
+                        }
+                        
+                    }
+        
+                }
+
+            }
+
+        }
+
+    }
+
+    /** search field */
+    .#{$prefix}search {
+
+        padding:map-get( $spacing, 'md' );
+
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
+
+            align-self:center;
+            padding:0 map-get( $spacing, 'md' );
+            margin-right:map-get( $spacing, 'md' );
+
+            .#{$prefix}search-container { max-width:map-get( $max-widths, 'xs' ); }
+
+        }
+
+    }
+
+    /** navigation items that get toggled on small screens */
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ .#{$prefix}nav-mobile { display:none; } }
+    @media ( max-width: map-get( $breakpoints, "lg" ) ){
+
+        .#{$prefix}nav-desktop { display:none; }
+        .#{$prefix}nav-toggle {
+
+            display:none;
+            opacity:0;
+            @include x-transition( all );
+
+            &.#{$prefix}nav-open { display:block; }
+            &.#{$prefix}nav-fade { opacity:1; }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,282 @@
+/** main navigation */
+.#{$prefix}navigation {
+
+    width:100%;
+    flex-shrink:0;
+    flex-grow:1;;
+    border-top:1px solid var( --#{$prefix}pale-blue );
+
+    ul.#{$prefix}menu-list {
+
+        @include reset-element();
+
+        border-bottom:1px solid var( --#{$prefix}pale-blue );
+
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){
+        
+            display:flex;
+            justify-content:center;
+            border:0;
+        
+        }
+
+        > li.#{$prefix}menu-item {
+
+            @include reset-element();
+            position:relative;
+
+            /** top level link, no sub */
+            > a,
+            > button {
+
+                @include reset-element();
+
+                padding:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' ) #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                text-decoration:none;
+                text-transform:uppercase;
+                font-weight:map-get( $font-weight, 'demi' );
+                color:var( --#{$prefix}wave-blue );
+                background-color: var( --#{$prefix}white );
+                border-top:1px solid var( --#{$prefix}pale-blue );
+                display:block;
+                cursor:pointer;
+
+                @include x-transition( all );
+                @include on-event {
+                    background-color:var( --#{$prefix}pale-blue );
+                    color:var( --#{$prefix}deeo-sea-blue );
+                }
+                @media ( min-width: map-get( $breakpoints, "lg" ) ){
+                    border:0;
+                    height:calc( 100% - #{ map-get( $spacing, 'sm' ) } );
+                    margin-bottom:map-get( $spacing, 'sm' );
+                }
+                @media ( max-width: map-get( $breakpoints, "lg" ) ){ width:100%; }
+
+            }
+            /** sub menu toggle button+ul */
+            > button {
+
+                @include reset-default-btn();
+
+                position:relative;
+                text-align:left;
+                background:var( --#{$prefix}white );
+
+                /** border bottom style for desktop */
+                @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                    &::after {
+
+                        position:absolute;
+                        margin-top:map-get( $spacing, 'sm' );
+                        left:0;
+                        bottom:#{ 0 - map-get( $spacing, 'sm' ) };
+                        display:block;
+                        content:" ";
+                        height:map-get( $spacing, 'sm' );
+                        width:calc( 100% - #{ map-get( $spacing, 'lg' ) } );
+                        background-color:transparent;
+                        @include x-transition( all );
+
+                    }
+
+                }
+
+                > span {
+
+                    display:block;
+                    position:relative;
+                    padding-right:#{ map-get( $spacing, "md" ) + map-get( $spacing, "xs" ) };
+
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ height:100%; }
+
+                    &::after {
+
+                        position:absolute;
+                        content:map-get( $svgs, "menu-chevron-lrg" );
+                        right:map-get( $spacing, 'sm' );
+                        width:19px;
+                        height:19px;
+
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                            top:0;
+                            right:0;
+                            content:map-get( $svgs, "menu-chevron" );
+                            width:11px;
+                            height:11px;
+
+                        }
+                        
+                        @include x-transition( all );
+
+                    }
+
+                }
+
+                &[aria-expanded="true"] {
+
+                    > span::after {
+
+                        margin-top:0px;
+
+                        @media ( min-width: map-get( $breakpoints, "lg" ) ){ margin-top:5px; }
+                        
+                        -webkit-transform: rotate( 180deg );
+                        -moz-transform:    rotate( 180deg );
+                        -o-transform:      rotate( 180deg );
+                        transform:         rotate( 180deg );
+
+                    }
+                    
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ &::after { background-color:var( --#{$prefix}hydro-blue ); } }
+                
+                }
+
+            }
+            > ul {
+
+                @include reset-element( $d:none );
+                @include x-transition( opacity );
+                padding:map-get( $spacing, 'md' ) 0;
+                width:100%;
+                opacity:0;
+                background-color:var( --#{$prefix}pale-blue-50 );
+                border-top:1px solid var( --#{$prefix}sky-blue );
+
+                @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+                    @include dropshadow();
+                    border:0;
+                    position:absolute;
+                    min-width:map-get( $max-widths, 'xs' );
+                    max-width:map-get( $max-widths, 'xs' );
+                    padding:map-get( $spacing, 'md' ) 0;
+
+                }
+
+                > li {
+
+                    @include reset-element();
+
+                    > a {
+
+                        display:block;
+                        color: var( --#{$prefix}deep-sea-blue );
+                        text-decoration:none;
+                        padding:#{ map-get( $spacing, 'xs' ) + 2px } map-get( $spacing, 'md' );
+                        @include x-transition( all );
+
+                        @include on-event {
+
+                            background-color:var( --#{$prefix}sky-blue );
+                            color:var( --#{$prefix}black );
+                            text-decoration:underline;
+
+                        }
+
+                    }
+
+                    &.most-requested {
+
+                        > span {
+
+                            margin:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' ) 0 map-get( $spacing, 'md' );
+                            padding:#{ map-get( $spacing, 'md' ) + 2px } 0 #{ map-get( $spacing, 'xs' ) + 2px } 0;
+                            border-top:1px solid var( --#{$prefix}sky-blue );
+                            color:var( --#{$prefix}black-75 );
+                            font-size:map-get( $font-size, 'sm' );
+                            font-weight:map-get( $font-weight, 'demi' );
+                            display:block;
+
+                        }
+
+                    }
+
+                }
+                
+                &.#{$prefix}menu-open { display:block; }
+                &.#{$prefix}menu-fade { opacity:1; }
+
+            }
+
+            /** active state */
+            &.#{$prefix}active {
+
+                /** top level link, no sub */
+                > a,
+                > button {
+
+                    background-color:var( --#{$prefix}pale-blue );
+                    color:var( --#{$prefix}deeo-sea-blue );
+
+                }
+                > ul {
+
+                    > li.#{$prefix}active {
+
+                        font-weight:map-get( $font-weight, 'bold' );
+                        background-color:var( --#{$prefix}sky-blue );
+                        color:var( --#{$prefix}black );
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/** left/page navigation */
+.mht {
+
+    #sidebar {
+
+        > nav {
+
+            > span.title { 
+                
+                text-transform: uppercase;
+                font-size: map-get( $font-size, 'sm' );
+            
+            }
+            > ul {
+
+                @include reset-element();
+
+                > li {
+
+                    @include reset-element();
+
+                    > a {
+
+                        display:block;
+                        color:var( --#{$prefix}link-color );
+                        text-decoration:none;
+
+                        @include x-transition( color );
+                        @include on-event {
+
+                            color:var( --#{$prefix}link-hover-color );
+                            text-decoration:underline;
+
+                        }
+
+                        &.active { font-weight:map-get( $font-weight, 'bold' ); }
+        
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

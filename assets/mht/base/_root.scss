@@ -1,9 +1,13 @@
 :root {
-    @each $key, $value in $colors { 
-        --#{$prefix}#{$key}:#{$value};
-    }
-    @each $key, $value in $breakpoints { 
-        --#{$prefix}breakpoint-#{$key}:#{$value};
-    }
-    --#{$prefix}max-width:#{ $max-width };
+
+    @each $key, $value in $colors { --#{$prefix}#{$key}:#{$value}; }
+
+    --#{$prefix}link-color: #{ $link-color };
+    --#{$prefix}link-hover-color: #{ $link-hover-color };
+    --#{$prefix}link-active-color: #{ $link-active-color };
+
+    @each $key, $value in $breakpoints { --#{$prefix}breakpoint-#{$key}:#{$value}; }
+
+    --#{$prefix}max-width: #{ $max-width };
+
 }
