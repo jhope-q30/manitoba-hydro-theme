@@ -1,20 +1,15 @@
-span {
+.mht {
 
-    &.title {
+    span {
 
-        display:block;
-
+        &.title {
+    
+            display:block;
+    
+        }
+    
     }
 
-}
-
-/** content area */
-.#{$prefix}content-area {
-
-    p {
-
-        line-height:map-get( $line-height, 'md' );
-
-    }
+    p { line-height:map-get( $line-height, 'md' ); }
 
 }

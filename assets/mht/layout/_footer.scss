@@ -3,9 +3,12 @@
     .site-footer {
 
         background-color: var( --#{$prefix}deep-sea-blue );
-        padding:map-get( $spacing, 'lg' ) 0;
+        padding:map-get( $spacing, 'md' ) 0;
+
+        * { color:var( --#{$prefix}white ); }
 
         a { @include text-link-white(); }
+        p { line-height:map-get( $line-height, 'lg' ); }
 
         .site-footer-container {
 
@@ -13,11 +16,158 @@
 
             .site-footer-banner {
 
+                padding:map-get( $spacing, 'md' ) 0;
                 display:flex;
-                justify-content:space-between;
-                align-items:center;
+                flex-direction:column;
+                gap:map-get( $spacing, 'lg' );
 
-            }            
+                @media ( min-width: map-get( $breakpoints, "md" ) ){
+
+                    flex-direction:row;
+                    justify-content:space-between;
+                    align-items:center;
+
+                }
+
+                .social-media-links {
+
+                    > ul {
+            
+                        @include reset-element( $d:flex );
+            
+                        gap:map-get( $spacing, 'md' );
+            
+                        > li {
+            
+                            @include reset-element();
+            
+                            > a {
+            
+                                display:block;
+                                color:transparent !important;
+                                overflow:hidden;
+                                width:36px;
+                                height:36px;
+                                text-decoration:none !important;
+                                background-repeat:no-repeat;
+                                background-position:0 0;
+                                background-color:var( --#{$prefix}white );
+                                border-radius:50%;
+            
+                                @include x-transition( background-color );
+                                @include on-event { background-color:var( --#{$prefix}cyan-blue ); }
+            
+                                @each $key, $value in $social {
+                                    &.#{$key} { background-image: #{$value} };
+                                }
+            
+                            }
+            
+                        }
+            
+                    }
+            
+                }
+
+            }
+            
+            /** navigation links */
+            .footer-navigation {
+
+                padding:map-get( $spacing, 'md' ) 0;
+
+                @media ( min-width: map-get( $breakpoints, "md" ) ){
+
+                    display:flex;
+                    gap:map-get( $spacing, 'xl' );
+
+                }
+
+                .footer-column {
+
+                    > ul {
+
+                        @include reset-element();
+
+                        > li {
+
+                            @include reset-element();
+
+                            > a {
+
+                                display:block;
+                                padding:map-get( $spacing, 'sm' ) 0;
+                                text-decoration:none;
+                                text-transform:uppercase;
+                                font-size:map-get( $font-size, 'md' );
+                                
+                                @include on-event { text-decoration:underline; }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .subfooter {
+
+                padding:map-get( $spacing, 'md' ) 0;
+
+                .acknowledgement {
+
+                    max-width:map-get( $max-widths, 'lg' );
+
+                }
+
+                .subfooter-container {
+
+                    @media ( min-width: map-get( $breakpoints, "md" ) ){
+
+                        display:flex;
+                        justify-content:space-between;
+
+                    }
+
+                    ul.subfooter-links {
+
+                        @include reset-element();
+
+                        padding:map-get( $spacing, 'md' ) 0;
+
+                        li {
+
+                            @include reset-element( $d:inline-block );
+
+                            &:not( :first-child ) {
+
+                                &::before { 
+                                    
+                                    content:"|";
+                                    display:inline-block;
+                                    padding:0 map-get( $spacing, 'md' ) 0 #{ map-get( $spacing, 'md' ) - 2px };
+                                
+                                }
+
+                            }
+
+                            a {
+
+                                display:inline-block;
+                                font-size:map-get( $font-size, 'sm' );
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
 
         }
 
