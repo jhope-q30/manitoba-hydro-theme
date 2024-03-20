@@ -12,10 +12,6 @@
 	color: var( --#{$prefix}link-knockout-color );
     @include on-event { color: var( --#{$prefix}link-knockout-hover-color ); }
 }
-/// button style
-@mixin button-style(){
-	
-}
 /// content width for containers
 @mixin content-width(){
 
