@@ -2,11 +2,15 @@
 
     background-color:var( --#{$prefix}hydro-blue );
 
-    &:not( .mht-banner-home ) { padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0; }
+    &:not( .mht-banner-home ) { 
+        
+        padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
+
+        .#{$prefix}banner-content { @include content-width(); }
+    
+    }
 
     .#{$prefix}banner-content {
-
-        @include content-width();
 
         * { &:not( .mht-btn ) { color:var( --#{$prefix}white ); } }
         a:not( .mht-btn ) { @include text-link-white(); }
@@ -19,6 +23,8 @@
         .#{$prefix}banner-content {
 
             @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+
+                @include content-width();
 
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -37,12 +43,22 @@
                         background-repeat:no-repeat;
                         background-size:contain;
                         background-position:0 0;
-                        background-image:url( '/mht/images/abstracts/banner-image.png' );
+                        background-image: $banner-abstract;
                         z-index:map-get( $zindex, 1 );
 
                     }
 
                     img { position:relative; }
+
+                }
+
+            }
+
+            .mht-banner-text {
+
+                @media screen and ( max-width: map-get( $breakpoints, "lg" ) ) {
+
+                    padding:map-get( $spacing, 'md' ) map-get( $gutters, 'sm' ) map-get( $spacing, 'lg' ) map-get( $gutters, 'sm' );
 
                 }
 
