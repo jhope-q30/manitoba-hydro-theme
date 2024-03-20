@@ -26,3 +26,5 @@ $colors: map-merge(
     ),
     $colors
 );
+
+@each $key, $value in $colors { .#{$prefix}background-#{$key} { background-color:#{ $value }; } }

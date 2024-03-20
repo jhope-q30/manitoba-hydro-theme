@@ -1,0 +1,20 @@
+.#{$prefix}callouts {
+
+    @include content-width();
+
+    .#{$prefix}callout-item {
+
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto 1fr;
+        column-gap:#{ map-get( $gutters, "sm" ) };
+
+        .mht-callout-image {
+
+            > img { @include reset-image(); }
+
+        }
+
+    }
+
+}
