@@ -7,6 +7,8 @@
     flex-wrap:wrap;
     background-color: var( --#{$prefix}white );
 
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding-top:map-get( $spacing, 'sm' ); }
+
     .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
 
         flex-shrink:1;
@@ -50,6 +52,8 @@
 
                     text-decoration:none;
                     color:var( --#{$prefix}black );
+                    font-size:map-get( $font-size, 'sm' );
+                    font-weight:map-get( $font-weight, 'demi' );
 
                     @include on-event { text-decoration:underline; }
 

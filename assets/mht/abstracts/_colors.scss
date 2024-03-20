@@ -25,10 +25,3 @@ $colors: map-merge(
     ),
     $colors
 );
-
-$link-color: map-get( $colors, "hydro-blue" );
-$link-hover-color: map-get( $colors, "wave-blue" );
-$link-active-color: map-get( $colors, "black" );
-$link-knockout-color: map-get( $colors, "white" );
-$link-knockout-hover-color: map-get( $colors, "pale-blue" );
-$link-knockout-active-color: map-get( $colors, "pale-blue-50" );

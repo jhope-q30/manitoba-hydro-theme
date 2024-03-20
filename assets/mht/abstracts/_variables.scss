@@ -10,3 +10,15 @@ $prefix: "mht-";
 @import "breakpoints";
 @import "columns";
 @import "typography";
+
+/** links */
+$link-color: map-get( $colors, "hydro-blue" );
+$link-hover-color: map-get( $colors, "wave-blue" );
+$link-active-color: map-get( $colors, "black" );
+$link-knockout-color: map-get( $colors, "white" );
+$link-knockout-hover-color: map-get( $colors, "pale-blue" );
+$link-knockout-active-color: map-get( $colors, "pale-blue-50" );
+
+/** border colors, radius for buttons, input, etc... */
+$border-color: map-get( $colors, "pale-blue" );
+$border-radius: #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };

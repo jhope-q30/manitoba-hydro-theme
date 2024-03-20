@@ -10,6 +10,9 @@
     --#{$prefix}link-knockout-hover-color: #{ $link-knockout-hover-color };
     --#{$prefix}link-knockout-active-color: #{ $link-knockout-active-color };
 
+    --#{$prefix}border-color: #{ $border-color };
+    --#{$prefix}border-radius: #{ $border-radius };
+
     @each $key, $value in $breakpoints { --#{$prefix}breakpoint-#{$key}:#{$value}; }
 
     --#{$prefix}max-width: #{ $max-width };

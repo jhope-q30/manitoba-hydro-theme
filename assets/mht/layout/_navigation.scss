@@ -4,18 +4,17 @@
     width:100%;
     flex-shrink:0;
     flex-grow:1;
-    border-top:1px solid var( --#{$prefix}pale-blue );
+    border-top:1px solid var( --#{$prefix}border-color );
 
     ul.#{$prefix}menu-list {
 
         @include reset-element();
 
-        border-bottom:1px solid var( --#{$prefix}pale-blue );
+        border-bottom:1px solid var( --#{$prefix}border-color );
 
         @media ( min-width: map-get( $breakpoints, "lg" ) ){
         
             display:flex;
-            justify-content:center;
             border:0;
         
         }
@@ -24,6 +23,8 @@
 
             @include reset-element();
             position:relative;
+
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){ margin:0 map-get( $spacing, 'md' ); }
 
             /** top level link, no sub */
             > a,
@@ -34,10 +35,11 @@
                 padding:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' ) #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
                 text-decoration:none;
                 text-transform:uppercase;
+                font-size:map-get( $font-size, 'sm' );
                 font-weight:map-get( $font-weight, 'demi' );
                 color:var( --#{$prefix}wave-blue );
                 background-color: var( --#{$prefix}white );
-                border-top:1px solid var( --#{$prefix}pale-blue );
+                border-top:1px solid var( --#{$prefix}border-color );
                 display:block;
                 cursor:pointer;
 

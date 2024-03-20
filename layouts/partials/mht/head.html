@@ -8,7 +8,8 @@
 {{- with .Description }}<meta name="description" content="{{ . }}">{{- end }}
 {{- with .Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{- end }}
 <link rel="stylesheet" href="https://use.typekit.net/xrw4ihz.css">
-{{- $options := ( dict "targetPath" "css/mht/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
+<link rel="stylesheet" href="/mht/css/normalize.css">
+{{- $options := ( dict "targetPath" "mht/css/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
 {{- $style := resources.Get "mht/mht.scss" | resources.ToCSS $options -}}
 {{- with $style }}
 <link rel="stylesheet" href="{{ .RelPermalink }}">{{ end }}
