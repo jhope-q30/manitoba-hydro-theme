@@ -6,8 +6,6 @@
 
     if ( ! $siteNavigation ) { return; }
 
-    const $content = document.getElementById( 'content' );
-    const $menuLogo = document.getElementById( 'header-logo' );
     const $menuToggler = document.getElementById( 'toggler' );
     const $menuToggles = document.querySelectorAll( '.mht-nav-toggle' );
     const $primaryMenu = document.getElementById( 'primary-menu' );
@@ -106,4 +104,15 @@
 
     updateWindowSize();
 
+}() );
+/** alert js */
+( function(){
+    console.log( "Alert js loaded" );
+    const $mhtAlertClose = document.querySelectorAll( '.mht-alert-close' );
+    Array.prototype.forEach.call( $mhtAlertClose, ( $close, i ) => {
+        $close.addEventListener( 'click', (e) => {
+            const $alert = e.target.closest( '.mht-alert' );
+            $alert.remove();
+        } )
+    }, true );
 }() );

@@ -7,6 +7,16 @@
     --#{$prefix}btn-hover-color: var( --#{$prefix}button-hover-color );
     --#{$prefix}btn-border-hover-color: var( --#{$prefix}button-border-hover-color );
 
+    &.white {
+
+        --#{$prefix}btn-background-color: var( --#{$prefix}white );
+        --#{$prefix}btn-color: var( --#{$prefix}link-color );
+        --#{$prefix}btn-hover-color: var( --#{$prefix}link-hover-color );
+        --#{$prefix}btn-border-color: var( --#{$prefix}white );
+        --#{$prefix}btn-border-hover-color: var( --#{$prefix}white );
+
+    }
+
     &.outline {
 
         --#{$prefix}btn-background-color: var( --#{$prefix}button-outline-background-color );

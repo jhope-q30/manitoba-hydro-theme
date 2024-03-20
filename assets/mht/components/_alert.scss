@@ -1,0 +1,30 @@
+.#{$prefix}alert {
+
+    background-color:var( --#{$prefix}alert-yellow );
+
+    .#{$prefix}alert-container {
+
+        @include content-width();
+
+        position:relative;
+        padding-top:map-get( $spacing, 'md' );
+        padding-bottom:map-get( $spacing, 'md' );
+
+        p { margin:0 0 map-get( $spacing, 'sm' ) 0; }
+
+        .#{$prefix}alert-close {
+
+            @include reset-default-btn();
+
+            position:absolute;
+            top:#{ map-get( $spacing, "md" ) };
+            right:#{ map-get( $spacing, "md" ) };
+            background:none;
+            border:0;
+            cursor:pointer;
+
+        }
+
+    }
+
+}
