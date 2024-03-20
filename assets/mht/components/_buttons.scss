@@ -1,0 +1,32 @@
+.#{$prefix}btn {
+
+    @include reset-default-btn();
+
+    background:var( --#{$prefix}button-background-color );
+    color:var( --#{$prefix}button-color );
+    display:inline-block;
+    font-size:map-get( $font-size, 'sm' );
+    font-weight:map-get( $font-weight, 'demi' );
+    padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
+    border:2px solid var( --#{$prefix}button-border-color );
+    border-radius: var( --#{$prefix}border-radius );
+    background-repeat:no-repeat !important;
+
+    @include x-transition( all );
+    @include on-event {
+
+        background:var( --#{$prefix}button-background-hover-color );
+        color:var( --#{$prefix}button-hover-color );
+        border-color:var( --#{$prefix}button-border-hover-color );
+
+    }
+
+    &.login {
+
+        background-image:map-get( $svgs, "lock" );
+        background-position:12px 8px;
+        padding-left:map-get( $spacing, 'lg' );
+
+    }
+
+}

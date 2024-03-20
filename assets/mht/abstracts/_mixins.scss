@@ -1,24 +1,22 @@
-///
+/// text styles
 @mixin text-link(){
-
 	color:var( --#{$prefix}link-color );
 	font-weight:map-get( $font-weight, 'demi' );
-
 	@include x-transition( color );
 	@include on-event {
-
 		color:var( --#{$prefix}link-hover-color );
 		text-decoration:underline;
-
 	}
-
 }
 @mixin text-link-white(){
-
 	color: var( --#{$prefix}link-knockout-color );
     @include on-event { color: var( --#{$prefix}link-knockout-hover-color ); }
-
 }
+/// button style
+@mixin button-style(){
+	
+}
+/// content width for containers
 @mixin content-width(){
 
 	--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };

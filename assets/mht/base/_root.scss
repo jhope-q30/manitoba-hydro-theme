@@ -10,6 +10,13 @@
     --#{$prefix}link-knockout-hover-color: #{ $link-knockout-hover-color };
     --#{$prefix}link-knockout-active-color: #{ $link-knockout-active-color };
 
+    --#{$prefix}button-color: #{ $button-color };
+    --#{$prefix}button-hover-color: #{ $button-hover-color };
+    --#{$prefix}button-background-color: #{ $button-background-color };
+    --#{$prefix}button-background-hover-color: #{ $button-background-hover-color };
+    --#{$prefix}button-border-color: #{ $button-border-color };
+    --#{$prefix}button-border-hover-color: #{ $button-border-hover-color };
+
     --#{$prefix}border-color: #{ $border-color };
     --#{$prefix}border-radius: #{ $border-radius };
 
