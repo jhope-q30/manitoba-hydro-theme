@@ -11,6 +11,14 @@ $prefix: "mht-";
 @import "columns";
 @import "typography";
 
+$zindex: (
+    1: 111,
+    2: 122,
+    3: 133,
+    4: 144,
+    5: 155
+);
+
 /** links */
 $link-color: map-get( $colors, "hydro-blue" );
 $link-hover-color: map-get( $colors, "wave-blue" );

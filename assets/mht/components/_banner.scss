@@ -1,17 +1,52 @@
 .#{$prefix}banner {
 
     background-color:var( --#{$prefix}hydro-blue );
-    padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
+
+    &:not( .mht-banner-home ) { padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0; }
 
     .#{$prefix}banner-content {
 
         @include content-width();
 
-        * { color:var( --#{$prefix}white ); }
+        * { &:not( .mht-btn ) { color:var( --#{$prefix}white ); } }
+        a:not( .mht-btn ) { @include text-link-white(); }
+        img { @include reset-image(); }
 
-        a:not( .btn ) {
+    }
 
-            @include text-link-white();
+    &.mht-banner-home {
+
+        .#{$prefix}banner-content {
+
+            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap:#{ map-get( $gutters, "lg" ) };
+
+                .#{$prefix}banner-image {
+
+                    position:relative;
+
+                    &::before {
+
+                        position:absolute;
+                        width:100%;
+                        height:100%;
+                        content:" ";
+                        background-repeat:no-repeat;
+                        background-size:contain;
+                        background-position:0 0;
+                        background-image:url( '/mht/images/abstracts/banner-image.png' );
+                        z-index:map-get( $zindex, 1 );
+
+                    }
+
+                    img { position:relative; }
+
+                }
+
+            }
 
         }
 
