@@ -6,6 +6,12 @@
     flex-grow:1;
     border-top:1px solid var( --#{$prefix}border-color );
 
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){
+
+        margin-top:map-get( $spacing, 'md' );
+
+    }
+
     ul.#{$prefix}menu-list {
 
         @include reset-element();
@@ -36,8 +42,8 @@
                 text-decoration:none;
                 text-transform:uppercase;
                 font-size:map-get( $font-size, 'sm' );
-                font-weight:map-get( $font-weight, 'demi' );
-                color:var( --#{$prefix}wave-blue );
+                font-weight:map-get( $font-weight, 'semi' );
+                color:var( --#{$prefix}link-color );
                 background-color: var( --#{$prefix}white );
                 border-top:1px solid var( --#{$prefix}border-color );
                 display:block;

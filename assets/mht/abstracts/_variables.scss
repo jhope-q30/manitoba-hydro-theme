@@ -26,6 +26,11 @@ $button-background-color: map-get( $colors, "hydro-blue" );
 $button-background-hover-color: map-get( $colors, "wave-blue" );
 $button-border-color: map-get( $colors, "hydro-blue" );
 $button-border-hover-color: map-get( $colors, "wave-blue" );
+/** button outline */
+$button-outline-color: map-get( $colors, "hydro-blue" );
+$button-outline-hover-color: map-get( $colors, "wave-blue" );
+$button-outline-background-color: map-get( $colors, "white" );
+$button-outline-background-hover-color: map-get( $colors, "pale-blue" );
 
 /** border colors, radius for buttons, input, etc... */
 $border-color: map-get( $colors, "pale-blue" );

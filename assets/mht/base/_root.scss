@@ -17,6 +17,11 @@
     --#{$prefix}button-border-color: #{ $button-border-color };
     --#{$prefix}button-border-hover-color: #{ $button-border-hover-color };
 
+    --#{$prefix}button-outline-color: #{ $button-outline-color };
+    --#{$prefix}button-outline-hover-color: #{ $button-outline-hover-color };
+    --#{$prefix}button-outline-background-color: #{ $button-outline-background-color };
+    --#{$prefix}button-outline-background-hover-color: #{ $button-outline-background-hover-color };
+
     --#{$prefix}border-color: #{ $border-color };
     --#{$prefix}border-radius: #{ $border-radius };
 

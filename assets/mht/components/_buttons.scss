@@ -1,31 +1,66 @@
 .#{$prefix}btn {
 
+    --#{$prefix}btn-background-color: var( --#{$prefix}button-background-color );
+    --#{$prefix}btn-color: var( --#{$prefix}button-color );
+    --#{$prefix}btn-border-color: var( --#{$prefix}button-border-color );
+    --#{$prefix}btn-background-hover-color: var( --#{$prefix}button-background-hover-color );
+    --#{$prefix}btn-hover-color: var( --#{$prefix}button-hover-color );
+    --#{$prefix}btn-border-hover-color: var( --#{$prefix}button-border-hover-color );
+
+    &.outline {
+
+        --#{$prefix}btn-background-color: var( --#{$prefix}button-outline-background-color );
+        --#{$prefix}btn-color: var( --#{$prefix}button-outline-color );
+        --#{$prefix}btn-background-hover-color: var( --#{$prefix}button-outline-background-hover-color );
+        --#{$prefix}btn-hover-color: var( --#{$prefix}button-outline-hover-color );
+
+    }
+
     @include reset-default-btn();
 
-    background:var( --#{$prefix}button-background-color );
-    color:var( --#{$prefix}button-color );
+    background:var( --#{$prefix}btn-background-color );
+    color:var( --#{$prefix}btn-color );
     display:inline-block;
     font-size:map-get( $font-size, 'sm' );
     font-weight:map-get( $font-weight, 'demi' );
     padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
-    border:2px solid var( --#{$prefix}button-border-color );
+    border:2px solid var( --#{$prefix}btn-border-color );
     border-radius: var( --#{$prefix}border-radius );
-    background-repeat:no-repeat !important;
 
     @include x-transition( all );
     @include on-event {
 
-        background:var( --#{$prefix}button-background-hover-color );
-        color:var( --#{$prefix}button-hover-color );
-        border-color:var( --#{$prefix}button-border-hover-color );
+        color:var( --#{$prefix}btn-hover-color );
+        background:var( --#{$prefix}btn-background-hover-color );
+        border-color:var( --#{$prefix}btn-border-hover-color );
 
     }
 
     &.login {
 
-        background-image:map-get( $svgs, "lock" );
-        background-position:12px 8px;
-        padding-left:map-get( $spacing, 'lg' );
+        vertical-align:top;
+
+        &::before {
+
+            content:" ";
+            background-image:#{ map-get( $svgs, "lock" ) };
+            background-repeat:no-repeat;
+            background-position:0 2px;
+            background-size:9px 14px;
+            margin:0 6px 0 0;
+            display:inline-block;
+            width:11px;
+            height:14px;
+
+        }
+
+    }
+
+    &.block {
+
+        width:100%;
+        display:block;
+        text-align:center;
 
     }
 

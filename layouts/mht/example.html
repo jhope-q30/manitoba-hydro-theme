@@ -9,9 +9,7 @@
 {{- end -}}
 <body class="{{ $body }}">
     {{ readFile "layouts/mht/parts/header/navigation.html" | safeHTML }}
-    <div id="content" name="content" role="main">
-        {{ .Content | safeHTML }}
-    </div>
+    {{ .Content | safeHTML }}
     {{ readFile "layouts/mht/parts/footer.html" | safeHTML }}
 </body>
 </html>

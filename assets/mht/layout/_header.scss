@@ -1,13 +1,17 @@
 .#{$prefix}header {
 
-    @include content-width();
-
     display:flex;
     justify-content:flex-end;
     flex-wrap:wrap;
     background-color: var( --#{$prefix}white );
 
-    @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding-top:map-get( $spacing, 'sm' ); }
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
+        
+        @include content-width();
+
+        padding-top:map-get( $spacing, 'md' );
+    
+    }
 
     .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
 
@@ -15,19 +19,25 @@
         flex-grow:1;
         align-self:center;
 
-        > a {
-
-            padding:map-get( $spacing, 'sm' );
+        > a { 
+            
             display:inline-block;
+            padding:map-get( $spacing, "sm" ) map-get( $gutters, "sm" );
 
+            @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0; }
+        
         }
 
     }
 
     .#{$prefix}menu-group {
 
-        .#{$prefix}item { 
-            
+        padding:map-get( $spacing, 'md' ) 0;
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0; }
+
+        .#{$prefix}item {
+
+            padding:map-get( $spacing, 'sm' ) map-get( $gutters, "sm" );
             @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
         
         }
@@ -68,9 +78,10 @@
 
                         > a {
 
+                            @include text-link();
+
                             display:block;
                             font-size:map-get( $font-size, 'sm' );
-                            font-weight:map-get( $font-weight, 'demi' );
                             padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
 
                             @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
@@ -91,8 +102,6 @@
             align-items:center;
             align-self:center;
 
-            @media ( max-width: map-get( $breakpoints, "lg" ) ){ padding-right:map-get( $spacing, 'md' ); }
-
             .#{$prefix}item {
 
                 button {
@@ -112,41 +121,58 @@
 
                     button#toggler {
 
-                        border-radius:map-get( $spacing, 'sm' );
-                        padding:0 map-get( $spacing, 'md' ) 0 0;
-                        background-color:var( --#{$prefix}pale-blue );
+                        padding:0 map-get( $spacing, 'xs' );
+                        background-color:var( --#{$prefix}white );
                         cursor:pointer;
-                        @include x-transition( background-color );
+
+                        @include x-transition( color );
 
                         > span { 
                             
-                            padding:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) } #{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                            padding-top:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) };
+                            padding-right:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) };
+                            padding-bottom:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) };
+                            padding-left:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) };
                             text-transform:uppercase;
                             display:block;
+                            font-size:map-get( $font-size, 'sm' );
+                            font-weight:map-get( $font-weight, 'demi' );
                             background-image:map-get( $svgs, 'menu' );
                             background-position:100% 50%;
                             background-repeat:no-repeat;
+
+                            > span {
+
+                                display:block;
+
+                                &.close { display:none; }
+
+                            }
                         
                         }
 
                         &[aria-expanded="true"] {
-
-                            background-color:var( --#{$prefix}hydro-blue );
-                            color:var( --#{$prefix}white );
                             
-                            > span { background-image:map-get( $svgs, 'menu-open' ); }
+                            > span { 
+                                
+                                background-image:map-get( $svgs, 'menu-open' );
+
+                                > span {
+                                    
+                                    display:none;
+                                    
+                                    &.close { display:block; }
+                                
+                                }
+                            
+                            }
                             
                         }
                         &:hover {
 
-                            &[aria-expanded="false"] {
+                            color:var( --#{$prefix}wave-blue );
 
-                                background-color:var( --#{$prefix}hydro-blue );
-                                color:var( --#{$prefix}white );
-                                
-                                > span { background-image:map-get( $svgs, 'menu-white' ); }
-                            
-                            }
+                            &[aria-expanded="false"] { > span { background-image:map-get( $svgs, 'menu-hover' ); } }
                         
                         }
                         
