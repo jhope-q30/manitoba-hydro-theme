@@ -26,6 +26,7 @@
     padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
     border:2px solid var( --#{$prefix}btn-border-color );
     border-radius: var( --#{$prefix}border-radius );
+    text-decoration:none;
 
     @include x-transition( all );
     @include on-event {

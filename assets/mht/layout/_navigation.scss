@@ -6,11 +6,7 @@
     flex-grow:1;
     border-top:1px solid var( --#{$prefix}border-color );
 
-    @media ( min-width: map-get( $breakpoints, "lg" ) ){
-
-        margin-top:map-get( $spacing, 'md' );
-
-    }
+    @media ( min-width: map-get( $breakpoints, "lg" ) ){ margin-top:map-get( $spacing, 'md' ); }
 
     ul.#{$prefix}menu-list {
 
@@ -147,6 +143,7 @@
 
                 @include reset-element( $d:none );
                 @include x-transition( opacity );
+                
                 padding:map-get( $spacing, 'md' ) 0;
                 width:100%;
                 opacity:0;
