@@ -1,10 +1,7 @@
 /** content area */
-.#{$prefix}content-area {
+.#{$prefix}content-area,
+.#{$prefix}cards {
 
-    a {
-
-        @include text-link();
-
-    }
+    a { @include text-link(); }
 
 }

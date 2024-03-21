@@ -2,7 +2,7 @@
 
     background-color:var( --#{$prefix}hydro-blue );
 
-    &:not( .mht-banner-home ) { 
+    &:not( .#{$prefix}banner-home ) { 
         
         padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
 
@@ -12,13 +12,13 @@
 
     .#{$prefix}banner-content {
 
-        * { &:not( .mht-btn ) { color:var( --#{$prefix}white ); } }
-        a:not( .mht-btn ) { @include text-link-white(); }
+        * { &:not( .#{$prefix}btn ) { color:var( --#{$prefix}white ); } }
+        a:not( .#{$prefix}btn ) { @include text-link-white(); }
         img { @include reset-image(); }
 
     }
 
-    &.mht-banner-home {
+    &.#{$prefix}banner-home {
 
         .#{$prefix}banner-content {
 
@@ -54,12 +54,14 @@
 
             }
 
-            .mht-banner-text {
+            .#{$prefix}banner-text {
 
-                @media screen and ( max-width: map-get( $breakpoints, "lg" ) ) {
+                padding:map-get( $gutters, 'lg' ) 0;
 
-                    padding:map-get( $spacing, 'md' ) map-get( $gutters, 'sm' ) map-get( $spacing, 'lg' ) map-get( $gutters, 'sm' );
+                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
 
+                    padding-right:map-get( $gutters, 'sm' );
+                
                 }
 
             }

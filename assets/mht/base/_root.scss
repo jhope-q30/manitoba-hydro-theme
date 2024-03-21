@@ -24,7 +24,7 @@
 
     --#{$prefix}border-color: #{ $border-color };
     --#{$prefix}border-radius: #{ $border-radius };
-
+ 
     @each $key, $value in $breakpoints { --#{$prefix}breakpoint-#{$key}:#{$value}; }
 
 }

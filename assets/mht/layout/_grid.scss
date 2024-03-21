@@ -1,8 +1,14 @@
 .#{$prefix}group-grid {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    column-gap:#{ map-get( $gutters, "sm" ) };
+    @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr;
+
+    }
+
+    column-gap:$grid-column-gap;
+    row-gap:$grid-row-gap;
 
 }

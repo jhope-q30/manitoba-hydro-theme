@@ -1,25 +1,33 @@
 .#{$prefix}cards {
 
-    .#{$prefix}card {
+    padding:map-get( $gutters, 'lg' ) 0;
 
-        .#{$prefix}card-image {
+    &.#{$prefix}group-grid {
 
-            overflow:hidden;
+        padding-bottom:#{ map-get( $gutters, 'lg' ) - $grid-row-gap };
 
-            > img { 
-                
-                @include reset-image();
-                @include x-transition( all );
+    }
+
+}
+
+.#{$prefix}card {
+
+    .#{$prefix}card-image {
+
+        overflow:hidden;
+
+        > img { 
             
-            }
-
+            @include reset-image();
+            @include x-transition( all );
+        
         }
 
-        @include on-event {
+    }
 
-            .#{$prefix}card-image { > img { transform: scale( 1.1 ); } }
+    @include on-event {
 
-        }
+        .#{$prefix}card-image { > img { transform: scale( 1.1 ); } }
 
     }
 

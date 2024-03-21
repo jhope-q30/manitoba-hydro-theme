@@ -34,7 +34,7 @@
 
                 @include reset-element();
 
-                padding:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' ) #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) } map-get( $spacing, 'md' );
+                padding:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' );
                 text-decoration:none;
                 text-transform:uppercase;
                 font-size:map-get( $font-size, 'sm' );
@@ -52,8 +52,7 @@
                 }
                 @media ( min-width: map-get( $breakpoints, "lg" ) ){
                     border:0;
-                    height:calc( 100% - #{ map-get( $spacing, 'sm' ) } );
-                    margin-bottom:map-get( $spacing, 'sm' );
+                    height:100%;
                 }
                 @media ( max-width: map-get( $breakpoints, "lg" ) ){ width:100%; }
 
@@ -82,6 +81,8 @@
                         width:calc( 100% - #{ map-get( $spacing, 'lg' ) } );
                         background-color:transparent;
                         @include x-transition( all );
+
+                        z-index:map-get( $zindex, 3 );
 
                     }
 
@@ -155,9 +156,11 @@
                     @include dropshadow();
                     border:0;
                     position:absolute;
+                    margin-top:#{ map-get( $spacing, 'sm' ) };
                     min-width:map-get( $max-widths, 'xs' );
                     max-width:map-get( $max-widths, 'xs' );
                     padding:map-get( $spacing, 'md' ) 0;
+                    z-index:map-get( $zindex, 2 );
 
                 }
 

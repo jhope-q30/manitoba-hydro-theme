@@ -43,3 +43,7 @@ $button-outline-background-hover-color: map-get( $colors, "pale-blue" );
 /** border colors, radius for buttons, input, etc... */
 $border-color: map-get( $colors, "pale-blue" );
 $border-radius: #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };
+
+/** grid */
+$grid-column-gap:#{ map-get( $gutters, "sm" ) };
+$grid-row-gap:#{ map-get( $gutters, "sm" ) };
