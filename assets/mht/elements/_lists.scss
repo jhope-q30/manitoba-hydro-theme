@@ -1,7 +1,12 @@
 /** content area */
-.#{$prefix}content-area {
+.#{$prefix}content-area,
+.#{$prefix}cards {
 
     ul, ol {
+
+        &.#{$prefix}list-unstyled { @include reset-element(); }
+
+        &:not( .#{$prefix}list-unstyled ) { padding:0 0 0 #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) }; }
 
         li {
 
@@ -10,27 +15,27 @@
 
         }
 
-    }
-
-    ul.links {
-
-        @include reset-element();
-
-        padding-left:map-get( $spacing, 'md' );
-
-        li {
+        &.links {
 
             @include reset-element();
 
-            margin:map-get( $spacing, 'sm' ) 0;
+            padding-left:map-get( $spacing, 'md' );
 
-            a {
+            li {
 
-                background-repeat:no-repeat;
-                background-image: map-get( $svgs, 'chevron-black-sm' );
-                background-position:0 4px;
-                padding-left:map-get( $spacing, 'md' );
-                display:block;
+                @include reset-element();
+
+                margin:map-get( $spacing, 'sm' ) 0;
+
+                a {
+
+                    background-repeat:no-repeat;
+                    background-image: map-get( $svgs, 'chevron-black-sm' );
+                    background-position:0 4px;
+                    padding-left:map-get( $spacing, 'md' );
+                    display:block;
+
+                }
 
             }
 

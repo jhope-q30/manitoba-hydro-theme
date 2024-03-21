@@ -5,15 +5,13 @@
     .#{$prefix}callout-item {
 
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto 1fr;
         column-gap:#{ map-get( $gutters, "sm" ) };
 
-        .mht-callout-image {
+        .#{$prefix}callout-content { grid-column-start:span 2; }
 
-            > img { @include reset-image(); }
-
-        }
+        .#{$prefix}callout-image { > img { @include reset-image(); } }
 
     }
 

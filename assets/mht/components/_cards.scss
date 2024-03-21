@@ -1,0 +1,13 @@
+.#{$prefix}cards {
+
+    .#{$prefix}card {
+
+        .#{$prefix}card-image {
+
+            > img { @include reset-image(); }
+
+        }
+
+    }
+
+}
