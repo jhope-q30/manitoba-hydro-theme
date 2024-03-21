@@ -4,7 +4,20 @@
 
         .#{$prefix}card-image {
 
-            > img { @include reset-image(); }
+            overflow:hidden;
+
+            > img { 
+                
+                @include reset-image();
+                @include x-transition( all );
+            
+            }
+
+        }
+
+        @include on-event {
+
+            .#{$prefix}card-image { > img { transform: scale( 1.1 ); } }
 
         }
 

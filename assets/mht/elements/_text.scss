@@ -10,6 +10,11 @@
     
     }
 
-    p { line-height:map-get( $line-height, 'md' ); }
+    p { 
+        
+        line-height:map-get( $line-height, 'md' );
+        margin:0 0 map-get( $spacing, 'md' ) 0;
+    
+    }
 
 }
