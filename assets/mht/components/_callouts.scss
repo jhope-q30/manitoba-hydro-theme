@@ -4,25 +4,28 @@
 
     .#{$prefix}callout-item {
 
+        padding:#{ map-get( $gutters, 'lg' ) - map-get( $gutters, 'xs' ) } 0;
+
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
             display: grid;
+            grid-template-areas: "content image";
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto 1fr;
             column-gap:#{ map-get( $gutters, "sm" ) };
+            padding:map-get( $gutters, 'lg' ) 0;
 
         }
 
-        padding:map-get( $gutters, 'lg' ) 0;
-
         &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
 
-        .#{$prefix}callout-content { 
-            
-            grid-column-start:span 2;
-            padding:map-get( $gutters, 'md' ) 0;
+        .#{$prefix}callout-content {
 
-            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding-right:map-get( $spacing, 'lg' ); }
+            grid-area: content;
+            grid-column-end:span 2;
+            padding:map-get( $gutters, 'md' ) 0 0 0;
+
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0 map-get( $spacing, 'lg' ) 0 0; }
 
             h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'lg' ) - 2px } 0; }
         
@@ -30,9 +33,11 @@
 
         .#{$prefix}callout-image {
 
+            grid-area:image;
+            grid-column-start:3;
             position:relative;
 
-            &::before {
+            /*&::before {
 
                 position:absolute;
                 left:-1px;
@@ -45,9 +50,13 @@
                 content:" ";
                 z-index:map-get( $zindex, 1 );
         
-            }
+            }*/
             
-            > img { @include reset-image(); }
+            > img { 
+                
+                @include reset-image();
+            
+            }
         
         }
 

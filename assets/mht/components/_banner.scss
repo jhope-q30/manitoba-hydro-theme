@@ -48,7 +48,7 @@
                         content:" ";
                         background-repeat:no-repeat;
                         background-size:contain;
-                        background-position:0 0;
+                        background-position:0 50%;
                         background-image: $banner-abstract;
                         z-index:map-get( $zindex, 1 );
 

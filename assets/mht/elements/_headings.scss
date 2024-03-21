@@ -1,27 +1,32 @@
-h1, h2, h3, h4, h5, h6 {
+.mht {
 
-    display:block;
-    line-height:map-get( $line-height, 'sm' );
-    font-weight:map-get( $font-weight, 'bold' );
-    margin:0 0 map-get( $spacing, 'md' ) 0;
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
 
-    > a { font-weight:map-get( $font-weight, 'bold' ) !important; }
+        display:block;
+        line-height:map-get( $line-height, 'sm' );
+        font-weight:map-get( $font-weight, 'bold' );
+        margin:0 0 map-get( $spacing, 'md' ) 0;
 
-}
-@for $i from 1 through 6 { h#{$i} { font-size: map-get( $font-size, h#{$i} ); } }
+        > a { font-weight:map-get( $font-weight, 'bold' ) !important; }
 
-@each $key, $value in $heading-images { 
-    
-    .#{$key} { 
+    }
+    @for $i from 1 through 6 { h#{$i}, .h#{$i} { font-size: map-get( $font-size, h#{$i} ); } }
+
+    @each $key, $value in $heading-images { 
         
-        padding-top:1px;
-        padding-left:#{ map-get( $spacing, 'xl' ) - map-get( $spacing, 'sm' ) };
-        min-height:#{ map-get( $gutters, 'md' ) + 2px };
-        background-image:#{ $value };
-        background-repeat:no-repeat;
-    
+        .#{$key} { 
+            
+            padding-top:1px;
+            padding-left:#{ map-get( $spacing, 'xl' ) - map-get( $spacing, 'sm' ) };
+            min-height:#{ map-get( $gutters, 'md' ) + 2px };
+            background-image:#{ $value };
+            background-repeat:no-repeat;
+        
+        }
+
     }
 
-}
+    h3, .h3 { line-height:map-get( $line-height, 'md' ); }
 
-h3 { line-height:map-get( $line-height, 'md' ); }
+}

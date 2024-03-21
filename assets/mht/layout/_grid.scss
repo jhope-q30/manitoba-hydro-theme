@@ -5,10 +5,43 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto 1fr;
+        column-gap:$grid-column-gap;
+        row-gap:$grid-row-gap;
+        padding:map-get( $gutters, 'lg' ) 0;
 
     }
 
-    column-gap:$grid-column-gap;
-    row-gap:$grid-row-gap;
+    .#{$prefix}group-item {
+
+        padding:map-get( $gutters, 'md' ) 0;
+
+        @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0; }
+
+    }
+
+    &.#{$prefix}grid-bordered {
+
+        .#{$prefix}group-item {
+
+            @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
+
+                &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
+
+            }
+
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
+
+                border-bottom:0;
+                border-right:1px solid var( --#{$prefix}sky-blue );
+                margin-right:#{ map-get( $gutters, 'xs' ) - 1px };
+                padding-right: map-get( $gutters, 'sm' );
+
+                &:nth-child(3) { border-color:transparent; }
+
+            }
+
+        }
+
+    }
 
 }

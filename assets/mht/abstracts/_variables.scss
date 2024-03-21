@@ -46,4 +46,4 @@ $border-radius: #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };
 
 /** grid */
 $grid-column-gap:#{ map-get( $gutters, "sm" ) };
-$grid-row-gap:#{ map-get( $gutters, "sm" ) };
+$grid-row-gap:#{ map-get( $gutters, "lg" ) };

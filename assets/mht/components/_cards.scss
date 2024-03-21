@@ -1,15 +1,3 @@
-.#{$prefix}cards {
-
-    padding:map-get( $gutters, 'lg' ) 0;
-
-    &.#{$prefix}group-grid {
-
-        padding-bottom:#{ map-get( $gutters, 'lg' ) - $grid-row-gap };
-
-    }
-
-}
-
 .#{$prefix}card {
 
     .#{$prefix}card-image {
