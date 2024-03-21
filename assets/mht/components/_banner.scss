@@ -1,5 +1,10 @@
 .#{$prefix}banner {
 
+    --#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+
+	@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
+	@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+
     background-color:var( --#{$prefix}hydro-blue );
 
     &:not( .#{$prefix}banner-home ) { 
@@ -54,7 +59,7 @@
 
                     }
 
-                    img { position:relative; }
+                    > img { @include reset-image(); }
 
                 }
 
@@ -62,10 +67,11 @@
 
             .#{$prefix}banner-text {
 
-                padding:map-get( $gutters, 'lg' ) 0;
+                padding:map-get( $gutters, 'lg' ) var( --#{$prefix}gutter-x );
 
                 @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
 
+                    padding-left:map-get( $gutters, 'sm' );
                     padding-right:map-get( $gutters, 'sm' );
                 
                 }

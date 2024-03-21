@@ -45,7 +45,7 @@
 
             @include reset-element();
 
-            margin-bottom:map-get( $spacing, 'md' );
+            margin-bottom:#{ map-get( $spacing, 'sm' ) + map-get( $spacing, 'xs' ) };
 
             li {
 
@@ -53,15 +53,15 @@
 
                 text-transform:uppercase;
                 font-weight:map-get( $font-weight, 'demi' );
+                margin-bottom:map-get( $spacing, 'xs' );
 
-                &:not( :first-child ) {
+                &:not( :last-child ) {
 
-                    &::before {
+                    &::after {
 
                         content:"|";
                         padding-left:map-get( $spacing, 'sm' );
                         padding-right:map-get( $spacing, 'sm' );
-
 
                     }
 
