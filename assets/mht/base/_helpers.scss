@@ -48,4 +48,12 @@
     .text-left { text-align: left !important; }
     .text-right { text-align: right !important; }
 
+    $position: left, top, right, bottom;
+
+    @each $key, $value in $gutters { 
+        @each $pos in $position {
+            .#{$prefix}gutter-#{$pos}-#{$key} { padding-#{$pos}: #{$value} };
+        }
+    }
+
 }

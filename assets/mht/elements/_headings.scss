@@ -5,6 +5,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:map-get( $font-weight, 'bold' );
     margin:0 0 map-get( $spacing, 'md' ) 0;
 
+    > a { font-weight:map-get( $font-weight, 'bold' ) !important; }
+
 }
 @for $i from 1 through 6 { h#{$i} { font-size: map-get( $font-size, h#{$i} ); } }
 
@@ -21,3 +23,5 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 }
+
+h3 { line-height:map-get( $line-height, 'md' ); }

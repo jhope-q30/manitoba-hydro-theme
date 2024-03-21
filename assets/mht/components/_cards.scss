@@ -12,11 +12,10 @@
 
 .#{$prefix}card {
 
-    
-
     .#{$prefix}card-image {
 
         overflow:hidden;
+        margin:0 0 map-get( $gutters, 'md' ) 0;
 
         > img { 
             

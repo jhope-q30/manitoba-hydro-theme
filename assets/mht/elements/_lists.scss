@@ -15,7 +15,7 @@
 
         }
 
-        &.links {
+        &.links { /** legacy */
 
             @include reset-element();
 
@@ -34,6 +34,36 @@
                     background-position:0 4px;
                     padding-left:map-get( $spacing, 'md' );
                     display:block;
+
+                }
+
+            }
+
+        }
+
+        &.#{$prefix}details {
+
+            @include reset-element();
+
+            margin-bottom:map-get( $spacing, 'md' );
+
+            li {
+
+                @include reset-element( $d:inline-block );
+
+                text-transform:uppercase;
+                font-weight:map-get( $font-weight, 'demi' );
+
+                &:not( :first-child ) {
+
+                    &::before {
+
+                        content:"|";
+                        padding-left:map-get( $spacing, 'sm' );
+                        padding-right:map-get( $spacing, 'sm' );
+
+
+                    }
 
                 }
 
