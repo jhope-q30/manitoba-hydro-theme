@@ -71,7 +71,7 @@
 
                 @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
 
-                    padding-left:map-get( $gutters, 'sm' );
+                    padding-left:0;
                     padding-right:map-get( $gutters, 'sm' );
                 
                 }
