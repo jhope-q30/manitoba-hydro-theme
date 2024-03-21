@@ -4,9 +4,13 @@
 
     &:not( .#{$prefix}banner-home ) { 
         
-        padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
+        /// padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
 
-        .#{$prefix}banner-content { @include content-width(); }
+        .#{$prefix}banner-content { 
+            
+            @include content-width();
+        
+        }
     
     }
 
@@ -15,6 +19,8 @@
         * { &:not( .#{$prefix}btn ) { color:var( --#{$prefix}white ); } }
         a:not( .#{$prefix}btn ) { @include text-link-white(); }
         img { @include reset-image(); }
+
+        .#{$prefix}btn { margin:map-get( $spacing, 'md' ) 0 0 0; }
 
     }
 

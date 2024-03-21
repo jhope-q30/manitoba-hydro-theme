@@ -29,4 +29,14 @@ $social: map-merge(
     $social
 );
 
+$heading-images:();
+$heading-images: map-merge(
+    (
+        "your-account": url( '/mht/images/icons/your-account.png' ),
+        "outages": url( '/mht/images/icons/outages.png' ),
+        "permits-service": url( '/mht/images/icons/permits-service.png' ),
+    ),
+    $heading-images
+);
+
 $banner-abstract: url( '/mht/images/abstracts/banner-image.png' );
