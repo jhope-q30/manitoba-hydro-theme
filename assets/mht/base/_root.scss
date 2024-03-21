@@ -27,6 +27,4 @@
 
     @each $key, $value in $breakpoints { --#{$prefix}breakpoint-#{$key}:#{$value}; }
 
-    --#{$prefix}max-width: #{ $max-width };
-
 }
