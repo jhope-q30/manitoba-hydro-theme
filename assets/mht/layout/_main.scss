@@ -4,159 +4,26 @@
 
         @include content-width();
 
+        padding-top:map-get( $gutters, 'lg' );
+        padding-bottom:map-get( $gutters, 'md' );
+
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
             --#{$prefix}column-gap: #{ map-get( $gutters, "sm" ) };
 
-            display: grid;
+            display:grid;
             grid-template-areas: "sidebar main";
             grid-template-columns: map-get( $columns, "left" ) 1fr;
             grid-template-rows: auto 1fr;
             column-gap:var( --#{$prefix}column-gap );
 
-            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
-
-                --#{$prefix}column-gap: #{ map-get( $gutters, "md" ) };
-                /// grid-template-columns: 248px minmax( 710px, 1fr );
-                
-            }
+            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}column-gap: #{ map-get( $gutters, "md" ) }; }
 
         }
 
-        #main-content { 
-            
-            grid-area: main;
-
-            .mht-content-area {
-                
-                padding:map-get( $spacing, 'xs' ) 0 0 0;
-
-                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding:map-get( $spacing, 'lg' ) 0; }
-            
-            }
-        
-        }
-        #sidebar { 
-            
-            grid-area: sidebar;
-
-            > * { 
-                
-                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding:map-get( $spacing, 'lg' ) 0; }
-            
-            }
-        
-        }
-
-        // Small devices
-        /*@media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
-
-            
-
-            // Fallback styles for when grid is not supported.
-            #main-content {
-                float: right;
-                width: 566px;
-            }
-
-            // Fallback styles for when grid is not supported.
-            #sidebar {
-                float: right;
-                min-height: 60vh;
-                width: 202px;
-            }
-        }
-
-        // Medium devices (desktops, 990px and up)
-        @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
-
-            grid-template-columns: 248px minmax(710px, 1fr);
-
-            // Fallback styles for when grid is not supported.
-            #main-content {
-                width: 710px;
-            }
-
-            // Fallback styles for when grid is not supported.
-            #sidebar {
-                width: 248px;
-            }
-        }
-
-        // Large devices (large desktops, 1210px and up)
-        @media screen and ( min-width: map-get( $breakpoints, "xl" ) ) {
-            // Fallback styles for when grid is not supported.
-            #main-content {
-                width: 928px;
-            }
-        }
-
-        @supports ( display: grid ) {
-            // Clearfix elements can interfere with the grid.
-            // &.clearfix { &::before, &::after { display: none !important; } }
-        }*/
+        #main-content { grid-area: main; }
+        #sidebar { grid-area: sidebar; }
 
     }
 
 }
-
-/// Main content container
-///
-/// Contains main content, banners, and navigation.
-
-/*#main-content {
-    margin: 0;
-    padding: 0;
-
-    &.full {
-        grid-column: sidebar-start / main-end;
-        width: 100%;
-    }
-
-    &.static {
-        border-bottom: 20px solid darken($dark-grey, 25%);
-    }
-}*/
-
-/// Main content area
-///
-/// Contains the main content of the page.
-
-/*.content-area {
-    padding: var(--page-horizontal-padding);
-
-    h1 {
-        border-bottom: 1px solid $grey;
-        margin-bottom: 1em;
-        margin-top: 0;
-        padding-bottom: 15px;
-
-        + * {
-            margin-top: 0;
-        }
-    }
-
-    // Small devices (landscape phones, 570px and up)
-    @media screen and (min-width: $sm-screen) {
-        padding-bottom: 40px;
-        padding-top: 40px;
-    }
-
-    // Small devices (tablets, 768px and up)
-    @media screen and (min-width: $md-screen) {
-        padding-bottom: 50px;
-        padding-top: 50px;
-    }
-
-    @media screen and (min-width: $md-screen) and (max-width: #{$lg-screen - 1px}) {
-        .content-container:has(#sidebar) & {
-            margin: 0 10px; // Extra horizontal space.
-        }
-    }
-
-    // Large devices (large desktops, 1210px and up)
-    @media screen and (min-width: $xl-screen) {
-        padding-bottom: 80px;
-        padding-right: calc(var(--page-horizontal-padding) * 2);
-    }
-}*/

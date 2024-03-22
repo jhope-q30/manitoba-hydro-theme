@@ -3,7 +3,7 @@
 
     figure {
 
-        margin:0;
+        margin:0 0 map-get( $spacing, 'md' ) 0;
 
         > picture {
 

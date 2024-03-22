@@ -26,7 +26,7 @@
             @include reset-element();
             position:relative;
 
-            @media ( min-width: map-get( $breakpoints, "lg" ) ){ margin:0 map-get( $spacing, 'md' ); }
+            @media ( min-width: map-get( $breakpoints, "xl" ) ){ margin:0 map-get( $spacing, 'md' ); }
 
             /** top level link, no sub */
             > a,
@@ -250,9 +250,9 @@
             > span.title { 
                 
                 text-transform: uppercase;
-                font-size: map-get( $font-size, 'sm' );
+                font-size: map-get( $font-size, 'xs' );
                 font-weight:map-get( $font-weight, 'demi' );
-                padding:map-get( $spacing, 'md' ) 0;
+                padding:0 0 map-get( $spacing, 'md' ) 0;
             
             }
 

@@ -7,13 +7,18 @@
 
     background-color:var( --#{$prefix}hydro-blue );
 
+    /** base banner */
     &:not( .#{$prefix}banner-home ) { 
         
-        /// padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
+        padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
 
         .#{$prefix}banner-content { 
             
             @include content-width();
+
+            #breadcrumbs { padding-bottom:map-get( $spacing, 'sm' ); }
+
+            h1, h2, h3 { margin-top:map-get( $spacing, 'md' ); }
         
         }
     

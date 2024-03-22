@@ -12,12 +12,16 @@
                 flex-grow:1;
                 font-size:map-get( $font-size, 'sm' );
                 background-color:var( --#{$prefix}light-grey );
-                padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'xs' ) map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
+                padding:#{ map-get( $spacing, 'sm' ) + 1px } map-get( $spacing, 'xs' ) #{ map-get( $spacing, 'sm' ) + 1px } map-get( $spacing, 'md' );
                 border-radius:var( --#{$prefix}border-radius ) 0 0 var( --#{$prefix}border-radius );
                 border:1px solid var( --#{$prefix}hydro-blue );
                 border-right:0;
 
                 &::placeholder { font-weight:map-get( $font-weight, 'demi' ); }
+                &:focus { 
+                    outline:1px solid var( --#{$prefix}link-hover-color );
+                    outline-offset:0;
+                }
 
             }
 
@@ -63,6 +67,7 @@
             input[type="search"]:focus+button#button-search {
 
                 background-color:var( --#{$prefix}hydro-blue );
+                outline:1px solid var( --#{$prefix}link-hover-color );
                 
                 > svg { path { fill: var( --#{$prefix}white ); } }
 
