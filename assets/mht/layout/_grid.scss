@@ -1,12 +1,20 @@
 .#{$prefix}group-grid {
 
+    --#{$prefix}column-gap:#{ $grid-column-gap };
+    --#{$prefix}row-gap:#{ $grid-row-gap };
+
+    @each $key, $value in $gutters {
+        &.#{$prefix}column-gap-#{$key} { --#{$prefix}column-gap: #{ map-get( $gutters, #{$key} ) }; }
+        &.#{$prefix}row-gap-#{$key} { --#{$prefix}row-gap: #{ map-get( $gutters, #{$key} ) }; }
+    }
+
     @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows:1fr;
-        column-gap:$grid-column-gap;
-        row-gap:$grid-row-gap;
+        column-gap:var( --#{$prefix}column-gap );
+        row-gap:var( --#{$prefix}row-gap );
         padding:map-get( $gutters, 'lg' ) 0;
 
     }

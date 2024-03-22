@@ -72,10 +72,9 @@
         padding-right:var( --#{$prefix}card-padding-right );
         padding-bottom:var( --#{$prefix}card-padding-bottom );
         padding-left:var( --#{$prefix}card-padding-left );
-
+        height:100%;
         background-color:var( --#{$prefix}white );
         border-radius: var( --#{$prefix}border-radius );
-
         color:var( --#{$prefix}text-color );
         text-decoration:none;
         border:2px solid var( --#{$prefix}white );
