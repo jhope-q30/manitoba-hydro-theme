@@ -55,5 +55,39 @@
             .#{$prefix}gutter-#{$pos}-#{$key} { padding-#{$pos}: #{$value} };
         }
     }
+    .#{$prefix}gutter-top-gap { padding-top: #{ $grid-row-gap } };
+    .#{$prefix}gutter-bottom-gap { padding-top: #{ $grid-row-gap } };
+
+    /**
+    * skip to content
+    */
+    a.skip {
+        
+        top:-1000px;
+        left:-1000px;
+        height:1px;
+        width:1px;
+        text-align:left;
+        overflow:hidden;
+        padding:map-get( $gutters, 'xs' ) map-get( $gutters, 'sm' );
+        color:$text-color;
+        display:inline-block;
+        z-index:map-get( $zindex, 5 );
+
+        @include text-link();
+        
+        position:absolute;
+
+        &:active,
+        &:focus {
+            left:50%;
+            top:0;
+            width:auto;
+            height:auto;
+            overflow:visible;
+            outline:1px solid $link-hover-color;
+        }
+
+    }
 
 }

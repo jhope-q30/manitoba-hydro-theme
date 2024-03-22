@@ -7,6 +7,11 @@
     --#{$prefix}btn-hover-color: var( --#{$prefix}button-hover-color );
     --#{$prefix}btn-border-hover-color: var( --#{$prefix}button-border-hover-color );
 
+    --#{$prefix}btn-font-size: #{ map-get( $font-size, 'sm' ) };
+    --#{$prefix}btn-font-weight: #{ map-get( $font-weight, 'demi' ) };
+
+    --#{$prefix}btn-padding: #{ map-get( $spacing, 'sm' ) map-get( $spacing, 'md' ) };
+
     &.white {
 
         --#{$prefix}btn-background-color: var( --#{$prefix}white );
@@ -28,14 +33,15 @@
 
     @include reset-default-btn();
 
+    font-size:var( --#{$prefix}btn-font-size );
+    font-weight:var( --#{$prefix}btn-font-weight );
+
     background:var( --#{$prefix}btn-background-color );
     color:var( --#{$prefix}btn-color );
-    display:inline-block;
-    font-size:map-get( $font-size, 'sm' );
-    font-weight:map-get( $font-weight, 'demi' );
-    padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
+    padding:var( --#{$prefix}btn-padding );
     border:2px solid var( --#{$prefix}btn-border-color );
     border-radius: var( --#{$prefix}border-radius );
+    display:inline-block;
     text-decoration:none;
 
     @include x-transition( all );
@@ -72,6 +78,42 @@
         width:100%;
         display:block;
         text-align:center;
+
+    }
+
+}
+
+.mht {
+
+    /** lead button styling */
+    .#{$prefix}lead-btn {
+
+        @include reset-default-btn();
+        
+        padding-top:map-get( $spacing, 'md' );
+        padding-right: map-get( $spacing, 'lg' );
+        padding-bottom:map-get( $spacing, 'md' );
+        padding-left: #{ map-get( $spacing, 'xl' ) };
+        min-height:#{ map-get( $gutters, 'md' ) + 2px };
+        background-color:var( --#{$prefix}white );
+        font-size:map-get( $font-size, 'h3' );
+        font-weight:map-get( $font-weight, 'bold' );
+        line-height:map-get( $line-height, 'md' );
+        border-radius: var( --#{$prefix}border-radius );
+        background-position:#{ map-get( $spacing, 'sm' ) + 2px } #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) }, calc( 100% - #{ map-get( $spacing, 'md' ) } ) 50%;
+        background-repeat:no-repeat;
+        text-decoration:none;
+        display:block;
+        border:2px solid var( --#{$prefix}white );
+
+        @each $key, $value in $heading-icons { background-image:#{ $value }, #{ map-get( $svgs, 'chevron-btn-blue' ) }; }
+        @include x-transition( all );
+        @include on-event { 
+            
+            border-color:var( --#{$prefix}button-border-hover-color );
+            @include dropshadow();
+
+        }
 
     }
 
