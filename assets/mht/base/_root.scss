@@ -2,6 +2,8 @@
 
     @each $key, $value in $colors { --#{$prefix}#{$key}:#{$value}; }
 
+    --#{$prefix}text-color: #{ $text-color };
+
     --#{$prefix}link-color: #{ $link-color };
     --#{$prefix}link-hover-color: #{ $link-hover-color };
     --#{$prefix}link-active-color: #{ $link-active-color };

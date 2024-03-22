@@ -19,6 +19,9 @@ $zindex: (
     5: 155
 );
 
+/** text */
+$text-color: map-get( $colors, "black" );
+
 /** links */
 $link-color: map-get( $colors, "hydro-blue" );
 $link-hover-color: map-get( $colors, "wave-blue" );

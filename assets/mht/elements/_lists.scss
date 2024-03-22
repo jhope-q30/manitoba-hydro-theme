@@ -4,9 +4,25 @@
 
     ul, ol {
 
-        &.#{$prefix}list-unstyled { @include reset-element(); }
+        &.#{$prefix}list-unstyled,
+        &.#{$prefix}link-list { 
+            
+            @include reset-element();
 
-        &:not( .#{$prefix}list-unstyled ) { padding:0 0 0 #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) }; }
+            li {
+
+                ul {
+
+                    padding-top:map-get( $spacing, 'sm' );
+                    list-style:none;
+
+                }
+
+            }
+        
+        }
+
+        &:not( .#{$prefix}list-unstyled, .#{$prefix}link-list ) { padding:0 0 0 #{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'xs' ) }; }
 
         li {
 
@@ -40,6 +56,21 @@
 
             }
 
+        }
+
+        &.#{$prefix}link-list { 
+            
+            li {
+
+                ul {
+
+                    list-style:disc;
+                    color:var( --#{$prefix}link-color );
+
+                }
+
+            }
+        
         }
 
         &.#{$prefix}details {
