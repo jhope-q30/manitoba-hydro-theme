@@ -8,7 +8,7 @@
     background-color:var( --#{$prefix}hydro-blue );
 
     /** base banner */
-    &:not( .#{$prefix}banner-home ) { 
+    &:not( .#{$prefix}banner-home, .#{$prefix}banner-directional ) { 
         
         padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
 
@@ -34,7 +34,11 @@
 
     }
 
-    &.#{$prefix}banner-home {
+    &.#{$prefix}banner-home,
+    &.#{$prefix}banner-directional {
+
+        --#{$prefix}banner-abstract: #{ $banner-abstract };
+        &:not( .#{$prefix}banner-home ) { --#{$prefix}banner-abstract: #{ $banner-abstract-sm }; }
 
         .#{$prefix}banner-content {
 
@@ -59,7 +63,7 @@
                         background-repeat:no-repeat;
                         background-size:contain;
                         background-position:0 50%;
-                        background-image: $banner-abstract;
+                        background-image: var( --#{$prefix}banner-abstract );
                         z-index:map-get( $zindex, 1 );
 
                     }
