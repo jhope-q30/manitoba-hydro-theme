@@ -82,39 +82,3 @@
     }
 
 }
-
-.mht {
-
-    /** lead button styling */
-    .#{$prefix}lead-btn {
-
-        @include reset-default-btn();
-        
-        padding-top:map-get( $spacing, 'md' );
-        padding-right: map-get( $spacing, 'lg' );
-        padding-bottom:map-get( $spacing, 'md' );
-        padding-left: #{ map-get( $spacing, 'xl' ) };
-        min-height:#{ map-get( $gutters, 'md' ) + 2px };
-        background-color:var( --#{$prefix}white );
-        font-size:map-get( $font-size, 'h3' );
-        font-weight:map-get( $font-weight, 'bold' );
-        line-height:map-get( $line-height, 'md' );
-        border-radius: var( --#{$prefix}border-radius );
-        background-position:#{ map-get( $spacing, 'sm' ) + 2px } #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) }, calc( 100% - #{ map-get( $spacing, 'md' ) } ) 50%;
-        background-repeat:no-repeat;
-        text-decoration:none;
-        display:block;
-        border:2px solid var( --#{$prefix}white );
-
-        @each $key, $value in $heading-icons { background-image:#{ $value }, #{ map-get( $svgs, 'chevron-btn-blue' ) }; }
-        @include x-transition( all );
-        @include on-event { 
-            
-            border-color:var( --#{$prefix}button-border-hover-color );
-            @include dropshadow();
-
-        }
-
-    }
-
-}
