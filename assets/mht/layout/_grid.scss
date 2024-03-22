@@ -36,7 +36,8 @@
                 margin-right:#{ map-get( $gutters, 'xs' ) - 1px };
                 padding-right: map-get( $gutters, 'sm' );
 
-                &:nth-child(3) { border-color:transparent; }
+                &:nth-child(3),
+                &:last-child { border-color:transparent; }
 
             }
 
