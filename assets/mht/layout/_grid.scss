@@ -7,7 +7,7 @@
         grid-template-rows: auto 1fr;
         column-gap:$grid-column-gap;
         row-gap:$grid-row-gap;
-        padding:map-get( $gutters, 'lg' ) 0;
+        padding:map-get( $gutters, 'lg' ) 0 0 0;
 
     }
 
