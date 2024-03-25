@@ -25,7 +25,7 @@
 
             }
 
-            > button#button-search {
+            > button.#{$prefix}btn-search {
 
                 flex-shrink:0;
                 border-radius:0 var( --#{$prefix}border-radius ) var( --#{$prefix}border-radius ) 0;
@@ -64,7 +64,7 @@
 
             }
 
-            input[type="search"]:focus+button#button-search {
+            input[type="search"]:focus+button.#{$prefix}btn-search {
 
                 background-color:var( --#{$prefix}hydro-blue );
                 outline:1px solid var( --#{$prefix}link-hover-color );

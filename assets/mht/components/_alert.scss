@@ -10,12 +10,10 @@
         padding-top:map-get( $spacing, 'md' );
         padding-bottom:map-get( $spacing, 'md' );
 
-        p { margin:0 0 map-get( $spacing, 'sm' ) 0; }
+        p { margin:0 map-get( $spacing, 'lg' ) map-get( $spacing, 'sm' ) 0; }
         a { 
             color:var( --#{$prefix}black );
-            @include on-event {
-                color:var( --#{$prefix}link-hover-color );
-            }
+            @include on-event { color:var( --#{$prefix}link-hover-color ); }
         }
 
         .#{$prefix}alert-close {

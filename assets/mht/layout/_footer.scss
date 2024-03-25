@@ -55,11 +55,9 @@
                                 border-radius:50%;
             
                                 @include x-transition( background-color );
-                                @include on-event { background-color:var( --#{$prefix}cyan-blue ); }
+                                @include on-event { background-color:var( --#{$prefix}sky-blue ); }
             
-                                @each $key, $value in $social {
-                                    &.#{$key} { background-image: #{$value} };
-                                }
+                                @each $key, $value in $social { &.#{$key} { background-image: #{$value} }; }
             
                             }
             
