@@ -3,17 +3,40 @@
     /** breadcrumb in page */
     #breadcrumbs {
 
+        background-color:transparent !important;
+
         > ol {
 
             @include reset-element();
+
+            font-size:map-get( $font-size, 'md' );
 
             > li {
 
                 @include reset-element( $d: inline-block );
 
-                font-size:map-get( $font-size, 'xs' );
+                font-size:map-get( $font-size, 'sm' );
 
+                &::after {
+                    content:'';
+                    display:none;
+                }
                 &.current-page { font-weight:map-get( $font-weight, 'demi' ); }
+                &.home {
+
+                    a {
+
+                        background: none;
+                        height:auto;
+                        overflow:visible;
+                        text-indent:0;
+                        vertical-align:top;
+                        white-space:nowrap;
+                        width:auto;
+
+                    }
+                    
+                }
                 &:not( :first-child ) {
 
                     display:inline-block;
@@ -29,8 +52,12 @@
 
                 a {
 
+                    margin:0;
+                    padding:0;
                     color:var( --#{$prefix}black );
+                    //font-size:map-get( $font-size, 'sm' );
                     text-decoration:none;
+                    display:inline-block;
 
                     @include on-event {
 
