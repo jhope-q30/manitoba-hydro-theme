@@ -16,26 +16,7 @@
 
     @include on-event { .#{$prefix}card-image { > img { transform: scale( 1.1 ); } } }
 
-    .#{$prefix}card-head {
-
-        @each $key, $value in $heading-icons {
-
-            .#{$key} {
-
-                margin:0;
-                padding-top:1px;
-                padding-left:#{ map-get( $spacing, 'xl' ) - map-get( $spacing, 'sm' ) };
-                min-height:#{ map-get( $gutters, 'md' ) + 2px };
-                background-image:#{ $value };
-                background-repeat:no-repeat;
-                display:inline-block;
-
-            }
-
-        }
-
-    }
-
+    .#{$prefix}card-head { @include header-icons(); }
     .#{$prefix}card-body {
 
         display:block;
@@ -52,6 +33,7 @@
             grid-template-rows:1fr;
             column-gap:#{ map-get( $gutters, "sm" ) };
 
+            .#{$prefix}card-image { margin:0 0 map-get( $gutters, 'xs' ) 0; }
             .#{$prefix}card-body {
 
                 grid-column-start:2;
@@ -62,30 +44,13 @@
         }
 
     }
-    /** card button style */
-    &.#{$prefix}card-btn {
+    /** card link style */
+    &.#{$prefix}card-link {
 
         --#{$prefix}card-padding-top: #{ map-get( $gutters, 'sm' ) };
         --#{$prefix}card-padding-right: #{ map-get( $gutters, 'sm' ) };
         --#{$prefix}card-padding-bottom: #{ map-get( $gutters, 'sm' ) - map-get( $spacing, 'xs' ) };
         --#{$prefix}card-padding-left: #{ map-get( $gutters, 'sm' ) };
-
-        &.#{$prefix}card-btn-cta {
-
-            --#{$prefix}card-padding-top: #{ map-get( $gutters, 'xs' ) };
-            --#{$prefix}card-padding-bottom: #{ map-get( $gutters, 'xs' ) - 2px };
-
-            .#{$prefix}card-head {
-
-                display:block;
-                padding-right:map-get( $spacing, 'md' );
-                background-image:map-get( $svgs, 'chevron-btn-blue' );
-                background-repeat:no-repeat;
-                background-position:100% calc( 50% - 1px );
-
-            }
-
-        }
 
         padding-top:var( --#{$prefix}card-padding-top );
         padding-right:var( --#{$prefix}card-padding-right );

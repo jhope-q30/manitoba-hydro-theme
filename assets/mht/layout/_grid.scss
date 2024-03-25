@@ -3,9 +3,19 @@
     --#{$prefix}column-gap:#{ $grid-column-gap };
     --#{$prefix}row-gap:#{ $grid-row-gap };
 
+    /** grid equal gap style */
+    &.#{$prefix}grid-equal-gap {
+
+        --#{$prefix}column-gap:#{ $grid-column-gap };
+        --#{$prefix}row-gap:#{ $grid-column-gap };
+
+    }
+
     @each $key, $value in $gutters {
+
         &.#{$prefix}column-gap-#{$key} { --#{$prefix}column-gap: #{ map-get( $gutters, #{$key} ) }; }
         &.#{$prefix}row-gap-#{$key} { --#{$prefix}row-gap: #{ map-get( $gutters, #{$key} ) }; }
+
     }
 
     @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
@@ -27,6 +37,21 @@
 
     }
 
+    /** grid article style */
+    &.#{$prefix}grid-article {
+
+        @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { padding:map-get( $gutters, 'md' ) 0; }
+
+        .#{$prefix}group-item { 
+            
+            padding:map-get( $gutters, 'sm' ) 0;
+
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0; }
+        
+        }
+
+    }
+    /** grid bordered style */
     &.#{$prefix}grid-bordered {
 
         .#{$prefix}group-item {

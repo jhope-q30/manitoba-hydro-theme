@@ -6,10 +6,8 @@
     --#{$prefix}btn-background-hover-color: var( --#{$prefix}button-background-hover-color );
     --#{$prefix}btn-hover-color: var( --#{$prefix}button-hover-color );
     --#{$prefix}btn-border-hover-color: var( --#{$prefix}button-border-hover-color );
-
     --#{$prefix}btn-font-size: #{ map-get( $font-size, 'sm' ) };
     --#{$prefix}btn-font-weight: #{ map-get( $font-weight, 'demi' ) };
-
     --#{$prefix}btn-padding: #{ map-get( $spacing, 'sm' ) map-get( $spacing, 'md' ) };
 
     &.white {
@@ -79,6 +77,59 @@
         width:100%;
         display:block;
         text-align:center;
+
+    }
+
+}
+
+/** button cta style */
+.#{$prefix}cta-btn {
+
+    position:relative;
+    padding-top:#{ map-get( $gutters, 'sm' ) };
+    padding-right:#{ map-get( $gutters, 'lg' ) };
+    padding-bottom:#{ map-get( $gutters, 'sm' ) - map-get( $spacing, 'xs' ) };
+    padding-left:#{ map-get( $gutters, 'sm' ) };;
+
+    @include header-icons( $self: true, $pt: #{ map-get( $spacing, 'md' ) }, $pl: #{ map-get( $spacing, 'xl' ) + map-get( $spacing, 'sm' ) }, $bx: #{ map-get( $spacing, 'md' ) }, $by: 50%, $mh: 0 );
+
+    font-size:map-get( $font-size, 'h3' );
+    font-weight:map-get( $font-weight, 'bold' );
+    background-color:var( --#{$prefix}white );
+    border-radius: var( --#{$prefix}border-radius );
+    color:var( --#{$prefix}link-color );
+    text-decoration:none;
+    border:2px solid var( --#{$prefix}white );
+    display:inline-block;
+
+    &::after {
+
+        position:absolute;
+        top:0;
+        right:map-get( $spacing, 'md' );
+        content:" ";
+        width:16px;
+        height:100%;
+        background-image:map-get( $svgs, 'chevron-btn-blue' );
+        background-position:0 50%;
+        background-repeat:no-repeat;
+
+    }
+
+    @include x-transition( all );
+    @include on-event { 
+        
+        border-color:var( --#{$prefix}button-border-hover-color );
+        color:var( --#{$prefix}link-hover-color );
+
+        @include dropshadow();
+        
+    }
+
+    &.block {
+
+        width:100%;
+        display:block;
 
     }
 
