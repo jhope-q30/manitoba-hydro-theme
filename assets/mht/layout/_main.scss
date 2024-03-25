@@ -29,7 +29,12 @@
         }
 
         #main-content { grid-area: main; }
-        #sidebar { grid-area: sidebar; }
+        #sidebar { 
+            
+            grid-area: sidebar;
+            width:map-get( $columns, "left" );
+        
+        }
 
     }
 

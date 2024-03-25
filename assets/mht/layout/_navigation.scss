@@ -247,6 +247,8 @@
 
     #sidebar {
 
+        padding:0;
+
         > nav {
 
             > span.title { 
@@ -263,19 +265,26 @@
 
             a {
 
-                display:block;
-                color:var( --#{$prefix}link-color );
-                font-size: map-get( $font-size, 'sm' );
-                font-weight:map-get( $font-weight, 'demi' );
-                text-decoration:none;
-                padding:map-get( $spacing, 'sm' ) 0;
-                line-height: map-get( $line-height, 'md' );
+                &,
+                &:link,
+                &:visited {
 
-                @include x-transition( color );
-                @include on-event {
+                    padding-left:0;
+                    display:block;
+                    color:var( --#{$prefix}link-color );
+                    font-size: map-get( $font-size, 'sm' );
+                    font-weight:map-get( $font-weight, 'demi' );
+                    text-decoration:none;
+                    padding:map-get( $spacing, 'sm' ) 0;
+                    line-height: map-get( $line-height, 'md' );
 
-                    color:var( --#{$prefix}link-hover-color );
-                    text-decoration:underline;
+                    @include x-transition( color );
+                    @include on-event {
+
+                        color:var( --#{$prefix}link-hover-color );
+                        text-decoration:underline;
+
+                    }
 
                 }
 
@@ -285,7 +294,20 @@
 
                 > li {
 
-                    > a { &.active { font-weight:map-get( $font-weight, 'bold' ); } }
+                    > a {
+                        
+                        &.active { 
+                            
+                            font-weight:map-get( $font-weight, 'bold' );
+                            color:$link-color !important;
+                            &::before {
+                                content:'';
+                                display:none;
+                            }
+                        
+                        }
+                    
+                    }
 
                     ul {
 

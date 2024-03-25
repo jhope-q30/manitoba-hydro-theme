@@ -22,9 +22,9 @@ body {
     padding: 0;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    text-underline-offset: 0.08em;
+    text-underline-offset: 0.15em;
     @supports ( text-underline-position: from-font ) {
-        text-underline-offset: 0.05em;
+        text-underline-offset: 0.15em;
         text-underline-position: from-font;
     }
 }

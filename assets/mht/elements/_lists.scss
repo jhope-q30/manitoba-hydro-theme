@@ -11,9 +11,10 @@
 
             li {
 
-                ul {
+                ul, ol {
 
-                    padding-top:map-get( $spacing, 'sm' );
+                    margin:0;
+                    padding:0;
                     list-style:none;
 
                 }
@@ -43,6 +44,7 @@
                 @include reset-element();
 
                 margin:map-get( $spacing, 'sm' ) 0;
+                padding:0 !important;
 
                 a {
 
@@ -51,6 +53,7 @@
                     background-position:0 4px;
                     padding-left:map-get( $spacing, 'md' );
                     display:block;
+                    text-decoration:underline;
 
                 }
 
@@ -66,7 +69,7 @@
 
                     list-style:disc;
                     color:var( --#{$prefix}link-color );
-                    padding-left:0;
+                    ///padding-left:0;
 
                 }
 
