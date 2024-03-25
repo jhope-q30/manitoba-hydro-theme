@@ -8,9 +8,10 @@
 {{- end -}}
 {{- end -}}
 <body class="{{ $body }}">
-    {{- if index .Params "showAlert" }}{{ readFile "layouts/mht/parts/alert.html" | safeHTML }}{{- end }}
-    {{ readFile "layouts/mht/parts/header/navigation.html" | safeHTML }}
-    {{ .Content | safeHTML }}
-    {{ readFile "layouts/mht/parts/footer.html" | safeHTML }}
+{{- if index .Params "showAlert" }}{{ readFile "layouts/mht/parts/alert.html" | safeHTML }}{{- end }}
+{{ readFile "layouts/mht/parts/header/navigation.html" | safeHTML }}
+<main>{{ .Content | safeHTML }}
+</main>
+{{ readFile "layouts/mht/parts/footer.html" | safeHTML }}
 </body>
 </html>

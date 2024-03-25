@@ -1,5 +1,12 @@
 .mht {
 
+    main {
+
+        margin:0;
+        padding:0;
+
+    }
+
     .content-container {
 
         @include content-width();
