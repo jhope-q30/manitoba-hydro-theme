@@ -1,6 +1,6 @@
 /** content area */
 .#{$prefix}content-area,
-.#{$prefix}cards {
+.#{$prefix}card {
 
     ul, ol {
 
@@ -66,6 +66,7 @@
 
                     list-style:disc;
                     color:var( --#{$prefix}link-color );
+                    padding-left:0;
 
                 }
 

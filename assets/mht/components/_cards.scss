@@ -14,15 +14,7 @@
 
     }
 
-    @include on-event {
-
-        .#{$prefix}card-image {
-            
-            > img { transform: scale( 1.1 ); }
-        
-        }
-
-    }
+    @include on-event { .#{$prefix}card-image { > img { transform: scale( 1.1 ); } } }
 
     .#{$prefix}card-head {
 
@@ -30,6 +22,7 @@
 
             .#{$key} {
 
+                margin:0;
                 padding-top:1px;
                 padding-left:#{ map-get( $spacing, 'xl' ) - map-get( $spacing, 'sm' ) };
                 min-height:#{ map-get( $gutters, 'md' ) + 2px };
@@ -43,6 +36,32 @@
 
     }
 
+    .#{$prefix}card-body {
+
+        display:block;
+        padding:map-get( $spacing, 'md' ) 0 0 0;
+
+    }
+    /** card article style */
+    &.#{$prefix}card-article {
+
+        @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
+
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows:1fr;
+            column-gap:#{ map-get( $gutters, "sm" ) };
+
+            .#{$prefix}card-body {
+
+                grid-column-start:2;
+                grid-column-end:span 2;
+
+            }
+
+        }
+
+    }
     /** card button style */
     &.#{$prefix}card-btn {
 
