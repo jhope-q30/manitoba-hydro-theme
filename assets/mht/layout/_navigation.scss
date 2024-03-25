@@ -48,7 +48,7 @@
                 @include x-transition( all );
                 @include on-event {
                     background-color:var( --#{$prefix}pale-blue );
-                    color:var( --#{$prefix}deeo-sea-blue );
+                    color:var( --#{$prefix}deep-sea-blue );
                 }
                 @media ( min-width: map-get( $breakpoints, "lg" ) ){
                     border:0;
@@ -135,7 +135,8 @@
 
                     }
                     
-                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ &::after { background-color:var( --#{$prefix}hydro-blue ); } }
+                    /** border bottom style for desktop */
+                    @media ( min-width: map-get( $breakpoints, "lg" ) ){ &::after { background-color:var( --#{$prefix}cyan-blue ); } }
                 
                 }
 
@@ -217,7 +218,7 @@
                 > button {
 
                     background-color:var( --#{$prefix}pale-blue );
-                    color:var( --#{$prefix}deeo-sea-blue );
+                    color:var( --#{$prefix}deep-sea-blue );
 
                 }
                 > ul {
