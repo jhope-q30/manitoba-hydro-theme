@@ -9,6 +9,9 @@
 
             > input[type="search"] {
 
+                margin:0;
+                padding:0;
+                font-family:$font-family;
                 flex-grow:1;
                 font-size:map-get( $font-size, 'sm' );
                 background-color:var( --#{$prefix}light-grey );
@@ -68,6 +71,7 @@
 
                 background-color:var( --#{$prefix}hydro-blue );
                 outline:1px solid var( --#{$prefix}link-hover-color );
+                outline-offset:0;
                 
                 > svg { path { fill: var( --#{$prefix}white ); } }
 

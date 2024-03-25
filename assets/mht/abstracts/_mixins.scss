@@ -2,7 +2,6 @@
 @mixin text-link(){
 	color:var( --#{$prefix}link-color );
 	font-weight:map-get( $font-weight, 'demi' );
-	text-underline-offset: 0.3em;
 	@include x-transition( color );
 	@include on-event {
 		color:var( --#{$prefix}link-hover-color );

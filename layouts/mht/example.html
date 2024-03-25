@@ -13,5 +13,8 @@
 <main>{{ .Content | safeHTML }}
 </main>
 {{ readFile "layouts/mht/parts/footer.html" | safeHTML }}
+{{- if eq hugo.Environment "test" }}
+<script src="/assets/js/global.min.js?ver=sha256-2oIYlxmj"></script>
+{{- end }}
 </body>
 </html>

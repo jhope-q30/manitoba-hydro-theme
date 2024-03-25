@@ -1,6 +1,6 @@
 .mht {
 
-    .site-footer {
+    .#{$prefix}site-footer {
 
         background-color: var( --#{$prefix}deep-sea-blue );
         padding:map-get( $spacing, 'md' ) 0;
@@ -10,11 +10,11 @@
         a { @include text-link-white(); }
         p { line-height:map-get( $line-height, 'lg' ); }
 
-        .site-footer-container {
+        .#{$prefix}site-footer-container {
 
             @include content-width();
 
-            .site-footer-banner {
+            .#{$prefix}site-footer-banner {
 
                 padding:map-get( $spacing, 'md' ) 0;
                 display:flex;
@@ -29,7 +29,7 @@
 
                 }
 
-                .social-media-links {
+                .#{$prefix}social-media-links {
 
                     > ul {
             
@@ -70,7 +70,7 @@
             }
             
             /** navigation links */
-            .footer-navigation {
+            .#{$prefix}footer-navigation {
 
                 padding:map-get( $spacing, 'md' ) 0;
 
@@ -81,7 +81,7 @@
 
                 }
 
-                .footer-column {
+                .#{$prefix}footer-column {
 
                     > ul {
 
@@ -111,17 +111,17 @@
 
             }
 
-            .subfooter {
+            .#{$prefix}subfooter {
 
                 padding:map-get( $spacing, 'md' ) 0;
 
-                .acknowledgement {
+                .#{$prefix}acknowledgement {
 
                     max-width:map-get( $max-widths, 'lg' );
 
                 }
 
-                .subfooter-container {
+                .#{$prefix}subfooter-container {
 
                     @media ( min-width: map-get( $breakpoints, "md" ) ){
 

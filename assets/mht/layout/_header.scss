@@ -107,6 +107,8 @@
                 button {
 
                     @include reset-default-btn();
+                    
+                    font-family:$font-family;
                     margin:0;
                     padding:0;
                     border:0;

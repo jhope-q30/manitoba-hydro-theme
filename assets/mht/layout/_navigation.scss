@@ -34,6 +34,7 @@
 
                 @include reset-element();
 
+                font-family:$font-family;
                 padding:#{ map-get( $spacing, 'md' ) - 2px } map-get( $spacing, 'md' );
                 text-decoration:none;
                 text-transform:uppercase;

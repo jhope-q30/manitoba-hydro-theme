@@ -6,6 +6,8 @@
         display:block;
         line-height:map-get( $line-height, 'sm' );
         font-weight:map-get( $font-weight, 'bold' );
+        letter-spacing:normal;
+        
         &:not( .h1, .h2, .h3, .h4, .h5, .h6 ) { margin:0 0 map-get( $spacing, 'md' ) 0 };
 
         > a { font-weight:map-get( $font-weight, 'bold' ) !important; }

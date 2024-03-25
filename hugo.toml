@@ -1,7 +1,0 @@
-baseURL      = '/'
-languageCode = 'en-us'
-title        = 'Manitoba Hydro theme site'
-
-[markup.goldmark.renderer]
-    hardWraps = true
-    unsafe    = true

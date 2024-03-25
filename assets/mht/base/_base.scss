@@ -7,6 +7,24 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-html, body { 
+html, body { font-family: $font-family; }
+body {
+    accent-color: var( --#{$prefix}hydro-blue );
+    background: var( --#{$prefix}white );
+    color: $text-color;
     font-family: $font-family;
+    font-size: 100%;
+    font-size: $text-size;
+    letter-spacing: $letter-spacing;
+    line-height: map-get( $line-height, 'md' );
+    margin: 0;
+    min-width: 250px;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    text-underline-offset: 0.08em;
+    @supports ( text-underline-position: from-font ) {
+        text-underline-offset: 0.05em;
+        text-underline-position: from-font;
+    }
 }

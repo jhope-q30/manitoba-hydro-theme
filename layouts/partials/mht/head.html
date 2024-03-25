@@ -8,7 +8,13 @@
 {{- with .Description }}<meta name="description" content="{{ . }}">{{- end }}
 {{- with .Keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{- end }}
 <link rel="stylesheet" href="https://use.typekit.net/xrw4ihz.css">
+{{- if eq hugo.Environment "production" }}
 <link rel="stylesheet" href="/mht/css/normalize.css">
+{{ else }}
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/landing-page.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+{{- end }}
 {{- $options := ( dict "targetPath" "mht/css/mht.css" "enableSourceMap" true "outputStyle" "compressed" ) -}}
 {{- $style := resources.Get "mht/mht.scss" | resources.ToCSS $options -}}
 {{- with $style }}
