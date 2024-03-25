@@ -69,7 +69,7 @@
 
                     list-style:disc;
                     color:var( --#{$prefix}link-color );
-                    padding: map-get( $spacing, 'xs' ) 0 0 map-get( $spacing, 'md' );
+                    padding: map-get( $spacing, 'sm' ) 0 0 map-get( $spacing, 'md' );
 
                 }
 
