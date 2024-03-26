@@ -43,6 +43,14 @@
 
         }
 
+        .#{$prefix}card-body {
+
+            padding:map-get( $spacing, 'sm' ) 0 0 0;
+
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0 }
+    
+        }
+
     }
     /** card link style */
     &.#{$prefix}card-link {

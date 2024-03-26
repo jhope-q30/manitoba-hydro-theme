@@ -96,7 +96,7 @@
                     &::after {
 
                         content:"|";
-                        padding-left:map-get( $spacing, 'sm' );
+                        padding-left:map-get( $spacing, 'md' );
                         padding-right:map-get( $spacing, 'sm' );
 
                     }
