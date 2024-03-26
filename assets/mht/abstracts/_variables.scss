@@ -26,7 +26,7 @@ $letter-spacing: normal;
 
 /** links */
 $link-color: map-get( $colors, "hydro-blue" );
-$link-hover-color: map-get( $colors, "wave-blue" );
+$link-hover-color: map-get( $colors, "deep-sea-blue" );
 $link-active-color: map-get( $colors, "black" );
 $link-knockout-color: map-get( $colors, "white" );
 $link-knockout-hover-color: map-get( $colors, "pale-blue" );
@@ -36,12 +36,13 @@ $link-knockout-active-color: map-get( $colors, "pale-blue-50" );
 $button-color: map-get( $colors, "white" );
 $button-hover-color: map-get( $colors, "white" );
 $button-background-color: map-get( $colors, "hydro-blue" );
-$button-background-hover-color: map-get( $colors, "wave-blue" );
+$button-background-hover-color: map-get( $colors, "deep-sea-blue" );
 $button-border-color: map-get( $colors, "hydro-blue" );
-$button-border-hover-color: map-get( $colors, "wave-blue" );
+$button-border-hover-color: map-get( $colors, "deep-sea-blue" );
+
 /** button outline */
 $button-outline-color: map-get( $colors, "hydro-blue" );
-$button-outline-hover-color: map-get( $colors, "wave-blue" );
+$button-outline-hover-color: map-get( $colors, "deep-sea-blue" );
 $button-outline-background-color: map-get( $colors, "white" );
 $button-outline-background-hover-color: map-get( $colors, "pale-blue" );
 
@@ -52,3 +53,13 @@ $border-radius: #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };
 /** grid */
 $grid-column-gap:map-get( $gutters, "sm" );
 $grid-row-gap:map-get( $gutters, "lg" );
+
+/** footer */
+$footer-text-color: map-get( $colors, "white" );
+$footer-background-color: map-get( $colors, "deep-sea-blue" );
+$footer-link-color: map-get( $colors, "white" );
+$footer-link-hover-color: map-get( $colors, "sky-blue" );
+$footer-link-active-color: map-get( $colors, "sky-blue" );
+
+/** banner */
+$banner-background-color: map-get( $colors, "hydro-blue" );

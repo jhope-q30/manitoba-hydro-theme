@@ -5,3 +5,7 @@ title         = 'Manitoba Hydro theme site'
 [markup.goldmark.renderer]
     hardWraps = true
     unsafe    = true
+
+[security]
+	[security.exec]
+		allow = ['^go$', '^npx$', '^postcss$', '^babel$']

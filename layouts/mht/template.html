@@ -9,6 +9,6 @@
 {{- end -}}
 <body class="{{ $body }}">
 {{ .Content }}
-<script src='/mht/js/mht.js'></script>
+{{ partial "mht/javascript" . }}
 </body>
 </html>

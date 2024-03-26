@@ -5,9 +5,9 @@
 	@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
 	@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
 
-    background-color:var( --#{$prefix}hydro-blue );
+    background-color:var( --#{$prefix}banner-background-color );
 
-    /** base banner */
+    /** base banner ( content page ) */
     &:not( .#{$prefix}banner-home, .#{$prefix}banner-directional, .#{$prefix}banner-landing ) {
 
         padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } 0;
@@ -15,6 +15,7 @@
         .#{$prefix}banner-content {
 
             @include content-width();
+
             #breadcrumbs { padding-bottom:map-get( $spacing, 'sm' ); }
             h1, h2, h3 { margin-top:map-get( $spacing, 'md' ); }
 
@@ -36,40 +37,25 @@
         --#{$prefix}banner-abstract: #{ $banner-abstract };
         &:not( .#{$prefix}banner-home ) { --#{$prefix}banner-abstract: #{ $banner-abstract-sm }; }
 
+        --#{$prefix}banner-column-gap: #{ map-get( $gutters, "xs" ) };
+        @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}banner-column-gap: #{ map-get( $gutters, "md" ) }; }
+	    @media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}banner-column-gap: #{ map-get( $gutters, "lg" ) }; }
+
         .#{$prefix}banner-content {
 
-            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
-                @include content-width();
+                @include content-width( $gutter: false );
 
                 .#{$prefix}banner-grid {
 
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    column-gap:#{ map-get( $gutters, "lg" ) };
+                    column-gap:var( --#{$prefix}banner-column-gap );
                     grid-template-areas: "left right";
 
                     .#{$prefix}banner-left { grid-area:left; }
                     .#{$prefix}banner-right { grid-area:right; }
-                    .#{$prefix}banner-image {
-
-                        position:relative;
-
-                        &::before {
-
-                            position:absolute;
-                            width:100%;
-                            height:100%;
-                            content:" ";
-                            background-repeat:no-repeat;
-                            background-size:contain;
-                            background-position:0 50%;
-                            background-image: var( --#{$prefix}banner-abstract );
-                            z-index:map-get( $zindex, 1 );
-
-                        }
-
-                    }
 
                 }
 
@@ -79,11 +65,34 @@
 
                 padding:map-get( $gutters, 'lg' ) var( --#{$prefix}gutter-x );
 
-                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding-right:0; }
 
-                    padding-left:0;
-                    padding-right:map-get( $gutters, 'sm' );
-                
+            }
+
+            .#{$prefix}banner-image {
+
+                padding:0 var( --#{$prefix}gutter-x ) map-get( $gutters, 'lg' ) var( --#{$prefix}gutter-x );
+
+                @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:map-get( $gutters, 'lg' ) var( --#{$prefix}gutter-x ); }
+                @media screen and ( min-width: map-get( $breakpoints, "xxl" ) ) {
+
+                    position:relative;
+                    padding:0;
+
+                    &::before {
+
+                        position:absolute;
+                        width:100%;
+                        height:100%;
+                        content:" ";
+                        background-repeat:no-repeat;
+                        background-size:contain;
+                        background-position:0 50%;
+                        background-image: var( --#{$prefix}banner-abstract );
+                        z-index:map-get( $zindex, 1 );
+
+                    }
+
                 }
 
             }

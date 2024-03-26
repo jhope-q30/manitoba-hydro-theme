@@ -2,12 +2,15 @@
 
     .#{$prefix}site-footer {
 
-        background-color: var( --#{$prefix}deep-sea-blue );
+        background-color: var( --#{$prefix}footer-background-color );
         padding:map-get( $spacing, 'md' ) 0;
 
-        * { color:var( --#{$prefix}white ); }
-
-        a { @include text-link-white(); }
+        * { color:var( --#{$prefix}footer-text-color ); }
+        a {
+            color: var( --#{$prefix}footer-link-color );
+            @include x-transition( color );
+            @include on-event { color: var( --#{$prefix}footer-link-hover-color ); }
+        }
         p { line-height:map-get( $line-height, 'lg' ); }
 
         .#{$prefix}site-footer-container {
@@ -44,20 +47,21 @@
                             > a {
             
                                 display:block;
-                                color:transparent !important;
                                 overflow:hidden;
                                 width:36px;
                                 height:36px;
-                                text-decoration:none !important;
                                 background-repeat:no-repeat;
                                 background-position:0 0;
-                                background-color:var( --#{$prefix}white );
+                                background-color:var( --#{$prefix}footer-link-color );
                                 border-radius:50%;
+
+                                color:transparent !important;
+                                text-decoration:none !important;
             
                                 @include x-transition( background-color );
-                                @include on-event { background-color:var( --#{$prefix}sky-blue ); }
+                                @include on-event { background-color:var( --#{$prefix}footer-link-hover-color ); }
             
-                                @each $key, $value in $social { &.#{$key} { background-image: #{$value} }; }
+                                @each $key, $value in $social { &.#{$key} { background-image:#{$value} }; }
             
                             }
             
@@ -97,7 +101,6 @@
                                 padding:map-get( $spacing, 'sm' ) 0;
                                 text-decoration:none;
                                 text-transform:uppercase;
-                                font-size:map-get( $font-size, 'md' );
                                 
                                 @include on-event { text-decoration:underline; }
 
@@ -115,12 +118,7 @@
 
                 padding:map-get( $spacing, 'md' ) 0;
 
-                .#{$prefix}acknowledgement {
-
-                    max-width:map-get( $max-widths, 'lg' );
-
-                }
-
+                .#{$prefix}acknowledgement { max-width:map-get( $max-widths, 'lg' ); }
                 .#{$prefix}subfooter-container {
 
                     @media ( min-width: map-get( $breakpoints, "md" ) ){
