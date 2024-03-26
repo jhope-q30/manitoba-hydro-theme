@@ -127,7 +127,7 @@
                     grid-template-areas:
                         "breadcrumb breadcrumb right"
                         "left left right";
-                        
+
                 }
 
             }
@@ -156,6 +156,38 @@
                 @media screen and ( min-width: map-get( $breakpoints, "xxl" ) ) { padding:0; }
 
             }
+
+        }
+
+    }
+    &.#{$prefix}banner-directional {
+
+        .#{$prefix}banner-content {
+
+            .#{$prefix}banner-text {
+
+                padding-top:map-get( $gutters, 'md' );
+                padding-bottom:#{ map-get( $gutters, 'md' ) - map-get( $spacing, 'xs' ) };
+
+                @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
+
+                    padding-top:map-get( $gutters, 'lg' );
+                    padding-bottom:map-get( $gutters, 'lg' );
+
+                }
+
+            }
+
+        }
+
+    }
+    &.#{$prefix}banner-directional,
+    &.#{$prefix}banner-landing {
+
+        .#{$prefix}banner-image {
+
+            display:none;
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { display:block; }
 
         }
 
