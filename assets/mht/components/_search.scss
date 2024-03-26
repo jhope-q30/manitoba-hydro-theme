@@ -59,7 +59,7 @@
 
                 @include on-event {
 
-                    background-color:var( --#{$prefix}hydro-blue );
+                    background-color:var( --#{$prefix}deep-sea-blue );
 
                     > svg { path { fill: var( --#{$prefix}white ); } }
                     
@@ -72,6 +72,8 @@
                 background-color:var( --#{$prefix}hydro-blue );
                 outline:1px solid var( --#{$prefix}link-hover-color );
                 outline-offset:0;
+
+                @include on-event { background-color:var( --#{$prefix}deep-sea-blue ); }
                 
                 > svg { path { fill: var( --#{$prefix}white ); } }
 
