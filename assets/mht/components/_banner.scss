@@ -1,3 +1,8 @@
+/** global */
+.#{$prefix}banner-breadcrumb { grid-area:breadcrumb; }
+.#{$prefix}banner-left { grid-area:left; }
+.#{$prefix}banner-right { grid-area:right; }
+/** banner styles */
 .#{$prefix}banner {
 
     --#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
@@ -54,9 +59,6 @@
                     column-gap:var( --#{$prefix}banner-column-gap );
                     grid-template-areas: "left right";
 
-                    .#{$prefix}banner-left { grid-area:left; }
-                    .#{$prefix}banner-right { grid-area:right; }
-
                 }
 
             }
@@ -104,27 +106,37 @@
 
         .#{$prefix}banner-content {
 
-            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
                 .#{$prefix}banner-grid {
 
                     grid-template-columns: 1fr 1fr 1fr;
-
-                    .#{$prefix}banner-left {
-
-                        grid-column-start:1;
-                        grid-column-end:span 2;
-
-                    }
-
-                    .#{$prefix}banner-right {
-
-                        grid-column-start:3;
-                        grid-column-end:span 1;
-
-                    }
+                    grid-template-rows: auto 1fr;
+                    grid-template-areas:
+                        "breadcrumb breadcrumb breadcrumb"
+                        "left left right";
 
                 }
+
+            }
+
+            @media screen and ( min-width: map-get( $breakpoints, "xl" ) ) {
+
+                .#{$prefix}banner-grid {
+
+                    grid-template-areas:
+                        "breadcrumb breadcrumb right"
+                        "left left right";
+                        
+                }
+
+            }
+
+            .#{$prefix}banner-breadcrumb {
+
+                padding:map-get( $gutters, 'md' ) var( --#{$prefix}gutter-x ) 0 var( --#{$prefix}gutter-x );
+
+                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding-right:0; }
 
             }
 
@@ -133,14 +145,15 @@
                 #breadcrumbs { padding-bottom:map-get( $spacing, 'sm' ); }
                 h1, h2, h3 { margin-top:map-get( $spacing, 'md' ); }
 
-                padding:#{ map-get( $spacing, 'lg' ) - map-get( $spacing, 'sm' ) } var( --#{$prefix}gutter-x );
+                padding-top:map-get( $gutters, 'xs' );
+                padding-bottom:map-get( $gutters, 'md' );
 
-                @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+            }
 
-                    padding-left:0;
-                    padding-right:map-get( $gutters, 'sm' );
-                
-                }
+            .#{$prefix}banner-image {
+
+                @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding-top:#{ map-get( $spacing, 'lg' ) }; }
+                @media screen and ( min-width: map-get( $breakpoints, "xxl" ) ) { padding:0; }
 
             }
 
