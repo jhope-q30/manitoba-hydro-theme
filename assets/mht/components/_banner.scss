@@ -23,12 +23,9 @@
     }
     .#{$prefix}banner-content {
 
-        a:not( .#{$prefix}btn ) { @include text-link-white(); }
+        @include banner-text-style();
+
         img { @include reset-image(); }
-
-        * { &:not( .#{$prefix}btn ) { color:var( --#{$prefix}white ); } }
-
-        .#{$prefix}btn { margin:map-get( $spacing, 'md' ) 0 0 0; }
 
     }
 

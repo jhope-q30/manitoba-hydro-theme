@@ -1,3 +1,24 @@
+.#{$prefix}callouts,
+.#{$prefix}callout-cta {
+
+    .#{$prefix}callout-content {
+
+        grid-area: content;
+        padding:map-get( $gutters, 'md' ) 0 0 0;
+
+        @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:#{ map-get( $spacing, 'md' ) + map-get( $spacing, 'sm' ) } map-get( $spacing, 'lg' ) 0 0; }
+
+    }
+    .#{$prefix}callout-image {
+
+        grid-area:image;
+    
+        img { @include reset-image(); }
+    
+    }
+
+}
+/** callouts style homepage/stacked */
 .#{$prefix}callouts {
 
     @include content-width();
@@ -19,21 +40,15 @@
 
         &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
 
-        .#{$prefix}callout-content {
-
-            grid-area: content;
+        .#{$prefix}callout-content { 
+            
             grid-column-end:span 2;
-            padding:map-get( $gutters, 'md' ) 0 0 0;
-
-            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0 map-get( $spacing, 'lg' ) 0 0; }
 
             h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'lg' ) - 2px } 0; }
         
         }
-
         .#{$prefix}callout-image {
 
-            grid-area:image;
             grid-column-start:3;
             position:relative;
             align-self:start;
@@ -63,9 +78,49 @@
                 }
         
             }
-            
-            img { @include reset-image(); }
         
+        }
+
+    }
+
+}
+
+/** callout cta style */
+.#{$prefix}callout-cta {
+
+    background-color:var( --#{$prefix}hydro-blue );
+
+    .#{$prefix}callout-container {
+
+        @include content-width( $gutter: false );
+
+        @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
+
+            display: grid;
+            grid-template-areas: "content image";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            column-gap:#{ map-get( $gutters, "sm" ) };
+
+        }
+
+        .#{$prefix}callout-content { 
+            
+            @include content-width();
+            @include banner-text-style();
+
+            padding-top:map-get( $gutters, 'md' );
+            padding-bottom:map-get( $gutters, 'md' );
+
+            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding-top:map-get( $gutters, 'lg' ); }
+
+            h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'md' ) } 0; }
+        
+        }
+        .#{$prefix}callout-image {
+
+            img { @include reset-image(); }
+
         }
 
     }

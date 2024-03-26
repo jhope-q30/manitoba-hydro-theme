@@ -2,12 +2,18 @@
 
     --#{$prefix}column-gap:#{ $grid-column-gap };
     --#{$prefix}row-gap:#{ $grid-row-gap };
+    --#{$prefix}gutter-y:#{ map-get( $gutters, 'md' ) };
 
     /** grid equal gap style */
     &.#{$prefix}grid-equal-gap {
 
         --#{$prefix}column-gap:#{ $grid-column-gap };
         --#{$prefix}row-gap:#{ $grid-column-gap };
+        --#{$prefix}gutter-y:#{ ( $grid-column-gap / 2 ) };
+
+        padding:var( --#{$prefix}gutter-y ) 0 #{ $grid-row-gap - ( $grid-column-gap / 2 ) } 0;
+
+        @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0 0 #{ $grid-row-gap } 0; }
 
     }
 
@@ -31,7 +37,7 @@
 
     .#{$prefix}group-item {
 
-        padding:map-get( $gutters, 'md' ) 0;
+        padding:var( --#{$prefix}gutter-y ) 0;
 
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0; }
 

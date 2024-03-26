@@ -12,19 +12,30 @@
 	color: var( --#{$prefix}link-knockout-color );
     @include on-event { color: var( --#{$prefix}link-knockout-hover-color ); }
 }
+/// text style for text on MH blue banners
+@mixin banner-text-style(){
+	a:not( .#{$prefix}btn ) { @include text-link-white(); }
+	* { &:not( .#{$prefix}btn ) { color:var( --#{$prefix}white ); } }
+	.#{$prefix}btn { margin:map-get( $spacing, 'md' ) 0 0 0; }
+}
 /// content width for containers
-@mixin content-width(){
+@mixin content-width( $gutter: true ){
 
-	--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+	@if( $gutter ) {
 
-	@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
-	@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+		--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+
+		@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
+		@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+
+		padding-left: var( --#{$prefix}gutter-x );
+		padding-right: var( --#{$prefix}gutter-x );
+
+	}
 
 	margin:0 auto;
 	width:100%;
 	max-width:$max-width;
-	padding-left: var( --#{$prefix}gutter-x );
-	padding-right: var( --#{$prefix}gutter-x );
 
 }
 /// dropshadow
