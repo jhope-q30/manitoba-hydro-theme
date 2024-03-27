@@ -11,7 +11,7 @@
     }
     .#{$prefix}callout-image {
 
-        grid-area:image;
+        grid-area: image;
     
         img { @include reset-image(); }
     
@@ -30,9 +30,8 @@
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
             display: grid;
-            grid-template-areas: "content image";
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: auto 1fr;
+            grid-template-areas:"content content image";
             column-gap:#{ map-get( $gutters, "sm" ) };
             padding:map-get( $gutters, 'lg' ) 0;
 
@@ -41,15 +40,12 @@
         &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
 
         .#{$prefix}callout-content { 
-            
-            grid-column-end:span 2;
 
             h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'lg' ) - 2px } 0; }
         
         }
         .#{$prefix}callout-image {
 
-            grid-column-start:3;
             position:relative;
             align-self:start;
 
@@ -97,9 +93,8 @@
         @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) {
 
             display: grid;
-            grid-template-areas: "content image";
+            grid-template-areas:"content image";
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 1fr;
             column-gap:#{ map-get( $gutters, "sm" ) };
 
         }
@@ -110,7 +105,7 @@
             @include banner-text-style();
 
             padding-top:map-get( $gutters, 'md' );
-            padding-bottom:map-get( $gutters, 'md' );
+            padding-bottom:0;
 
             @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding-top:map-get( $gutters, 'lg' ); }
 
@@ -118,6 +113,14 @@
         
         }
         .#{$prefix}callout-image {
+
+            @include content-width();
+
+            padding-top:map-get( $gutters, 'md' );
+            padding-bottom:map-get( $gutters, 'md' );
+
+            @media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { padding-top:map-get( $gutters, 'lg' ); }
+            @media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { padding:0; }
 
             img { @include reset-image(); }
 
