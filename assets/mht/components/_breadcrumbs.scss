@@ -76,14 +76,12 @@
                 padding-bottom:0;
                 padding-top:0;
         
-                > li {
-
-                    &.home,
-                    &.current-page { display:none; }
+                li {
 
                     display:none;
                     margin:0;
 
+                    &:not( :first-child ) { display:none; }
                     &::after { display: none; }
                     &:nth-last-child(2) {
 
