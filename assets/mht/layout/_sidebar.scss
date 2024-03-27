@@ -68,10 +68,13 @@
                             
                             font-weight:map-get( $font-weight, 'bold' );
                             color:$link-color !important;
+                            
                             &::before {
                                 content:'';
                                 display:none;
                             }
+
+                            @include on-event { color:var( --#{$prefix}link-hover-color ) !important; }
                         
                         }
                     
