@@ -1,7 +1,9 @@
+/** logo, secondary links, mobile toggle, login */
 .#{$prefix}header {
 
     display:flex;
     justify-content:flex-end;
+    align-items:top;
     flex-wrap:wrap;
     background-color: var( --#{$prefix}white );
 
@@ -12,8 +14,9 @@
         padding-top:map-get( $spacing, 'md' );
     
     }
-
-    .#{$prefix}logo { /** logo flex expands to fill open space on desktop */
+    
+    /** logo flex expands to fill open space on desktop */
+    .#{$prefix}logo {
 
         flex-shrink:1;
         flex-grow:1;
@@ -29,11 +32,28 @@
         }
 
     }
+    /** secondary section to accomidate secondary links, new items, etc.. */
+    .#{$prefix}secondary {
 
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
+
+            display:flex;
+            align-items:center;
+
+        }
+
+    }
+
+    /** secondary links */
     .#{$prefix}menu-group {
 
         padding:map-get( $spacing, 'md' ) 0;
-        @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0; }
+        @media ( min-width: map-get( $breakpoints, "lg" ) ){ 
+            
+            padding:0;
+            height:100%;
+        
+        }
 
         .#{$prefix}item {
 
@@ -61,7 +81,6 @@
                 a {
 
                     text-decoration:none;
-
                     @include on-event { text-decoration:underline; }
 
                 }
@@ -263,7 +282,7 @@
 
             align-self:center;
             padding:0 map-get( $spacing, 'md' );
-
+            
             .#{$prefix}search-container { max-width:map-get( $max-widths, 'xs' ); }
 
         }
