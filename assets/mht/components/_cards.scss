@@ -26,29 +26,23 @@
     /** card article style */
     &.#{$prefix}card-article {
 
+        .#{$prefix}card-body { padding:0; }
+
         @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
 
             display:grid;
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows:1fr;
+            grid-template-areas:"card-image card-body card-body";
             column-gap:#{ map-get( $gutters, "sm" ) };
 
-            .#{$prefix}card-image { margin:0 0 map-get( $gutters, 'xs' ) 0; }
-            .#{$prefix}card-body {
-
-                grid-column-start:2;
-                grid-column-end:span 2;
-
+            .#{$prefix}card-image { 
+                
+                grid-area:card-image;
+                margin:0 0 map-get( $gutters, 'xs' ) 0;
+            
             }
+            .#{$prefix}card-body { grid-area:card-body; }
 
-        }
-
-        .#{$prefix}card-body {
-
-            padding:map-get( $spacing, 'sm' ) 0 0 0;
-
-            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0 }
-    
         }
 
     }
@@ -64,12 +58,14 @@
         padding-right:var( --#{$prefix}card-padding-right );
         padding-bottom:var( --#{$prefix}card-padding-bottom );
         padding-left:var( --#{$prefix}card-padding-left );
-        height:100%;
+
         background-color:var( --#{$prefix}white );
         border-radius: var( --#{$prefix}border-radius );
         color:var( --#{$prefix}text-color );
-        text-decoration:none;
         border:2px solid var( --#{$prefix}white );
+
+        height:100%;
+        text-decoration:none;
         display:block;
 
         .#{$prefix}card-head {

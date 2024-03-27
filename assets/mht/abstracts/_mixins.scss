@@ -18,6 +18,10 @@
 	* { &:not( .#{$prefix}btn ) { color:var( --#{$prefix}white ); } }
 	.#{$prefix}btn { margin:map-get( $spacing, 'md' ) 0 0 0; }
 }
+/// text resizing for headings in banners, callouts, etc...
+@mixin banner-heading-sizes( $step: 1, $range: 3 ){
+	@for $i from 1 through $range { h#{$i}, .h#{$i} { font-size: map-get( $font-size, h#{$i+$step} ); } }
+}
 /// content width for containers
 @mixin content-width( $gutter: true ){
 
