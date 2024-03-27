@@ -11,7 +11,7 @@
 
         @include content-width();
 
-        padding-top:map-get( $gutters, 'lg' );
+        padding-top:map-get( $gutters, 'md' );
         padding-bottom:map-get( $gutters, 'md' );
 
         @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
