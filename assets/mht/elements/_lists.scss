@@ -88,6 +88,7 @@
                 @include reset-element( $d:inline-block );
 
                 text-transform:uppercase;
+                font-size:map-get( $font-size, 'sm' );
                 font-weight:map-get( $font-weight, 'demi' );
                 margin-bottom:map-get( $spacing, 'sm' );
 
