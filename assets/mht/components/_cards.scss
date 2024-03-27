@@ -41,7 +41,39 @@
                 margin:0 0 map-get( $gutters, 'xs' ) 0;
             
             }
-            .#{$prefix}card-body { grid-area:card-body; }
+            .#{$prefix}card-body { 
+                
+                grid-area:card-body;
+
+                @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { 
+                    
+                    @include banner-heading-sizes();
+
+                    ul.#{$prefix}details {
+            
+                        li {
+
+                            display:block;
+                            margin:0 0 map-get( $spacing, 'sm' ) 0;
+            
+                            &:not( :last-child ) {
+            
+                                &::after {
+            
+                                    content:"";
+                                    display:none;
+            
+                                }
+            
+                            }
+            
+                        }
+
+                    }
+                
+                }
+            
+            }
 
         }
 
