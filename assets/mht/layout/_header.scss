@@ -82,6 +82,7 @@
 
                             display:block;
                             font-size:map-get( $font-size, 'sm' );
+                            font-weight:map-get( $font-weight, 'semi' );
                             padding:map-get( $spacing, 'sm' ) map-get( $spacing, 'md' );
 
                             @media ( min-width: map-get( $breakpoints, "lg" ) ){ padding:0 map-get( $spacing, 'sm' ); }
