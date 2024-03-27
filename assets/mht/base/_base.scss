@@ -14,8 +14,8 @@ body {
     font-family: $font-family;
     font-size: 100%;
     font-size: $text-size;
-    letter-spacing: $letter-spacing;
-    line-height: $line-height;
+    letter-spacing: $text-letter-spacing;
+    line-height: $text-line-height;
     margin: 0;
     min-width: $min-width;
     padding: 0;

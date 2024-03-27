@@ -22,8 +22,8 @@ $zindex: (
 /** text */
 $text-color: map-get( $colors, "black" );
 $text-size:map-get( $font-size, 'md' );
-$letter-spacing: normal;
-$line-height: map-get( $line-height, 'md' );
+$text-letter-spacing: normal;
+$text-line-height: map-get( $line-height, 'md' );
 $text-underline-offset: 0.15em;
 
 /** links */
