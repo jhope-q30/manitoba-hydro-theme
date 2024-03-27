@@ -23,14 +23,25 @@
 	@for $i from 1 through $range { h#{$i}, .h#{$i} { font-size: map-get( $font-size, h#{$i+$step} ); } }
 }
 /// content width for containers
-@mixin content-width( $gutter: true ){
+@mixin content-width( $gutter: true, $trim: 0 ){
 
 	@if( $gutter ) {
 
-		--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+		@if( $trim ) {
 
-		@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
-		@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+			--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) - $trim };
+
+			@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) - $trim }; }
+			@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) - $trim }; }
+
+		} @else {
+
+			--#{$prefix}gutter-x: #{ map-get( $gutters, "sm" ) };
+
+			@media screen and ( min-width: map-get( $breakpoints, "lg" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "md" ) }; }
+			@media screen and ( min-width: map-get( $breakpoints, "xl" ) ) { --#{$prefix}gutter-x: #{ map-get( $gutters, "lg" ) }; }
+
+		}
 
 		padding-left: var( --#{$prefix}gutter-x );
 		padding-right: var( --#{$prefix}gutter-x );

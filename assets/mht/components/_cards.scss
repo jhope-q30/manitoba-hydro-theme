@@ -5,16 +5,9 @@
         overflow:hidden;
         margin:0 0 map-get( $gutters, 'md' ) 0;
 
-        > img { 
-            
-            @include reset-image();
-            @include x-transition( all );
-        
-        }
+        > img { @include reset-image(); }
 
     }
-
-    @include on-event { .#{$prefix}card-image { > img { transform: scale( 1.1 ); } } }
 
     .#{$prefix}card-head { @include header-icons(); }
     .#{$prefix}card-body {
@@ -26,15 +19,18 @@
     /** card article style */
     &.#{$prefix}card-article {
 
-        .#{$prefix}card-image { 
-                
-            margin:0 0 #{ map-get( $spacing, 'md' ) + map-get( $spacing, 'sm' ) } 0;
-        
-        }
+        height:100%;
+        padding:#{ $grid-column-gap * .5 };
+
+        .#{$prefix}card-image { margin:0 0 #{ map-get( $spacing, 'md' ) + map-get( $spacing, 'sm' ) } 0; }
         .#{$prefix}card-body { padding:0; }
+
+        @include x-transition( background-color );
+        @include on-event { background-color:var( --#{$prefix}card-hover-background ); }
 
         @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
 
+            padding-top:map-get( $gutters, 'sm' ); 
             display:grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas:"card-image card-body card-body";

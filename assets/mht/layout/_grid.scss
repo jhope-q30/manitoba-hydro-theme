@@ -5,6 +5,7 @@
     --#{$prefix}gutter-y:#{ map-get( $gutters, 'md' ) };
 
     /** grid equal gap style */
+    &.#{$prefix}grid-article { --#{$prefix}column-gap:#{ $grid-column-gap * .5 }; }
     &.#{$prefix}grid-equal-gap {
 
         --#{$prefix}column-gap:#{ $grid-column-gap };
@@ -50,7 +51,7 @@
 
         .#{$prefix}group-item { 
             
-            padding:map-get( $gutters, 'sm' ) 0;
+            padding:map-get( $gutters, 'xs' ) 0;
 
             @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { padding:0; }
         
@@ -62,12 +63,7 @@
 
         .#{$prefix}group-item {
 
-            @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
-
-                &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
-
-            }
-
+            @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); } }
             @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
                 border-bottom:0;

@@ -1,5 +1,2 @@
-.#{$prefix}container {
-
-    @include content-width();
-
-}
+.#{$prefix}container { @include content-width(); }
+.#{$prefix}container-article { @include content-width( $gutter: true, $trim: ( $grid-column-gap * .5 ) ); }
