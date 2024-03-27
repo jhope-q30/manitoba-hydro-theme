@@ -2,6 +2,12 @@
 
     .#{$prefix}site-footer {
 
+        --#{$prefix}footer-text-color: #{ $footer-text-color };
+        --#{$prefix}footer-background-color: #{ $footer-background-color };
+        --#{$prefix}footer-link-color: #{ $footer-link-color };
+        --#{$prefix}footer-link-hover-color: #{ $footer-link-hover-color };
+        --#{$prefix}footer-link-active-color: #{ $footer-link-active-color };
+
         background-color: var( --#{$prefix}footer-background-color );
         padding:map-get( $spacing, 'md' ) 0;
 

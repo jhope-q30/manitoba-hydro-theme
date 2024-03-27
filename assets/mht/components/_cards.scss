@@ -26,7 +26,7 @@
         .#{$prefix}card-body { padding:0; }
 
         @include x-transition( background-color );
-        @include on-event { background-color:var( --#{$prefix}card-hover-background ); }
+        @include on-event { background-color:$card-article-hover-background; }
 
         @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
 
@@ -112,7 +112,7 @@
         @include x-transition( all );
         @include on-event { 
             
-            border-color:var( --#{$prefix}button-border-hover-color );
+            border-color:$card-link-hover-border;
             @include dropshadow();
 
             .#{$prefix}card-head { color:var( --#{$prefix}link-hover-color ); }
