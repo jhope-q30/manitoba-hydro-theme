@@ -7,7 +7,6 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-html, body { font-family: $font-family; }
 body {
     accent-color: var( --#{$prefix}hydro-blue );
     background: var( --#{$prefix}white );
@@ -16,15 +15,15 @@ body {
     font-size: 100%;
     font-size: $text-size;
     letter-spacing: $letter-spacing;
-    line-height: map-get( $line-height, 'md' );
+    line-height: $line-height;
     margin: 0;
-    min-width: 250px;
+    min-width: $min-width;
     padding: 0;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    text-underline-offset: 0.15em;
+    text-underline-offset: $text-underline-offset;
     @supports ( text-underline-position: from-font ) {
-        text-underline-offset: 0.15em;
+        text-underline-offset: $text-underline-offset;
         text-underline-position: from-font;
     }
 }

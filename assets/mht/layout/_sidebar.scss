@@ -7,6 +7,18 @@
 
         > nav {
 
+            margin:map-get( $gutters, 'md' ) 0 0 0;
+            padding:map-get( $gutters, 'sm' ) 0 map-get( $gutters, 'md' ) 0;
+            border-top:1px solid var( --#{$prefix}border-color-gray );
+
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
+
+                margin:0;
+                padding:0 0 map-get( $gutters, 'md' ) 0;
+                border:0;
+
+            }
+
             > span.title { 
                 
                 text-transform: uppercase;

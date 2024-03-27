@@ -23,6 +23,8 @@ $zindex: (
 $text-color: map-get( $colors, "black" );
 $text-size:map-get( $font-size, 'md' );
 $letter-spacing: normal;
+$line-height: map-get( $line-height, 'md' );
+$text-underline-offset: 0.15em;
 
 /** links */
 $link-color: map-get( $colors, "hydro-blue" );
@@ -48,6 +50,7 @@ $button-outline-background-hover-color: map-get( $colors, "pale-blue" );
 
 /** border colors, radius for buttons, input, etc... */
 $border-color: map-get( $colors, "pale-blue" );
+$border-color-gray: map-get( $colors, "medium-grey" );
 $border-radius: #{ map-get( $spacing, 'md' ) - map-get( $spacing, 'xs' ) };
 
 /** grid */

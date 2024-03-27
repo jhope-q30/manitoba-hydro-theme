@@ -1,8 +1,9 @@
+$min-width: 280px;
 $max-width: 1440px;
 $max-widths: ();
 $max-widths: map-merge(
     (
-        "xs": 280px,
+        "xs": $min-width,
         "sm": 540px,
         "md": 720px,
         "lg": 960px,

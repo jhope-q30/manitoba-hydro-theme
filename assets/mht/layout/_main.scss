@@ -32,7 +32,7 @@
         #sidebar { 
             
             grid-area: sidebar;
-            width:map-get( $columns, "left" );
+            @media screen and ( min-width: map-get( $breakpoints, "md" ) ) { width:map-get( $columns, "left" ); }
         
         }
 
