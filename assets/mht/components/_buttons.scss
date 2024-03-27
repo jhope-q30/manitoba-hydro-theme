@@ -7,7 +7,7 @@
     --#{$prefix}btn-hover-color: var( --#{$prefix}button-hover-color );
     --#{$prefix}btn-border-hover-color: var( --#{$prefix}button-border-hover-color );
     --#{$prefix}btn-font-size: #{ map-get( $font-size, 'sm' ) };
-    --#{$prefix}btn-font-weight: #{ map-get( $font-weight, 'demi' ) };
+    --#{$prefix}btn-font-weight: #{ map-get( $font-weight, 'semi' ) };
     --#{$prefix}btn-padding: #{ map-get( $spacing, 'sm' ) map-get( $spacing, 'md' ) };
 
     &.white {
