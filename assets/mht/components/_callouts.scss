@@ -39,11 +39,7 @@
 
         &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); }
 
-        .#{$prefix}callout-content { 
-
-            h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'lg' ) - 2px } 0; }
-        
-        }
+        .#{$prefix}callout-content { h1, h2, h3 { margin:0 0 #{ map-get( $spacing, 'lg' ) - 2px } 0; } }
         .#{$prefix}callout-image {
 
             position:relative;

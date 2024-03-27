@@ -28,7 +28,7 @@
         @include x-transition( background-color );
         @include on-event { background-color:$card-article-hover-background; }
 
-        @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
+        @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) {
 
             padding-top:map-get( $gutters, 'sm' ); 
             display:grid;
@@ -46,7 +46,7 @@
                 
                 grid-area:card-body;
 
-                @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { 
+                @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) { 
                     
                     @include banner-heading-sizes();
 

@@ -47,7 +47,7 @@
     /** grid article style */
     &.#{$prefix}grid-article {
 
-        @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { padding:map-get( $gutters, 'md' ) 0; }
+        @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) { padding:map-get( $gutters, 'md' ) 0; }
 
         .#{$prefix}group-item { 
             
@@ -63,7 +63,7 @@
 
         .#{$prefix}group-item {
 
-            @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); } }
+            @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) { &:not( :last-child ) { border-bottom:1px solid var( --#{$prefix}sky-blue ); } }
             @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
                 border-bottom:0;

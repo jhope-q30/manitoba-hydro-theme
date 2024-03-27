@@ -25,7 +25,7 @@
 
             h1, h2, h3 { margin-top:map-get( $spacing, 'md' ); }
 
-            @media screen and ( max-width: map-get( $breakpoints, "md" ) ) { @include banner-heading-sizes(); }
+            @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) { @include banner-heading-sizes(); }
 
         }
 
@@ -51,7 +51,7 @@
 
         .#{$prefix}banner-content {
 
-            @media screen and ( max-width: map-get( $breakpoints, "lg" ) ) { @include banner-heading-sizes(); }
+            @media screen and ( max-width: #{ map-get( $breakpoints, "lg" ) - 1px } ) { @include banner-heading-sizes(); }
             @media screen and ( min-width: map-get( $breakpoints, "md" ) ) {
 
                 @include content-width( $gutter: false );

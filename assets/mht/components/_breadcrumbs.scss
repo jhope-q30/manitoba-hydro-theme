@@ -45,6 +45,8 @@
                         
                         content:"\\";
                         padding:0 map-get( $spacing, 'sm' ) 0 map-get( $spacing, 'xs' );
+
+                        @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) { content:map-get( $svgs, 'chevron-back-white' ); }
                     
                     }
 
@@ -63,6 +65,43 @@
                         color:var( --#{$prefix}link-hover-color );
                         text-decoration:underline;
     
+                    }
+
+                }
+
+            }
+
+            @media screen and ( max-width: #{ map-get( $breakpoints, "md" ) - 1px } ) {
+
+                padding-bottom:0;
+                padding-top:0;
+        
+                > li {
+
+                    &.home,
+                    &.current-page { display:none; }
+
+                    display:none;
+                    margin:0;
+
+                    &::after { display: none; }
+                    &:nth-last-child(2) {
+
+                        display: inline-block;
+        
+                        a {
+
+                            display: inline-block;
+        
+                            &::before {
+
+                                content: "";
+                                display: none;
+                                
+                            }
+
+                        }
+
                     }
 
                 }

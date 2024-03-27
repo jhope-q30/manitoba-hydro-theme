@@ -18,12 +18,12 @@
         width: 1px;
     }
 
-    @media screen and ( max-width: ( map-get( $breakpoints, "sm" ) - 1px ) ) {
+    @media screen and ( max-width: ( #{ map-get( $breakpoints, "sm" ) - 1px } ) ) {
         .hide-phone-only {
             display: none !important;
         }
     }
-    @media screen and ( max-width: ( map-get( $breakpoints, "lg" ) - 1px ) ) {
+    @media screen and ( max-width: ( #{ map-get( $breakpoints, "lg" ) - 1px } ) ) {
         .hide-mobile-tablet {
             display: none !important;
         }
