@@ -89,7 +89,7 @@
 
                 text-transform:uppercase;
                 font-weight:map-get( $font-weight, 'demi' );
-                margin-bottom:map-get( $spacing, 'xs' );
+                margin-bottom:map-get( $spacing, 'sm' );
 
                 &:not( :last-child ) {
 

@@ -26,6 +26,11 @@
     /** card article style */
     &.#{$prefix}card-article {
 
+        .#{$prefix}card-image { 
+                
+            margin:0 0 #{ map-get( $spacing, 'md' ) + map-get( $spacing, 'sm' ) } 0;
+        
+        }
         .#{$prefix}card-body { padding:0; }
 
         @media screen and ( max-width: map-get( $breakpoints, "md" ) ) {
@@ -54,7 +59,6 @@
                         li {
 
                             display:block;
-                            margin:0 0 map-get( $spacing, 'sm' ) 0;
             
                             &:not( :last-child ) {
             
